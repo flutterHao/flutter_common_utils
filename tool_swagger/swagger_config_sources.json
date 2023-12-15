@@ -1,0 +1,8 @@
+{
+  "swagger_resources": [
+    {
+      "store_dir": "cn_mgr",
+      "url": "http://10.10.37.3:9950/swagger-resources" 
+    }
+  ]
+}

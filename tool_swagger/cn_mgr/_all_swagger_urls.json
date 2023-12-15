@@ -1,0 +1,47 @@
+[
+  {
+    "name": "用户服务",
+    "header": "0e644bfc3f3b1ea60fd375088e6817d5",
+    "location": "/v2/api-docs?group=default",
+    "swaggerVersion": "2.0",
+    "servicePath": "/game-pf-user",
+    "debug": true,
+    "local": false
+  },
+  {
+    "name": "游戏服务",
+    "header": "3090965e682da0fa30ebf0adf183564a",
+    "location": "/v2/api-docs?group=default",
+    "swaggerVersion": "2.0",
+    "servicePath": "/game-pf-games",
+    "debug": true,
+    "local": false
+  },
+  {
+    "name": "系统服务",
+    "header": "1eac78df646d445ef6141acdc78eb249",
+    "location": "/v2/api-docs?group=default",
+    "swaggerVersion": "2.0",
+    "servicePath": "/game-pf-system",
+    "debug": true,
+    "local": false
+  },
+  {
+    "name": "基础服务",
+    "header": "4b78f623a3254dc8e3d37f20063635cd",
+    "location": "/v2/api-docs?group=default",
+    "swaggerVersion": "2.0",
+    "servicePath": "/game-pf-basic",
+    "debug": true,
+    "local": false
+  },
+  {
+    "name": "支付服务",
+    "header": "7a046cafa8b4028610282cb978d456c4",
+    "location": "/v2/api-docs?group=default",
+    "swaggerVersion": "2.0",
+    "servicePath": "/game-pf-payment",
+    "debug": true,
+    "local": false
+  }
+]

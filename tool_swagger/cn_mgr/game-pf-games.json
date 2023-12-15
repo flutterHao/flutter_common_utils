@@ -1,0 +1,6486 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "<div style='font-size:14px;color:black;'>游戏 微服务 API</div>",
+    "version": "1.0",
+    "title": "Games Service API"
+  },
+  "host": "10.10.37.3",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "global-dictionary-controller",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "【APP】游戏API",
+      "x-author": "周港东",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "冲榜API",
+      "x-author": "王骏豪",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "排行榜API",
+      "x-author": "周港东",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "游戏活动配置",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "游戏管理 - 游戏分类API",
+      "x-author": "周港东",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "游戏管理 - 游戏列表API",
+      "x-author": "周港东",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "游戏管理 - 游戏数据配置API",
+      "x-author": "周港东",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "游戏红包API",
+      "x-author": "王骏豪",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "用户游戏信息api",
+      "x-author": "王骏豪",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "福利-活动API",
+      "x-author": "王骏豪",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "福利-礼包API",
+      "x-author": "王骏豪",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "红包转钱包规则设置API",
+      "x-author": "王骏豪",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "通知中心API",
+      "x-author": "周港东",
+      "x-order": "2147483647"
+    }
+  ],
+  "paths": {
+    "/activeRanking/create": {
+      "post": {
+        "tags": [
+          "冲榜API"
+        ],
+        "summary": "添加冲榜活动",
+        "operationId": "createUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "createActivityRankingTo",
+            "description": "createActivityRankingTo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateActivityRankingTo",
+              "originalRef": "CreateActivityRankingTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»",
+              "originalRef": "BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/activeRanking/deleteById": {
+      "post": {
+        "tags": [
+          "冲榜API"
+        ],
+        "summary": "删除冲榜活动",
+        "operationId": "deleteByIdUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»",
+              "originalRef": "BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/activeRanking/exportActivityRanking": {
+      "post": {
+        "tags": [
+          "冲榜API"
+        ],
+        "summary": "导出表格",
+        "operationId": "exportActivityRankingUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "searchActivityRankingQuery",
+            "description": "searchActivityRankingQuery",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SearchActivityRankingQuery",
+              "originalRef": "SearchActivityRankingQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/activeRanking/getActivityRankingById": {
+      "get": {
+        "tags": [
+          "冲榜API"
+        ],
+        "summary": "根据id查询冲榜信息",
+        "operationId": "getActivityRankingByIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«GetActivityRankingByIdVo»",
+              "originalRef": "BaseResponse«GetActivityRankingByIdVo»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/activeRanking/searchPage": {
+      "post": {
+        "tags": [
+          "冲榜API"
+        ],
+        "summary": "分页查询冲榜活动",
+        "operationId": "searchPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "searchActivityRankingQuery",
+            "description": "searchActivityRankingQuery",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SearchActivityRankingQuery",
+              "originalRef": "SearchActivityRankingQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«SearchActivityRankingVo»»",
+              "originalRef": "BaseResponse«IPage«SearchActivityRankingVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/activeRanking/updateById": {
+      "post": {
+        "tags": [
+          "冲榜API"
+        ],
+        "summary": "修改冲榜活动",
+        "operationId": "updateByIdUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateActivityRankingTo",
+            "description": "updateActivityRankingTo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateActivityRankingTo",
+              "originalRef": "UpdateActivityRankingTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»",
+              "originalRef": "BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/activityConfig/create": {
+      "post": {
+        "tags": [
+          "游戏活动配置"
+        ],
+        "summary": "添加玩游戏 领红包配置",
+        "operationId": "createUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "crateGameActivityConfigTo",
+            "description": "crateGameActivityConfigTo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateGameActivityConfigTo",
+              "originalRef": "CreateGameActivityConfigTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»",
+              "originalRef": "BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/activityConfig/getConfig": {
+      "get": {
+        "tags": [
+          "游戏活动配置"
+        ],
+        "summary": "查询玩游戏 领红包配置",
+        "operationId": "getConfigUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«GameActivityConfig»",
+              "originalRef": "BaseResponse«GameActivityConfig»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/game/detail": {
+      "post": {
+        "tags": [
+          "【APP】游戏API"
+        ],
+        "summary": "获取游戏详情",
+        "operationId": "detailUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "query",
+            "description": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AppGameDetailQuery",
+              "originalRef": "AppGameDetailQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«AppGameDetailVo»",
+              "originalRef": "BaseResponse«AppGameDetailVo»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/game/gameListByType": {
+      "post": {
+        "tags": [
+          "【APP】游戏API"
+        ],
+        "summary": "游戏分类下属游戏列表",
+        "operationId": "gameListByTypeUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "query",
+            "description": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GameTypeAppQuery",
+              "originalRef": "GameTypeAppQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«Page«AppGameTypeGameVo»»",
+              "originalRef": "BaseResponse«Page«AppGameTypeGameVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/game/gameTypeList": {
+      "get": {
+        "tags": [
+          "【APP】游戏API"
+        ],
+        "summary": "游戏分类列表",
+        "operationId": "gameTypeListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«游戏分类VO»»",
+              "originalRef": "BaseResponse«List«游戏分类VO»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/game/rankingList": {
+      "post": {
+        "tags": [
+          "【APP】游戏API"
+        ],
+        "summary": "榜单列表",
+        "operationId": "rankingListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "query",
+            "description": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GameRankingAppQuery",
+              "originalRef": "GameRankingAppQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«Page«AppGameSortRankingVo»»",
+              "originalRef": "BaseResponse«Page«AppGameSortRankingVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/game/search": {
+      "post": {
+        "tags": [
+          "【APP】游戏API"
+        ],
+        "summary": "游戏搜索",
+        "operationId": "searchUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "query",
+            "description": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AppGameSearchQuery",
+              "originalRef": "AppGameSearchQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«GameEsModels»",
+              "originalRef": "BaseResponse«GameEsModels»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/userGameInfo/createUserGameInfo": {
+      "post": {
+        "tags": [
+          "用户游戏信息api"
+        ],
+        "summary": "存储用户游戏信息",
+        "operationId": "createUserGameInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "createUserGameInfoTo",
+            "description": "createUserGameInfoTo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/添加用户游戏内信息",
+              "originalRef": "添加用户游戏内信息"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse",
+              "originalRef": "BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/userGameInfo/playGamesInfo": {
+      "get": {
+        "tags": [
+          "用户游戏信息api"
+        ],
+        "summary": "玩游戏 领红包界面信息",
+        "operationId": "playGamesInfoUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "current",
+            "in": "query",
+            "description": "current",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "size",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "uid",
+            "in": "query",
+            "description": "uid",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«PlayGamesInfoVo»",
+              "originalRef": "BaseResponse«PlayGamesInfoVo»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/userGameInfo/rankingList": {
+      "get": {
+        "tags": [
+          "用户游戏信息api"
+        ],
+        "summary": "冲榜列表",
+        "operationId": "rankingListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "activityId",
+            "in": "query",
+            "description": "activityId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "uid",
+            "in": "query",
+            "description": "uid",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«RankingListVo»",
+              "originalRef": "BaseResponse«RankingListVo»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/userGameInfo/redEnvelopeToWallet": {
+      "post": {
+        "tags": [
+          "用户游戏信息api"
+        ],
+        "summary": "红包转钱包",
+        "operationId": "redEnvelopeToWalletUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "redEnvelopeToWalletTo",
+            "description": "redEnvelopeToWalletTo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RedEnvelopeToWalletTo",
+              "originalRef": "RedEnvelopeToWalletTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»",
+              "originalRef": "BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/userGameInfo/redPacketBalanceList": {
+      "get": {
+        "tags": [
+          "用户游戏信息api"
+        ],
+        "summary": "红包余额列表",
+        "operationId": "redPacketBalanceListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "current",
+            "in": "query",
+            "description": "current",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "size",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "uid",
+            "in": "query",
+            "description": "uid",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«RedPacketBalanceListVo»",
+              "originalRef": "BaseResponse«RedPacketBalanceListVo»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/userGameInfo/redPacketCollectionDetails": {
+      "get": {
+        "tags": [
+          "用户游戏信息api"
+        ],
+        "summary": "红包领取详情",
+        "operationId": "redPacketCollectionDetailsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "current",
+            "in": "query",
+            "description": "current",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "size",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "uid",
+            "in": "query",
+            "description": "uid",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«RedEnvelopeCollectionRecord»»",
+              "originalRef": "BaseResponse«IPage«RedEnvelopeCollectionRecord»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/game/create": {
+      "post": {
+        "tags": [
+          "游戏管理 - 游戏列表API"
+        ],
+        "summary": "新增",
+        "operationId": "createUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/游戏-添加Command",
+              "originalRef": "游戏-添加Command"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»",
+              "originalRef": "BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/game/export": {
+      "post": {
+        "tags": [
+          "游戏管理 - 游戏列表API"
+        ],
+        "summary": "导出数据",
+        "operationId": "exportUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "query",
+            "description": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GamePageQuery",
+              "originalRef": "GamePageQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/game/exportOnShelve": {
+      "post": {
+        "tags": [
+          "游戏管理 - 游戏列表API"
+        ],
+        "summary": "导出数据(在架游戏列表)",
+        "operationId": "exportOnShelveUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "query",
+            "description": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GameOnShelvePageQuery",
+              "originalRef": "GameOnShelvePageQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/game/getGameName": {
+      "get": {
+        "tags": [
+          "游戏管理 - 游戏列表API"
+        ],
+        "summary": "获取游戏名称",
+        "operationId": "getGameNameUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "gameIds",
+            "description": "gameIds",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/game/getOne": {
+      "get": {
+        "tags": [
+          "游戏管理 - 游戏列表API"
+        ],
+        "summary": "单个详情",
+        "operationId": "getOneUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "query",
+            "description": "游戏ID",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«游戏VO»",
+              "originalRef": "BaseResponse«游戏VO»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/game/list": {
+      "post": {
+        "tags": [
+          "游戏管理 - 游戏列表API"
+        ],
+        "summary": "获取已上架的游戏列表",
+        "operationId": "listUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "query",
+            "description": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GameListQuery",
+              "originalRef": "GameListQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«游戏列表VO»»",
+              "originalRef": "BaseResponse«List«游戏列表VO»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/game/listWithTypes": {
+      "post": {
+        "tags": [
+          "游戏管理 - 游戏列表API"
+        ],
+        "summary": "获取已上架的游戏列表（含游戏分类ID列表）",
+        "operationId": "listWithTypesUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«游戏列表VO»»",
+              "originalRef": "BaseResponse«List«游戏列表VO»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/game/offShelve": {
+      "get": {
+        "tags": [
+          "游戏管理 - 游戏列表API"
+        ],
+        "summary": "下架",
+        "operationId": "offShelveUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "query",
+            "description": "游戏ID",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»",
+              "originalRef": "BaseResponse«object»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/game/onShelvePage": {
+      "post": {
+        "tags": [
+          "游戏管理 - 游戏列表API"
+        ],
+        "summary": "分页列表(在架游戏列表)",
+        "operationId": "onShelvePageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "query",
+            "description": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GameOnShelvePageQuery",
+              "originalRef": "GameOnShelvePageQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«GameOnShelvePageVo»»",
+              "originalRef": "BaseResponse«IPage«GameOnShelvePageVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/game/page": {
+      "post": {
+        "tags": [
+          "游戏管理 - 游戏列表API"
+        ],
+        "summary": "分页列表",
+        "operationId": "pageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "query",
+            "description": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GamePageQuery",
+              "originalRef": "GamePageQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«GamePageVo»»",
+              "originalRef": "BaseResponse«IPage«GamePageVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/game/update": {
+      "post": {
+        "tags": [
+          "游戏管理 - 游戏列表API"
+        ],
+        "summary": "更新",
+        "operationId": "updateUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/游戏-添加Command",
+              "originalRef": "游戏-添加Command"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»",
+              "originalRef": "BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/gameDataConfig/get": {
+      "get": {
+        "tags": [
+          "游戏管理 - 游戏数据配置API"
+        ],
+        "summary": "获取",
+        "operationId": "getUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«GameDataConfigVo»",
+              "originalRef": "BaseResponse«GameDataConfigVo»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/gameDataConfig/save": {
+      "post": {
+        "tags": [
+          "游戏管理 - 游戏数据配置API"
+        ],
+        "summary": "保存",
+        "operationId": "saveUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GameDataConfigSaveCommand",
+              "originalRef": "GameDataConfigSaveCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»",
+              "originalRef": "BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/gameNotify/handle": {
+      "post": {
+        "tags": [
+          "通知中心API"
+        ],
+        "summary": "处理消息",
+        "operationId": "handleUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/处理消息Command",
+              "originalRef": "处理消息Command"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»",
+              "originalRef": "BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/gameNotify/list": {
+      "get": {
+        "tags": [
+          "通知中心API"
+        ],
+        "summary": "获取消息列表",
+        "operationId": "listUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«通知中心Model»",
+              "originalRef": "BaseResponse«通知中心Model»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/gameRanking/list": {
+      "get": {
+        "tags": [
+          "排行榜API"
+        ],
+        "summary": "获取排序列表",
+        "operationId": "listUsingGET_1",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "description": "排行类型（1: 热玩榜、2：热门榜、3：新品榜、4：热搜榜）",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«GameSortRankingVo»»",
+              "originalRef": "BaseResponse«List«GameSortRankingVo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/gameRanking/save": {
+      "post": {
+        "tags": [
+          "排行榜API"
+        ],
+        "summary": "保存排序",
+        "operationId": "saveUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/排行Model",
+              "originalRef": "排行Model"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»",
+              "originalRef": "BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/gameType/gameSortList": {
+      "get": {
+        "tags": [
+          "游戏管理 - 游戏分类API"
+        ],
+        "summary": "分类-游戏排序列表",
+        "operationId": "gameSortListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "typeId",
+            "in": "query",
+            "description": "分类ID",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«分类游戏排序VO»»",
+              "originalRef": "BaseResponse«List«分类游戏排序VO»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/gameType/saveGameSort": {
+      "post": {
+        "tags": [
+          "游戏管理 - 游戏分类API"
+        ],
+        "summary": "保存分类-游戏排序列表",
+        "operationId": "saveGameSortUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/类型游戏排序-保存command",
+              "originalRef": "类型游戏排序-保存command"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»",
+              "originalRef": "BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/gameType/saveType": {
+      "post": {
+        "tags": [
+          "游戏管理 - 游戏分类API"
+        ],
+        "summary": "保存游戏分类列表",
+        "operationId": "saveTypeUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/游戏类型-保存command",
+              "originalRef": "游戏类型-保存command"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»",
+              "originalRef": "BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/gameType/typeList": {
+      "get": {
+        "tags": [
+          "游戏管理 - 游戏分类API"
+        ],
+        "summary": "分类列表",
+        "operationId": "typeListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«游戏分类VO»»",
+              "originalRef": "BaseResponse«List«游戏分类VO»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/gift/createGameGift": {
+      "post": {
+        "tags": [
+          "福利-礼包API"
+        ],
+        "summary": "添加礼包信息",
+        "operationId": "createGameGiftUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "gameGiftCreateTo",
+            "description": "gameGiftCreateTo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GameGiftCreateTo",
+              "originalRef": "GameGiftCreateTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»",
+              "originalRef": "BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/gift/deleteGameGift": {
+      "get": {
+        "tags": [
+          "福利-礼包API"
+        ],
+        "summary": "删除礼包",
+        "operationId": "deleteGameGiftUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»",
+              "originalRef": "BaseResponse«boolean»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/gift/getGiftInfoById": {
+      "get": {
+        "tags": [
+          "福利-礼包API"
+        ],
+        "summary": "礼包详情查询",
+        "operationId": "getGiftInfoByIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«GiftInfoVo»",
+              "originalRef": "BaseResponse«GiftInfoVo»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/gift/searchGameGiftPage": {
+      "post": {
+        "tags": [
+          "福利-礼包API"
+        ],
+        "summary": "礼包列表查询",
+        "operationId": "searchGameGiftPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "gameGiftPageQuery",
+            "description": "gameGiftPageQuery",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GameGiftPageQuery",
+              "originalRef": "GameGiftPageQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«GameGiftPageVo»»",
+              "originalRef": "BaseResponse«IPage«GameGiftPageVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/gift/updateGameGift": {
+      "post": {
+        "tags": [
+          "福利-礼包API"
+        ],
+        "summary": "修改礼包信息",
+        "operationId": "updateGameGiftUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "gameGiftUpdateTo",
+            "description": "gameGiftUpdateTo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GameGiftUpdateTo",
+              "originalRef": "GameGiftUpdateTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»",
+              "originalRef": "BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/redEnvelopeToWallet/create": {
+      "post": {
+        "tags": [
+          "红包转钱包规则设置API"
+        ],
+        "summary": "添加金额",
+        "operationId": "createUsingPOST_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "createRedEnvelopeToWalletTo",
+            "description": "createRedEnvelopeToWalletTo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateRedEnvelopeToWalletTo",
+              "originalRef": "CreateRedEnvelopeToWalletTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»",
+              "originalRef": "BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/redEnvelopeToWallet/deleteById": {
+      "post": {
+        "tags": [
+          "红包转钱包规则设置API"
+        ],
+        "summary": "删除",
+        "operationId": "deleteByIdUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»",
+              "originalRef": "BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/redEnvelopeToWallet/findAll": {
+      "get": {
+        "tags": [
+          "红包转钱包规则设置API"
+        ],
+        "summary": "查询全部",
+        "operationId": "findAllUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«RedEnvelopeToWallet»»",
+              "originalRef": "BaseResponse«List«RedEnvelopeToWallet»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/redEnvelopeToWallet/updateById": {
+      "post": {
+        "tags": [
+          "红包转钱包规则设置API"
+        ],
+        "summary": "修改金额",
+        "operationId": "updateByIdUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateRedEnvelopeToWalletTo",
+            "description": "updateRedEnvelopeToWalletTo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateRedEnvelopeToWalletTo",
+              "originalRef": "UpdateRedEnvelopeToWalletTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»",
+              "originalRef": "BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/redEnvelopeToWallet/updateFrequency": {
+      "post": {
+        "tags": [
+          "红包转钱包规则设置API"
+        ],
+        "summary": "修改次数",
+        "operationId": "updateFrequencyUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "frequency",
+            "in": "query",
+            "description": "frequency",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»",
+              "originalRef": "BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/redPacket/createGameRedPacket": {
+      "post": {
+        "tags": [
+          "游戏红包API"
+        ],
+        "summary": "添加赚钱规则信息",
+        "operationId": "createGameRedPacketUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "createActivityRedPacketTo",
+            "description": "createActivityRedPacketTo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateActivityRedPacketTo",
+              "originalRef": "CreateActivityRedPacketTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»",
+              "originalRef": "BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/redPacket/deleteById": {
+      "post": {
+        "tags": [
+          "游戏红包API"
+        ],
+        "summary": "deleteById",
+        "operationId": "deleteByIdUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»",
+              "originalRef": "BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/redPacket/exportGameRedPacket": {
+      "post": {
+        "tags": [
+          "游戏红包API"
+        ],
+        "summary": "导出表格",
+        "operationId": "exportGameRedPacketUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "searchRedPacketPageQuery",
+            "description": "searchRedPacketPageQuery",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SearchRedPacketPageQuery",
+              "originalRef": "SearchRedPacketPageQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/redPacket/getById": {
+      "get": {
+        "tags": [
+          "游戏红包API"
+        ],
+        "summary": "getById",
+        "operationId": "getByIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«RedPacketGetByIdVo»",
+              "originalRef": "BaseResponse«RedPacketGetByIdVo»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/redPacket/searchGameRedPacketPage": {
+      "post": {
+        "tags": [
+          "游戏红包API"
+        ],
+        "summary": "分页查询赚钱规则信息",
+        "operationId": "searchGameRedPacketPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "searchRedPacketPageQuery",
+            "description": "searchRedPacketPageQuery",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SearchRedPacketPageQuery",
+              "originalRef": "SearchRedPacketPageQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«SearchRedPacketPageVo»»",
+              "originalRef": "BaseResponse«IPage«SearchRedPacketPageVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/redPacket/updateGameRedPacket": {
+      "post": {
+        "tags": [
+          "游戏红包API"
+        ],
+        "summary": "修改赚钱规则信息",
+        "operationId": "updateGameRedPacketUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateActivityRedPacketTo",
+            "description": "updateActivityRedPacketTo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateActivityRedPacketTo",
+              "originalRef": "UpdateActivityRedPacketTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»",
+              "originalRef": "BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/welfare/createActivity": {
+      "post": {
+        "tags": [
+          "福利-活动API"
+        ],
+        "summary": "添加活动信息",
+        "operationId": "createActivityUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "activityCreateTo",
+            "description": "activityCreateTo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ActivityCreateTo",
+              "originalRef": "ActivityCreateTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»",
+              "originalRef": "BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/welfare/getActivityById": {
+      "get": {
+        "tags": [
+          "福利-活动API"
+        ],
+        "summary": "根据id得到活动详细信息",
+        "operationId": "getActivityByIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«SearchActivityPageVo»",
+              "originalRef": "BaseResponse«SearchActivityPageVo»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/welfare/searchActivityPage": {
+      "post": {
+        "tags": [
+          "福利-活动API"
+        ],
+        "summary": "分页查询活动列表",
+        "operationId": "searchActivityPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "searchActivityPageQuery",
+            "description": "searchActivityPageQuery",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SearchActivityPageQuery",
+              "originalRef": "SearchActivityPageQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«SearchActivityPageVo»»",
+              "originalRef": "BaseResponse«IPage«SearchActivityPageVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/welfare/updateActivity": {
+      "post": {
+        "tags": [
+          "福利-活动API"
+        ],
+        "summary": "修改活动信息",
+        "operationId": "updateActivityUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "activityUpdateTo",
+            "description": "activityUpdateTo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ActivityUpdateTo",
+              "originalRef": "ActivityUpdateTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»",
+              "originalRef": "BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    }
+  },
+  "definitions": {
+    "ActivityCreateTo": {
+      "type": "object",
+      "properties": {
+        "activityImg": {
+          "type": "string",
+          "description": "活动图片"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "结束时间"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏id,game_info的id"
+        },
+        "hot": {
+          "type": "integer",
+          "format": "int32",
+          "description": "否热门1是0否"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "开始时间"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态1上架0下架"
+        },
+        "themeName": {
+          "type": "string",
+          "description": "主题名称"
+        },
+        "webUrl": {
+          "type": "string",
+          "description": "h5链接"
+        }
+      },
+      "title": "ActivityCreateTo"
+    },
+    "ActivityUpdateTo": {
+      "type": "object",
+      "properties": {
+        "activityImg": {
+          "type": "string",
+          "description": "活动图片"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "结束时间"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏id,game_info的id"
+        },
+        "hot": {
+          "type": "integer",
+          "format": "int32",
+          "description": "否热门1是0否"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键id"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "开始时间"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态1上架0下架"
+        },
+        "themeName": {
+          "type": "string",
+          "description": "主题名称"
+        },
+        "webUrl": {
+          "type": "string",
+          "description": "h5链接"
+        }
+      },
+      "title": "ActivityUpdateTo"
+    },
+    "AppGameDetailQuery": {
+      "type": "object",
+      "required": [
+        "gameId"
+      ],
+      "properties": {
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        }
+      },
+      "title": "AppGameDetailQuery"
+    },
+    "AppGameDetailVo": {
+      "type": "object",
+      "properties": {
+        "age": {
+          "type": "integer",
+          "format": "int32",
+          "description": "适龄(1: 8+  2: 12+  3:16+)"
+        },
+        "apkUrl": {
+          "type": "string",
+          "description": "Android 安装包URL"
+        },
+        "appStoreUrl": {
+          "type": "string",
+          "description": "AppStore URL"
+        },
+        "appTypes": {
+          "type": "string",
+          "description": "客户端类型(1: iOS  2: Android，多个英文逗号分隔)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "支付回调地址"
+        },
+        "detailImg": {
+          "type": "string",
+          "description": "详情背景图"
+        },
+        "domainWhites": {
+          "type": "string",
+          "description": "域名白名单"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "gameType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏类型(1: App  2: H5)"
+        },
+        "gameTypeNameList": {
+          "type": "array",
+          "description": "游戏分类名称列表",
+          "items": {
+            "type": "string"
+          }
+        },
+        "icon": {
+          "type": "string",
+          "description": "图标"
+        },
+        "introduction": {
+          "type": "string",
+          "description": "一句话简介"
+        },
+        "introductionDetail": {
+          "type": "string",
+          "description": "详细简介"
+        },
+        "issueTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "发行时间"
+        },
+        "language": {
+          "type": "string",
+          "description": "语言"
+        },
+        "largeImg": {
+          "type": "string",
+          "description": "大图"
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "厂商"
+        },
+        "onShelveTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "上架时间"
+        },
+        "packageName": {
+          "type": "string",
+          "description": "包名"
+        },
+        "packageSize": {
+          "type": "number",
+          "format": "double",
+          "description": "包大小"
+        },
+        "privacyPolicy": {
+          "type": "string",
+          "description": "隐私政策地址"
+        },
+        "screenshotList": {
+          "type": "array",
+          "description": "截图",
+          "items": {
+            "type": "string"
+          }
+        },
+        "smallImg": {
+          "type": "string",
+          "description": "小图"
+        },
+        "verifyUser": {
+          "type": "integer",
+          "format": "int64",
+          "description": "审核人"
+        },
+        "video": {
+          "type": "string",
+          "description": "视频"
+        },
+        "webUrl": {
+          "type": "string",
+          "description": "h5的链接地址"
+        }
+      },
+      "title": "AppGameDetailVo"
+    },
+    "AppGameSearchQuery": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "搜索关键字"
+        }
+      },
+      "title": "AppGameSearchQuery"
+    },
+    "AppGameSortRankingVo": {
+      "type": "object",
+      "properties": {
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排序"
+        },
+        "type": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排行类型（1: 热玩榜、2：热门榜、3：新品榜、4：热搜榜）"
+        }
+      },
+      "title": "AppGameSortRankingVo"
+    },
+    "AppGameTypeGameVo": {
+      "type": "object",
+      "properties": {
+        "apkUrl": {
+          "type": "string",
+          "description": "Android 安装包URL"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "icon": {
+          "type": "string",
+          "description": "游戏Icon"
+        },
+        "introduction": {
+          "type": "string",
+          "description": "一句话简介"
+        },
+        "packageName": {
+          "type": "string",
+          "description": "包名"
+        },
+        "packageSize": {
+          "type": "number",
+          "format": "double",
+          "description": "包大小"
+        },
+        "playingNums": {
+          "type": "integer",
+          "format": "int64",
+          "description": "在玩人数"
+        },
+        "score": {
+          "type": "number",
+          "format": "double",
+          "description": "评分"
+        },
+        "tagList": {
+          "type": "array",
+          "description": "标签（最新、礼包、活动、热门）",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "AppGameTypeGameVo"
+    },
+    "BaseResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "object"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse"
+    },
+    "BaseResponse«AppGameDetailVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/AppGameDetailVo",
+          "originalRef": "AppGameDetailVo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«AppGameDetailVo»"
+    },
+    "BaseResponse«GameActivityConfig»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/GameActivityConfig",
+          "originalRef": "GameActivityConfig"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«GameActivityConfig»"
+    },
+    "BaseResponse«GameDataConfigVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/GameDataConfigVo",
+          "originalRef": "GameDataConfigVo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«GameDataConfigVo»"
+    },
+    "BaseResponse«GameEsModels»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/GameEsModels",
+          "originalRef": "GameEsModels"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«GameEsModels»"
+    },
+    "BaseResponse«GetActivityRankingByIdVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/GetActivityRankingByIdVo",
+          "originalRef": "GetActivityRankingByIdVo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«GetActivityRankingByIdVo»"
+    },
+    "BaseResponse«GiftInfoVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/GiftInfoVo",
+          "originalRef": "GiftInfoVo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«GiftInfoVo»"
+    },
+    "BaseResponse«IPage«GameGiftPageVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«GameGiftPageVo»",
+          "originalRef": "IPage«GameGiftPageVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«GameGiftPageVo»»"
+    },
+    "BaseResponse«IPage«GameOnShelvePageVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«GameOnShelvePageVo»",
+          "originalRef": "IPage«GameOnShelvePageVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«GameOnShelvePageVo»»"
+    },
+    "BaseResponse«IPage«GamePageVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«GamePageVo»",
+          "originalRef": "IPage«GamePageVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«GamePageVo»»"
+    },
+    "BaseResponse«IPage«RedEnvelopeCollectionRecord»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«RedEnvelopeCollectionRecord»",
+          "originalRef": "IPage«RedEnvelopeCollectionRecord»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«RedEnvelopeCollectionRecord»»"
+    },
+    "BaseResponse«IPage«SearchActivityPageVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«SearchActivityPageVo»",
+          "originalRef": "IPage«SearchActivityPageVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«SearchActivityPageVo»»"
+    },
+    "BaseResponse«IPage«SearchActivityRankingVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«SearchActivityRankingVo»",
+          "originalRef": "IPage«SearchActivityRankingVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«SearchActivityRankingVo»»"
+    },
+    "BaseResponse«IPage«SearchRedPacketPageVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«SearchRedPacketPageVo»",
+          "originalRef": "IPage«SearchRedPacketPageVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«SearchRedPacketPageVo»»"
+    },
+    "BaseResponse«List«GameSortRankingVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GameSortRankingVo",
+            "originalRef": "GameSortRankingVo"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«GameSortRankingVo»»"
+    },
+    "BaseResponse«List«RedEnvelopeToWallet»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RedEnvelopeToWallet",
+            "originalRef": "RedEnvelopeToWallet"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«RedEnvelopeToWallet»»"
+    },
+    "BaseResponse«List«分类游戏排序VO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/分类游戏排序VO",
+            "originalRef": "分类游戏排序VO"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«分类游戏排序VO»»"
+    },
+    "BaseResponse«List«游戏分类VO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/游戏分类VO",
+            "originalRef": "游戏分类VO"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«游戏分类VO»»"
+    },
+    "BaseResponse«List«游戏列表VO»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/游戏列表VO",
+            "originalRef": "游戏列表VO"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«游戏列表VO»»"
+    },
+    "BaseResponse«Page«AppGameSortRankingVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/Page«AppGameSortRankingVo»",
+          "originalRef": "Page«AppGameSortRankingVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«Page«AppGameSortRankingVo»»"
+    },
+    "BaseResponse«Page«AppGameTypeGameVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/Page«AppGameTypeGameVo»",
+          "originalRef": "Page«AppGameTypeGameVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«Page«AppGameTypeGameVo»»"
+    },
+    "BaseResponse«PlayGamesInfoVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/PlayGamesInfoVo",
+          "originalRef": "PlayGamesInfoVo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«PlayGamesInfoVo»"
+    },
+    "BaseResponse«RankingListVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/RankingListVo",
+          "originalRef": "RankingListVo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«RankingListVo»"
+    },
+    "BaseResponse«RedPacketBalanceListVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/RedPacketBalanceListVo",
+          "originalRef": "RedPacketBalanceListVo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«RedPacketBalanceListVo»"
+    },
+    "BaseResponse«RedPacketGetByIdVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/RedPacketGetByIdVo",
+          "originalRef": "RedPacketGetByIdVo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«RedPacketGetByIdVo»"
+    },
+    "BaseResponse«SearchActivityPageVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/SearchActivityPageVo",
+          "originalRef": "SearchActivityPageVo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«SearchActivityPageVo»"
+    },
+    "BaseResponse«boolean»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "boolean"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«boolean»"
+    },
+    "BaseResponse«object»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "object"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«object»"
+    },
+    "BaseResponse«游戏VO»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/游戏VO",
+          "originalRef": "游戏VO"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«游戏VO»"
+    },
+    "BaseResponse«通知中心Model»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/通知中心Model",
+          "originalRef": "通知中心Model"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«通知中心Model»"
+    },
+    "CreateActivityRankingTo": {
+      "type": "object",
+      "properties": {
+        "areaClothing": {
+          "type": "string",
+          "description": "有效区服"
+        },
+        "award": {
+          "type": "string",
+          "description": "奖励。;分割"
+        },
+        "banner": {
+          "type": "string",
+          "description": "背景图片"
+        },
+        "createUser": {
+          "type": "integer",
+          "format": "int64",
+          "description": "创建人"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "结束时间"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "game的id ，gameInfo表的主键"
+        },
+        "rankingType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "上榜规则：1闯关、2金币、3角色等级、4游戏时长、5游戏充值"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "开始时间"
+        }
+      },
+      "title": "CreateActivityRankingTo"
+    },
+    "CreateActivityRedPacketTo": {
+      "type": "object",
+      "properties": {
+        "createUser": {
+          "type": "integer",
+          "format": "int64",
+          "description": "创建人"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "结束时间"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "game的id ，gameInfo表的主键"
+        },
+        "precautions": {
+          "type": "string",
+          "description": "注意事项"
+        },
+        "ruleType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "类型：1闯关2金币3角色等级4游戏时长5充值金额"
+        },
+        "rules": {
+          "type": "string",
+          "description": "规则：多个规则；分割 格式：条件-金额;条件-金额"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "开始时间"
+        }
+      },
+      "title": "CreateActivityRedPacketTo"
+    },
+    "CreateGameActivityConfigTo": {
+      "type": "object",
+      "properties": {
+        "createUser": {
+          "type": "integer",
+          "format": "int64",
+          "description": "创建人"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "标识 1开 0关"
+        }
+      },
+      "title": "CreateGameActivityConfigTo"
+    },
+    "CreateRedEnvelopeToWalletTo": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "金额"
+        },
+        "createUser": {
+          "type": "integer",
+          "format": "int64",
+          "description": "创建人"
+        },
+        "frequency": {
+          "type": "integer",
+          "format": "int32",
+          "description": "每天可转次数"
+        }
+      },
+      "title": "CreateRedEnvelopeToWalletTo"
+    },
+    "GameActivityConfig": {
+      "type": "object",
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "createUser": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "use": {
+          "type": "string"
+        }
+      },
+      "title": "GameActivityConfig"
+    },
+    "GameActivityRanking": {
+      "type": "object",
+      "properties": {
+        "areaClothing": {
+          "type": "string",
+          "description": "有效区服"
+        },
+        "award": {
+          "type": "string",
+          "description": "奖励  ;分割"
+        },
+        "banner": {
+          "type": "string",
+          "description": "背景图片"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "createUser": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "结束时间"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏id"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键id"
+        },
+        "rankingType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "规则：1闯关、2金币、3角色等级、4游戏时长、5游戏充值"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "开始时间"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态：1未开始 2进行中 3已结束"
+        }
+      },
+      "title": "GameActivityRanking"
+    },
+    "GameDataConfigSaveCommand": {
+      "type": "object",
+      "properties": {
+        "playNumMax": {
+          "type": "integer",
+          "format": "int32",
+          "description": "基础数值区间设置 - 在玩人数最大值"
+        },
+        "playNumMin": {
+          "type": "integer",
+          "format": "int32",
+          "description": "基础数值区间设置 - 在玩人数最小值"
+        },
+        "playNumStrategy": {
+          "type": "integer",
+          "format": "int32",
+          "example": 3,
+          "description": "数据源读取设置 - 在玩人数（1：真实数据、2：随即基础数据、3：随机基础数据+真实数据）"
+        },
+        "scoreMax": {
+          "type": "number",
+          "format": "double",
+          "description": "基础数值区间设置 - 评分最大值"
+        },
+        "scoreMin": {
+          "type": "number",
+          "format": "double",
+          "description": "基础数值区间设置 - 评分最小值"
+        },
+        "scoreStrategy": {
+          "type": "integer",
+          "format": "int32",
+          "example": 2,
+          "description": "数据源读取设置 - 评分（1：真实数据、2：随机基础数据、3：（随机基础数据+真实数据）/2）"
+        }
+      },
+      "title": "GameDataConfigSaveCommand"
+    },
+    "GameDataConfigVo": {
+      "type": "object",
+      "properties": {
+        "playNumMax": {
+          "type": "integer",
+          "format": "int32",
+          "description": "基础数值区间设置 - 在玩人数最大值"
+        },
+        "playNumMin": {
+          "type": "integer",
+          "format": "int32",
+          "description": "基础数值区间设置 - 在玩人数最小值"
+        },
+        "playNumStrategy": {
+          "type": "integer",
+          "format": "int32",
+          "example": 3,
+          "description": "数据源读取设置 - 在玩人数（1：真实数据、2：随即基础数据、3：随机基础数据+真实数据）"
+        },
+        "scoreMax": {
+          "type": "number",
+          "format": "double",
+          "description": "基础数值区间设置 - 评分最大值"
+        },
+        "scoreMin": {
+          "type": "number",
+          "format": "double",
+          "description": "基础数值区间设置 - 评分最小值"
+        },
+        "scoreStrategy": {
+          "type": "integer",
+          "format": "int32",
+          "example": 2,
+          "description": "数据源读取设置 - 评分（1：真实数据、2：随机基础数据、3：（随机基础数据+真实数据）/2）"
+        }
+      },
+      "title": "GameDataConfigVo"
+    },
+    "GameEsModel": {
+      "type": "object",
+      "properties": {
+        "androidPackUrl": {
+          "type": "string",
+          "description": "安卓安装包地址"
+        },
+        "clicks": {
+          "type": "integer",
+          "format": "int32",
+          "description": "点击量"
+        },
+        "gameInfoIcon": {
+          "type": "string",
+          "description": "图标"
+        },
+        "gameInfoId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "游戏详情id"
+        },
+        "gameInfoName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "gameInfoTypeIds": {
+          "type": "string",
+          "description": "分类id,game_type表的id,多个逗号隔开"
+        },
+        "gameTypeName": {
+          "type": "array",
+          "description": "分类名称",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hotSearchSorting": {
+          "type": "integer",
+          "format": "int32",
+          "description": "热搜排序"
+        },
+        "iosPackUrl": {
+          "type": "string",
+          "description": "ios安装包地址"
+        },
+        "isActivity": {
+          "type": "boolean",
+          "description": "是否存在活动"
+        },
+        "isGiftBag": {
+          "type": "boolean",
+          "description": "是否存在礼包"
+        },
+        "isNew": {
+          "type": "boolean",
+          "description": "是否是最新"
+        },
+        "isPopular": {
+          "type": "boolean",
+          "description": "是否是热门"
+        },
+        "score": {
+          "type": "string",
+          "description": "评分"
+        }
+      },
+      "title": "GameEsModel"
+    },
+    "GameEsModels": {
+      "type": "object",
+      "properties": {
+        "gameEsModels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GameEsModel",
+            "originalRef": "GameEsModel"
+          }
+        }
+      },
+      "title": "GameEsModels"
+    },
+    "GameGiftCreateTo": {
+      "type": "object",
+      "properties": {
+        "createUser": {
+          "type": "integer",
+          "format": "int64",
+          "description": "创建人"
+        },
+        "currencyNumber": {
+          "type": "integer",
+          "format": "int32",
+          "description": "兑换金币数量"
+        },
+        "detail": {
+          "type": "string",
+          "description": "礼包详情"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "结束时间"
+        },
+        "explain": {
+          "type": "string",
+          "description": "礼包说明"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏id,game_info的id"
+        },
+        "giftName": {
+          "type": "string",
+          "description": "礼包名称"
+        },
+        "giftType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "礼包类型1免费领取2金币兑换"
+        },
+        "remark": {
+          "type": "string",
+          "description": "礼包备注"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "开始时间"
+        },
+        "stock": {
+          "type": "integer",
+          "format": "int32",
+          "description": "剩余数量"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32",
+          "description": "礼包总数"
+        }
+      },
+      "title": "GameGiftCreateTo"
+    },
+    "GameGiftPageQuery": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "description": "当前页数"
+        },
+        "gameNameKey": {
+          "type": "string",
+          "description": "游戏名称关键字"
+        },
+        "giftNameKey": {
+          "type": "string",
+          "description": "礼包名称关键字"
+        },
+        "giftType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "礼包类型1免费领取2金币兑换"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页大小"
+        }
+      },
+      "title": "GameGiftPageQuery"
+    },
+    "GameGiftPageVo": {
+      "type": "object",
+      "properties": {
+        "currencyNumber": {
+          "type": "integer",
+          "format": "int32",
+          "description": "兑换金币设置"
+        },
+        "endTime": {
+          "type": "string",
+          "description": "结束时间"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏id"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "giftName": {
+          "type": "string",
+          "description": "礼包名称"
+        },
+        "giftType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "礼包类型"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "礼包id"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "开始时间"
+        },
+        "stock": {
+          "type": "integer",
+          "format": "int32",
+          "description": "剩余数量"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32",
+          "description": "礼包总数"
+        }
+      },
+      "title": "GameGiftPageVo"
+    },
+    "GameGiftUpdateTo": {
+      "type": "object",
+      "properties": {
+        "currencyNumber": {
+          "type": "integer",
+          "format": "int32",
+          "description": "兑换金币数量"
+        },
+        "detail": {
+          "type": "string",
+          "description": "礼包详情"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "结束时间"
+        },
+        "explain": {
+          "type": "string",
+          "description": "礼包说明"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏id,game_info的id"
+        },
+        "giftName": {
+          "type": "string",
+          "description": "礼包名称"
+        },
+        "giftType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "礼包类型1免费领取2金币兑换"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键id"
+        },
+        "remark": {
+          "type": "string",
+          "description": "礼包备注"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "开始时间"
+        },
+        "stock": {
+          "type": "integer",
+          "format": "int32",
+          "description": "剩余数量"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32",
+          "description": "礼包总数"
+        }
+      },
+      "title": "GameGiftUpdateTo"
+    },
+    "GameListQuery": {
+      "type": "object",
+      "properties": {
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "typeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏分类ID"
+        }
+      },
+      "title": "GameListQuery"
+    },
+    "GameOnShelvePageQuery": {
+      "type": "object",
+      "required": [
+        "current",
+        "size"
+      ],
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1,
+          "description": "当前页"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64",
+          "example": 10,
+          "description": "页显示条数"
+        },
+        "typeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏分类ID"
+        }
+      },
+      "title": "GameOnShelvePageQuery"
+    },
+    "GameOnShelvePageVo": {
+      "type": "object",
+      "properties": {
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "gameTypeNameList": {
+          "type": "array",
+          "description": "游戏分类",
+          "items": {
+            "type": "string"
+          }
+        },
+        "icon": {
+          "type": "string",
+          "description": "Icon"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键ID"
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "厂商"
+        },
+        "onShelveTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "上架时间"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态(1: 审核中  2: 上架  3: 下架  4: 审核未通过)"
+        },
+        "stateText": {
+          "type": "string",
+          "description": "状态(审核中/上架/下架/审核未通过)"
+        }
+      },
+      "title": "GameOnShelvePageVo"
+    },
+    "GamePageQuery": {
+      "type": "object",
+      "required": [
+        "current",
+        "size"
+      ],
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1,
+          "description": "当前页"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64",
+          "example": 10,
+          "description": "页显示条数"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态(1: 审核中  2: 上架  3:下架)"
+        },
+        "typeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏分类ID"
+        }
+      },
+      "title": "GamePageQuery"
+    },
+    "GamePageVo": {
+      "type": "object",
+      "properties": {
+        "firstOnTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "上线时间"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "gameTypeNameList": {
+          "type": "array",
+          "description": "游戏分类",
+          "items": {
+            "type": "string"
+          }
+        },
+        "icon": {
+          "type": "string",
+          "description": "Icon"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键ID"
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "厂商"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态(1: 审核中  2: 上架  3: 下架  4: 审核未通过)"
+        },
+        "stateText": {
+          "type": "string",
+          "description": "状态(审核中/上架/下架/审核未通过)"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "更新时间"
+        }
+      },
+      "title": "GamePageVo"
+    },
+    "GameRankingAppQuery": {
+      "type": "object",
+      "required": [
+        "current",
+        "size",
+        "type"
+      ],
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1,
+          "description": "当前页"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64",
+          "example": 10,
+          "description": "页显示条数"
+        },
+        "type": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排行类型（1：热玩榜、2：热门榜、3：新品榜、4：热搜榜）"
+        }
+      },
+      "title": "GameRankingAppQuery"
+    },
+    "GameSortRankingVo": {
+      "type": "object",
+      "properties": {
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排序"
+        },
+        "type": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排行类型（1: 热玩榜、2：热门榜、3：新品榜、4：热搜榜）"
+        }
+      },
+      "title": "GameSortRankingVo"
+    },
+    "GameTypeAppQuery": {
+      "type": "object",
+      "required": [
+        "current",
+        "size"
+      ],
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1,
+          "description": "当前页"
+        },
+        "gameTypeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏分类ID"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64",
+          "example": 10,
+          "description": "页显示条数"
+        }
+      },
+      "title": "GameTypeAppQuery"
+    },
+    "GameTypeDto": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "type": "string",
+          "description": "游戏分类Icon"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏分类ID"
+        },
+        "typeName": {
+          "type": "string",
+          "description": "游戏分类名称"
+        }
+      },
+      "title": "GameTypeDto"
+    },
+    "GetActivityRankingByIdVo": {
+      "type": "object",
+      "properties": {
+        "areaClothing": {
+          "type": "string",
+          "description": "有效区服"
+        },
+        "award": {
+          "type": "string",
+          "description": "奖励。;分割"
+        },
+        "banner": {
+          "type": "string",
+          "description": "背景图片"
+        },
+        "endTime": {
+          "type": "string",
+          "description": "结束时间"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏id，gameInfo表的主键"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键id"
+        },
+        "rankingType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "上榜规则：1闯关、2金币、3角色等级、4游戏时长、5游戏充值"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "开始时间"
+        }
+      },
+      "title": "GetActivityRankingByIdVo"
+    },
+    "GiftInfoVo": {
+      "type": "object",
+      "properties": {
+        "currencyNumber": {
+          "type": "integer",
+          "format": "int32",
+          "description": "兑换金币数量"
+        },
+        "detail": {
+          "type": "string",
+          "description": "礼包详情"
+        },
+        "endTime": {
+          "type": "string",
+          "description": "结束时间"
+        },
+        "explain": {
+          "type": "string",
+          "description": "兑换说明"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏id"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "giftName": {
+          "type": "string",
+          "description": "礼包名称"
+        },
+        "giftType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "礼包类型1免费领取2金币兑换"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键id"
+        },
+        "remark": {
+          "type": "string",
+          "description": "礼包备注"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "开始时间"
+        },
+        "stock": {
+          "type": "integer",
+          "format": "int32",
+          "description": "余量"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32",
+          "description": "礼包总数"
+        }
+      },
+      "title": "GiftInfoVo"
+    },
+    "IPage«GameGiftPageVo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GameGiftPageVo",
+            "originalRef": "GameGiftPageVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«GameGiftPageVo»"
+    },
+    "IPage«GameOnShelvePageVo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GameOnShelvePageVo",
+            "originalRef": "GameOnShelvePageVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«GameOnShelvePageVo»"
+    },
+    "IPage«GamePageVo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GamePageVo",
+            "originalRef": "GamePageVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«GamePageVo»"
+    },
+    "IPage«RedEnvelopeCollectionRecord»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RedEnvelopeCollectionRecord",
+            "originalRef": "RedEnvelopeCollectionRecord"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«RedEnvelopeCollectionRecord»"
+    },
+    "IPage«RedEnvelope»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RedEnvelope",
+            "originalRef": "RedEnvelope"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«RedEnvelope»"
+    },
+    "IPage«RedPacketActivityVo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RedPacketActivityVo",
+            "originalRef": "RedPacketActivityVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«RedPacketActivityVo»"
+    },
+    "IPage«SearchActivityPageVo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SearchActivityPageVo",
+            "originalRef": "SearchActivityPageVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«SearchActivityPageVo»"
+    },
+    "IPage«SearchActivityRankingVo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SearchActivityRankingVo",
+            "originalRef": "SearchActivityRankingVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«SearchActivityRankingVo»"
+    },
+    "IPage«SearchRedPacketPageVo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SearchRedPacketPageVo",
+            "originalRef": "SearchRedPacketPageVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«SearchRedPacketPageVo»"
+    },
+    "OrderItem": {
+      "type": "object",
+      "properties": {
+        "asc": {
+          "type": "boolean"
+        },
+        "column": {
+          "type": "string"
+        }
+      },
+      "title": "OrderItem"
+    },
+    "Page«AppGameSortRankingVo»": {
+      "type": "object",
+      "properties": {
+        "countId": {
+          "type": "string"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "maxLimit": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "optimizeCountSql": {
+          "type": "boolean"
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderItem",
+            "originalRef": "OrderItem"
+          }
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AppGameSortRankingVo",
+            "originalRef": "AppGameSortRankingVo"
+          }
+        },
+        "searchCount": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "Page«AppGameSortRankingVo»"
+    },
+    "Page«AppGameTypeGameVo»": {
+      "type": "object",
+      "properties": {
+        "countId": {
+          "type": "string"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "maxLimit": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "optimizeCountSql": {
+          "type": "boolean"
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderItem",
+            "originalRef": "OrderItem"
+          }
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AppGameTypeGameVo",
+            "originalRef": "AppGameTypeGameVo"
+          }
+        },
+        "searchCount": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "Page«AppGameTypeGameVo»"
+    },
+    "PlayGamesInfoVo": {
+      "type": "object",
+      "properties": {
+        "activityRedPackets": {
+          "$ref": "#/definitions/IPage«RedPacketActivityVo»",
+          "originalRef": "IPage«RedPacketActivityVo»"
+        },
+        "gameActivityRankings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GameActivityRanking",
+            "originalRef": "GameActivityRanking"
+          }
+        }
+      },
+      "title": "PlayGamesInfoVo"
+    },
+    "RankingList": {
+      "type": "object",
+      "properties": {
+        "areaClothing": {
+          "type": "string",
+          "description": "区服"
+        },
+        "award": {
+          "type": "number",
+          "description": "奖励"
+        },
+        "level": {
+          "type": "string",
+          "description": "级别"
+        },
+        "trumpetName": {
+          "type": "string",
+          "description": "名称"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户id"
+        },
+        "userTrumpetId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "小号id"
+        }
+      },
+      "title": "RankingList"
+    },
+    "RankingListVo": {
+      "type": "object",
+      "properties": {
+        "areaClothing": {
+          "type": "string",
+          "description": "区服"
+        },
+        "banner": {
+          "type": "string",
+          "description": "图片"
+        },
+        "endTime": {
+          "type": "string",
+          "description": "活动结束时间"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏id"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "活动id"
+        },
+        "rankingLists": {
+          "type": "array",
+          "description": "榜单排名",
+          "items": {
+            "$ref": "#/definitions/RankingList",
+            "originalRef": "RankingList"
+          }
+        },
+        "rankingType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "上榜规则：1闯关、2金币、3角色等级、4游戏时长、5游戏充值"
+        },
+        "trumpetName": {
+          "type": "string",
+          "description": "名称"
+        },
+        "userTrumpetId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "小号id"
+        }
+      },
+      "title": "RankingListVo"
+    },
+    "RedEnvelope": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expirationTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "gameName": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "period": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "transferOutAmount": {
+          "type": "number"
+        },
+        "type": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "title": "RedEnvelope"
+    },
+    "RedEnvelopeCollectionRecord": {
+      "type": "object",
+      "properties": {
+        "activityId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "activityType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "amount": {
+          "type": "number"
+        },
+        "areaClothing": {
+          "type": "string"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expirationTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "gameName": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "level": {
+          "type": "string"
+        },
+        "period": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "ruleType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "trumpetName": {
+          "type": "string"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "userTrumpetId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "RedEnvelopeCollectionRecord"
+    },
+    "RedEnvelopeToWallet": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "createUser": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "frequency": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "RedEnvelopeToWallet"
+    },
+    "RedEnvelopeToWalletTo": {
+      "type": "object",
+      "properties": {
+        "activityId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "活动id"
+        },
+        "activityType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "活动类型：1玩游戏领红包 2冲榜"
+        },
+        "amount": {
+          "type": "number",
+          "description": "转出金额"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏id"
+        },
+        "period": {
+          "type": "integer",
+          "format": "int32",
+          "description": "活动期数"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64",
+          "description": "uid"
+        }
+      },
+      "title": "RedEnvelopeToWalletTo"
+    },
+    "RedPacketActivityVo": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "金额"
+        },
+        "currentLevel": {
+          "type": "string",
+          "description": "当前级别"
+        },
+        "endTime": {
+          "type": "string",
+          "description": "结束时间"
+        },
+        "flag": {
+          "type": "boolean",
+          "description": "是否获得过红包"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏id"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "icon": {
+          "type": "string",
+          "description": "游戏icon"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "活动id"
+        },
+        "introduction": {
+          "type": "string",
+          "description": "游戏一句话描述"
+        },
+        "period": {
+          "type": "integer",
+          "format": "int32",
+          "description": "期数"
+        },
+        "precautions": {
+          "type": "string",
+          "description": "注意事项"
+        },
+        "redPacketCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "领取红包数量"
+        },
+        "require": {
+          "type": "string",
+          "description": "第一关要求"
+        },
+        "ruleType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "类型：1闯关2金币3角色等级4游戏时长5充值金额"
+        },
+        "rules": {
+          "type": "string",
+          "description": "规则"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "开始时间"
+        },
+        "trumpetId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "小号id"
+        },
+        "trumpetName": {
+          "type": "string",
+          "description": "小号名称"
+        },
+        "typeNames": {
+          "type": "array",
+          "description": "游戏分类",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "RedPacketActivityVo"
+    },
+    "RedPacketBalanceListVo": {
+      "type": "object",
+      "properties": {
+        "redEnvelopeIPage": {
+          "$ref": "#/definitions/IPage«RedEnvelope»",
+          "originalRef": "IPage«RedEnvelope»"
+        },
+        "totalAmount": {
+          "type": "number"
+        }
+      },
+      "title": "RedPacketBalanceListVo"
+    },
+    "RedPacketGetByIdVo": {
+      "type": "object",
+      "properties": {
+        "endTime": {
+          "type": "string",
+          "description": "结束时间"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏id，gameInfo表的主键"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键id"
+        },
+        "precautions": {
+          "type": "string",
+          "description": "注意事项"
+        },
+        "ruleType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "类型：1闯关2金币3角色等级4游戏时长5充值金额"
+        },
+        "rules": {
+          "type": "string",
+          "description": "规则。多个规则；分割 格式：条件-金额;条件-金额"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "开始时间"
+        }
+      },
+      "title": "RedPacketGetByIdVo"
+    },
+    "SDK": {
+      "type": "object",
+      "properties": {
+        "androidVersionName": {
+          "type": "string",
+          "description": "Android VersionName"
+        },
+        "apk": {
+          "type": "string",
+          "description": "Android 安装包"
+        },
+        "appStore": {
+          "type": "string",
+          "description": "AppStore 地址"
+        },
+        "appTypeList": {
+          "type": "array",
+          "description": "客户端(1: iOS  2: Android)",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "支付回调地址"
+        },
+        "domainWhiteList": {
+          "type": "array",
+          "description": "域名白名单",
+          "items": {
+            "type": "string"
+          }
+        },
+        "gameType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏类型(1: APP  2: H5)"
+        },
+        "iosVersionName": {
+          "type": "string",
+          "description": "iOS VersionName"
+        },
+        "md5": {
+          "type": "string",
+          "description": "MD5"
+        },
+        "packageName": {
+          "type": "string",
+          "description": "包名"
+        },
+        "packageSize": {
+          "type": "number",
+          "format": "double",
+          "description": "包大小"
+        },
+        "versionCode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "VersionCode"
+        },
+        "versionName": {
+          "type": "string",
+          "description": "游戏版本"
+        },
+        "webUrl": {
+          "type": "string",
+          "description": "游戏链接"
+        }
+      },
+      "title": "SDK"
+    },
+    "SDK0": {
+      "type": "object",
+      "required": [
+        "callbackUrl",
+        "gameType"
+      ],
+      "properties": {
+        "androidVersionName": {
+          "type": "string",
+          "description": "Android VersionName"
+        },
+        "apk": {
+          "type": "string",
+          "description": "Android 安装包"
+        },
+        "appStore": {
+          "type": "string",
+          "description": "AppStore 地址"
+        },
+        "appTypeList": {
+          "type": "array",
+          "description": "客户端(1: iOS  2: Android)",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "支付回调地址"
+        },
+        "domainWhiteList": {
+          "type": "array",
+          "description": "域名白名单",
+          "items": {
+            "type": "string"
+          }
+        },
+        "gameType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏类型(1: APP  2: H5)"
+        },
+        "iosVersionName": {
+          "type": "string",
+          "description": "iOS VersionName"
+        },
+        "md5": {
+          "type": "string",
+          "description": "MD5"
+        },
+        "packageName": {
+          "type": "string",
+          "description": "包名"
+        },
+        "packageSize": {
+          "type": "number",
+          "format": "double",
+          "description": "包大小"
+        },
+        "versionCode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "VersionCode"
+        },
+        "versionName": {
+          "type": "string",
+          "description": "游戏版本"
+        },
+        "webUrl": {
+          "type": "string",
+          "description": "游戏链接"
+        }
+      },
+      "title": "SDK0"
+    },
+    "SearchActivityPageQuery": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "description": "当前页数"
+        },
+        "gameKey": {
+          "type": "string",
+          "description": "游戏名称关键字"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页大小"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态"
+        },
+        "titleKey": {
+          "type": "string",
+          "description": "主题关键字"
+        }
+      },
+      "title": "SearchActivityPageQuery"
+    },
+    "SearchActivityPageVo": {
+      "type": "object",
+      "properties": {
+        "activityImg": {
+          "type": "string",
+          "description": "图片"
+        },
+        "endTime": {
+          "type": "string",
+          "description": "结束时间"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏id"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "hot": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否热门1是0否"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键id"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "开始时间"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态 1上架0下架"
+        },
+        "themeName": {
+          "type": "string",
+          "description": "活动标题"
+        },
+        "webUrl": {
+          "type": "string",
+          "description": "h5地址"
+        }
+      },
+      "title": "SearchActivityPageVo"
+    },
+    "SearchActivityRankingQuery": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "description": "当前页数"
+        },
+        "gameIdKey": {
+          "type": "string",
+          "description": "游戏id关键字"
+        },
+        "gameNameKey": {
+          "type": "string",
+          "description": "游戏名称关键字"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页大小"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态：1未开始 2进行中 3已结束"
+        }
+      },
+      "title": "SearchActivityRankingQuery"
+    },
+    "SearchActivityRankingVo": {
+      "type": "object",
+      "properties": {
+        "endTime": {
+          "type": "string"
+        },
+        "gameIcon": {
+          "type": "string"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "gameName": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "startTime": {
+          "type": "string"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "SearchActivityRankingVo"
+    },
+    "SearchRedPacketPageQuery": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "description": "当前页数"
+        },
+        "gameIdKey": {
+          "type": "string",
+          "description": "游戏id关键字"
+        },
+        "gameNameKey": {
+          "type": "string",
+          "description": "游戏名称关键字"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页大小"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态：1未开始2进行中3已结束"
+        }
+      },
+      "title": "SearchRedPacketPageQuery"
+    },
+    "SearchRedPacketPageVo": {
+      "type": "object",
+      "properties": {
+        "endTime": {
+          "type": "string",
+          "description": "结束时间"
+        },
+        "gameIcon": {
+          "type": "string",
+          "description": "游戏图标"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏id"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "period": {
+          "type": "integer",
+          "format": "int32",
+          "description": "期数"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "开始时间"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态"
+        }
+      },
+      "title": "SearchRedPacketPageVo"
+    },
+    "UpdateActivityRankingTo": {
+      "type": "object",
+      "properties": {
+        "areaClothing": {
+          "type": "string",
+          "description": "有效区服"
+        },
+        "award": {
+          "type": "string",
+          "description": "奖励。;分割"
+        },
+        "banner": {
+          "type": "string",
+          "description": "背景图片"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "结束时间"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "game的id ，gameInfo表的主键"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键id"
+        },
+        "rankingType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "上榜规则：1闯关、2金币、3角色等级、4游戏时长、5游戏充值"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "开始时间"
+        }
+      },
+      "title": "UpdateActivityRankingTo"
+    },
+    "UpdateActivityRedPacketTo": {
+      "type": "object",
+      "properties": {
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "结束时间"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "game的id ，gameInfo表的主键"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "precautions": {
+          "type": "string",
+          "description": "注意事项"
+        },
+        "ruleType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "类型：1闯关2金币3角色等级4游戏时长5充值金额"
+        },
+        "rules": {
+          "type": "string",
+          "description": "规则：多个规则；分割 格式：条件-金额;条件-金额"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "开始时间"
+        }
+      },
+      "title": "UpdateActivityRedPacketTo"
+    },
+    "UpdateRedEnvelopeToWalletTo": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "金额"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        }
+      },
+      "title": "UpdateRedEnvelopeToWalletTo"
+    },
+    "分类游戏排序VO": {
+      "type": "object",
+      "required": [
+        "gameId",
+        "sort"
+      ],
+      "properties": {
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排序"
+        },
+        "typeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "分类ID"
+        }
+      },
+      "title": "分类游戏排序VO"
+    },
+    "基本信息": {
+      "type": "object",
+      "required": [
+        "age",
+        "gameName",
+        "gameTypeIdList",
+        "introduction",
+        "introductionDetail",
+        "issueTime",
+        "language",
+        "manufacturer",
+        "privacyPolicy"
+      ],
+      "properties": {
+        "age": {
+          "type": "integer",
+          "format": "int32",
+          "description": "适龄(1: 8+  2: 12+  3:16+)"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "gameTypeIdList": {
+          "type": "array",
+          "description": "游戏分类",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "introduction": {
+          "type": "string",
+          "description": "一句话简介"
+        },
+        "introductionDetail": {
+          "type": "string",
+          "description": "详细简介"
+        },
+        "issueTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "发行时间"
+        },
+        "language": {
+          "type": "string",
+          "description": "语言"
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "厂商"
+        },
+        "privacyPolicy": {
+          "type": "string",
+          "description": "隐私政策地址"
+        }
+      },
+      "title": "基本信息"
+    },
+    "基本信息0": {
+      "type": "object",
+      "properties": {
+        "age": {
+          "type": "integer",
+          "format": "int32",
+          "description": "适龄(1: 8+  2: 12+  3:16+)"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "gameTypeIdList": {
+          "type": "array",
+          "description": "游戏分类",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "introduction": {
+          "type": "string",
+          "description": "一句话简介"
+        },
+        "introductionDetail": {
+          "type": "string",
+          "description": "详细简介"
+        },
+        "issueTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "发行时间"
+        },
+        "language": {
+          "type": "string",
+          "description": "语言"
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "厂商"
+        },
+        "privacyPolicy": {
+          "type": "string",
+          "description": "隐私政策地址"
+        }
+      },
+      "title": "基本信息0"
+    },
+    "处理消息Command": {
+      "type": "object",
+      "required": [
+        "id",
+        "isPass"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "ID"
+        },
+        "isPass": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否通过(0: 拒绝  1: 通过)"
+        }
+      },
+      "title": "处理消息Command"
+    },
+    "已上架游戏表": {
+      "type": "object",
+      "properties": {
+        "age": {
+          "type": "integer",
+          "format": "int32",
+          "description": "适龄(1: 8+  2: 12+  3: 16+)"
+        },
+        "androidPackId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "安卓最新包，game_pack的id"
+        },
+        "appTypes": {
+          "type": "string",
+          "description": "客户端类型(1: iOS  2: Android，多个英文逗号分隔)"
+        },
+        "callbackUrl": {
+          "type": "string",
+          "description": "支付回调地址"
+        },
+        "detailImg": {
+          "type": "string",
+          "description": "详情背景图"
+        },
+        "domainWhites": {
+          "type": "string",
+          "description": "域名白名单"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "gameType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏类型(1: App  2: H5)"
+        },
+        "icon": {
+          "type": "string",
+          "description": "图标"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "主键"
+        },
+        "introduction": {
+          "type": "string",
+          "description": "一句话简介"
+        },
+        "introductionDetail": {
+          "type": "string",
+          "description": "详细简介"
+        },
+        "iosPackId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "ios最新包，game_pack的id"
+        },
+        "issueTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "发行时间"
+        },
+        "language": {
+          "type": "string",
+          "description": "语言"
+        },
+        "largeImg": {
+          "type": "string",
+          "description": "大图模板"
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "厂商"
+        },
+        "onShelveTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "上架时间"
+        },
+        "privacyPolicy": {
+          "type": "string",
+          "description": "隐私政策地址"
+        },
+        "screenshots": {
+          "type": "string",
+          "description": "截图(多个英文逗号分隔)"
+        },
+        "smallImg": {
+          "type": "string",
+          "description": "小图模板"
+        },
+        "verifyUser": {
+          "type": "integer",
+          "format": "int64",
+          "description": "审核人"
+        },
+        "videos": {
+          "type": "string",
+          "description": "视频(多个英文逗号分隔)"
+        },
+        "webUrl": {
+          "type": "string",
+          "description": "h5的链接地址"
+        }
+      },
+      "title": "已上架游戏表"
+    },
+    "排行Model": {
+      "type": "object",
+      "properties": {
+        "gameSortRankingVoList": {
+          "type": "array",
+          "description": "排序列表",
+          "items": {
+            "$ref": "#/definitions/GameSortRankingVo",
+            "originalRef": "GameSortRankingVo"
+          }
+        },
+        "type": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排行类型（1: 热玩榜、2：热门榜、3：新品榜、4：热搜榜）"
+        }
+      },
+      "title": "排行Model"
+    },
+    "添加用户游戏内信息": {
+      "type": "object",
+      "properties": {
+        "areaClothing": {
+          "type": "string",
+          "description": "小号所在区服"
+        },
+        "breakthroughLevel": {
+          "type": "integer",
+          "format": "int32",
+          "description": "关卡"
+        },
+        "gameDuration": {
+          "type": "string",
+          "description": "游戏时长"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏id"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "gameRecharge": {
+          "type": "number",
+          "description": "游戏充值"
+        },
+        "goldNumber": {
+          "type": "integer",
+          "format": "int32",
+          "description": "金币数量"
+        },
+        "grade": {
+          "type": "integer",
+          "format": "int32",
+          "description": "小号等级"
+        },
+        "trumpetName": {
+          "type": "string",
+          "description": "小号名称"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户平台id"
+        },
+        "userTrumpetId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "小号id"
+        }
+      },
+      "title": "添加用户游戏内信息"
+    },
+    "游戏-添加Command": {
+      "type": "object",
+      "required": [
+        "baseInfo",
+        "material",
+        "sdk"
+      ],
+      "properties": {
+        "baseInfo": {
+          "$ref": "#/definitions/基本信息",
+          "originalRef": "基本信息"
+        },
+        "material": {
+          "$ref": "#/definitions/素材0",
+          "originalRef": "素材0"
+        },
+        "sdk": {
+          "$ref": "#/definitions/SDK0",
+          "originalRef": "SDK0"
+        }
+      },
+      "title": "游戏-添加Command"
+    },
+    "游戏VO": {
+      "type": "object",
+      "properties": {
+        "baseInfo": {
+          "$ref": "#/definitions/基本信息0",
+          "originalRef": "基本信息0"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        },
+        "material": {
+          "$ref": "#/definitions/素材",
+          "originalRef": "素材"
+        },
+        "sdk": {
+          "$ref": "#/definitions/SDK",
+          "originalRef": "SDK"
+        }
+      },
+      "title": "游戏VO"
+    },
+    "游戏分类VO": {
+      "type": "object",
+      "required": [
+        "icon",
+        "sort",
+        "typeNameTextId"
+      ],
+      "properties": {
+        "icon": {
+          "type": "string",
+          "description": "图标url"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "ID"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排序"
+        },
+        "typeName": {
+          "type": "string",
+          "description": "分类名称"
+        },
+        "typeNameTextId": {
+          "type": "string",
+          "description": "分类名称（文本ID）",
+          "minLength": 0,
+          "maxLength": 32
+        }
+      },
+      "title": "游戏分类VO"
+    },
+    "游戏列表VO": {
+      "type": "object",
+      "properties": {
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        }
+      },
+      "title": "游戏列表VO"
+    },
+    "游戏审核消息通知记录表": {
+      "type": "object",
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "gameIcon": {
+          "type": "string",
+          "description": "游戏icon"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "isDone": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否已处理(0: 未处理  1: 已处理)"
+        },
+        "isPass": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否通过(0: 未通过  1: 已通过)"
+        },
+        "verifyType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "审核原因(1: 添加游戏  2: 编辑游戏信息  3: 更新游戏)"
+        }
+      },
+      "title": "游戏审核消息通知记录表"
+    },
+    "游戏类型-保存command": {
+      "type": "object",
+      "properties": {
+        "gameTypeList": {
+          "type": "array",
+          "description": "游戏分类列表",
+          "items": {
+            "$ref": "#/definitions/游戏分类VO",
+            "originalRef": "游戏分类VO"
+          }
+        }
+      },
+      "title": "游戏类型-保存command"
+    },
+    "类型游戏排序-保存command": {
+      "type": "object",
+      "properties": {
+        "gameSortTypeVoList": {
+          "type": "array",
+          "description": "分类游戏排序列表",
+          "items": {
+            "$ref": "#/definitions/分类游戏排序VO",
+            "originalRef": "分类游戏排序VO"
+          }
+        },
+        "typeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "分类ID"
+        }
+      },
+      "title": "类型游戏排序-保存command"
+    },
+    "素材": {
+      "type": "object",
+      "properties": {
+        "detailImg": {
+          "type": "string",
+          "description": "详情背景图"
+        },
+        "icon": {
+          "type": "string",
+          "description": "图标"
+        },
+        "largeImg": {
+          "type": "string",
+          "description": "大图"
+        },
+        "screenshotList": {
+          "type": "array",
+          "description": "截图",
+          "items": {
+            "type": "string"
+          }
+        },
+        "smallImg": {
+          "type": "string",
+          "description": "小图"
+        },
+        "video": {
+          "type": "string",
+          "description": "视频"
+        }
+      },
+      "title": "素材"
+    },
+    "素材0": {
+      "type": "object",
+      "required": [
+        "detailImg",
+        "icon",
+        "largeImg",
+        "screenshotList",
+        "smallImg"
+      ],
+      "properties": {
+        "detailImg": {
+          "type": "string",
+          "description": "详情背景图"
+        },
+        "icon": {
+          "type": "string",
+          "description": "图标"
+        },
+        "largeImg": {
+          "type": "string",
+          "description": "大图"
+        },
+        "screenshotList": {
+          "type": "array",
+          "description": "截图",
+          "items": {
+            "type": "string"
+          }
+        },
+        "smallImg": {
+          "type": "string",
+          "description": "小图"
+        },
+        "video": {
+          "type": "string",
+          "description": "视频"
+        }
+      },
+      "title": "素材0"
+    },
+    "通知中心Model": {
+      "type": "object",
+      "properties": {
+        "doneList": {
+          "type": "array",
+          "description": "已处理列表",
+          "items": {
+            "$ref": "#/definitions/游戏审核消息通知记录表",
+            "originalRef": "游戏审核消息通知记录表"
+          }
+        },
+        "toDoList": {
+          "type": "array",
+          "description": "未处理列表",
+          "items": {
+            "$ref": "#/definitions/游戏审核消息通知记录表",
+            "originalRef": "游戏审核消息通知记录表"
+          }
+        }
+      },
+      "title": "通知中心Model"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+
+typedef {{all_model_class_name}}JsonConvertFunction<T> = T Function(Map<String, dynamic> json);
+
+class {{all_model_class_name}}<T> {
+
+  static T fromMap<T>(Map<String, dynamic> map) {
+    Function? fun = convertFuncMap[T.toString()];
+    return fun!(map) as T;
+  }
+
+  static bool contains<T>() {
+    Function? fun = convertFuncMap[T.toString()];
+    return fun != null;
+  }
+
+  static final Map<String, {{all_model_class_name}}JsonConvertFunction> convertFuncMap = {
+    {%- for a_class_name in all_classes %}
+    ({{a_class_name}}).toString(): {{a_class_name}}.fromMap,
+    {%- endfor %}
+  };
+}

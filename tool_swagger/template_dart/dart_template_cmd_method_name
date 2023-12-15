@@ -1,0 +1,5 @@
+{%- set aSpace = ' ' -%}
+{{cmd_dict.method}}{{cmd_dict.method_name_str}}<T>({ {%- for param in cmd_dict.allParams -%}
+{{aSpace}}required {{param.realdarttype}}{%- if param.required == false -%} {%- endif -%} {{aSpace}}{{ param.realname }}, 
+{%- endfor -%}
+{{aSpace}} required Function onSuccess, required Function? onError, int? nTimeout})

@@ -1,0 +1,31 @@
+// {{origin}}
+@JsonSerializable()
+class {{class_name}} {
+  {%- for key in properties %}
+  {%- if properties[key].type == 'object' %}
+  late Map<String, dynamic> {{properties[key].realkey}} = {}; // object String {{properties[key].realkey}};
+  {%- elif properties[key].type == '' %}
+  late {{properties[key].refClass}} {{properties[key].realkey}} = {{properties[key].refClass}}(); // empty
+  {%- elif properties[key].type == 'None' %}
+  late {{properties[key].refClass}} {{properties[key].realkey}}; // None
+  {%- elif properties[key].type == 'integer' and properties[key].format == 'int64' %}
+  late int {{properties[key].realkey}} = 0;
+  {%- elif properties[key].type == 'integer' %}
+  late int {{properties[key].realkey}} = 0;
+  {%- elif properties[key].type == 'number' %}
+  late double {{properties[key].realkey}} = 0.0;
+  {%- elif properties[key].type == 'array' %}
+  late {{properties[key].refClass}} {{properties[key].realkey}} = <{{properties[key].refClassSingle}}>[];
+  {%- elif properties[key].type == 'string' %}
+  late String {{properties[key].realkey}} = '';
+  {%- elif properties[key].type == 'boolean' %}
+  late bool {{properties[key].realkey}} = false;
+  {%- else %}
+  late {{properties[key].realkey}};
+  {%- endif %}  // {{properties[key].description}} ({{properties[key].type}} {{properties[key].refClass}})
+  {%- endfor %}
+  {{class_name}}();
+  factory {{class_name}}.fromJson(Map<String, dynamic> json) => ${{class_name}}FromJson(json);
+  Map<String, dynamic> toJson() => ${{class_name}}ToJson(this);
+}
+

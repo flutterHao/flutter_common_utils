@@ -1,0 +1,3075 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "<div style='font-size:14px;color:black;'>用户 微服务 API</div>",
+    "version": "1.0",
+    "title": "User Service API"
+  },
+  "host": "10.10.37.3",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "App邀请信息",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "app优惠券信息",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "vip和新人优惠券",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "优惠劵信息",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "反馈意见",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "后台邀请规则设置以及详情",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "用户信息",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "用户小号信息",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "用户登录",
+      "x-order": "2147483647"
+    }
+  ],
+  "paths": {
+    "/app/inviteApp/getInviteInfo": {
+      "get": {
+        "tags": [
+          "App邀请信息"
+        ],
+        "summary": "getInviteInfo",
+        "operationId": "getInfoUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "phone",
+            "in": "query",
+            "description": "phone",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«InviteInfoVo»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/couponInfo/add": {
+      "post": {
+        "tags": [
+          "优惠劵信息"
+        ],
+        "summary": "添加优惠券",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "couponInfoVo",
+            "description": "couponInfoVo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CouponInfo对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/couponInfo/delete": {
+      "delete": {
+        "tags": [
+          "优惠劵信息"
+        ],
+        "summary": "删除优惠券",
+        "operationId": "deleteUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/couponInfo/get": {
+      "get": {
+        "tags": [
+          "优惠劵信息"
+        ],
+        "summary": "获取优惠券信息",
+        "operationId": "getUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«CouponInfo对象»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/couponInfo/getCoupon": {
+      "post": {
+        "tags": [
+          "优惠劵信息"
+        ],
+        "summary": "领券中心",
+        "operationId": "getCouponUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getCouponVo",
+            "description": "getCouponVo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetCouponVo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«CouponInfo对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/couponInfo/getCouponName": {
+      "get": {
+        "tags": [
+          "优惠劵信息"
+        ],
+        "summary": "获取新人/vip优惠券名称",
+        "operationId": "getCouponNameUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "couponType",
+            "in": "query",
+            "description": "couponType",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«CouponInfo对象»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/couponInfo/list": {
+      "post": {
+        "tags": [
+          "优惠劵信息"
+        ],
+        "summary": "优惠券列表",
+        "operationId": "listUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "couponListVo",
+            "description": "couponListVo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CouponListVo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«CouponInfo对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/couponInfo/robCoupons": {
+      "post": {
+        "tags": [
+          "优惠劵信息"
+        ],
+        "summary": "金币兑换优惠券",
+        "operationId": "robCouponsUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "robCouponsVo",
+            "description": "robCouponsVo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RobCouponsVo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/couponRelevance/add": {
+      "post": {
+        "tags": [
+          "vip和新人优惠券"
+        ],
+        "summary": "添加",
+        "operationId": "addUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "relevance",
+            "description": "relevance",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CouponRelevance对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/couponRelevance/delete": {
+      "delete": {
+        "tags": [
+          "vip和新人优惠券"
+        ],
+        "summary": "删除",
+        "operationId": "deleteUsingDELETE_1",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/couponRelevance/newPeopleList": {
+      "post": {
+        "tags": [
+          "vip和新人优惠券"
+        ],
+        "summary": "新人优惠券list",
+        "operationId": "newPeopleListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "page",
+            "description": "page",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PageVo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«CouponRelevanceListVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/couponRelevance/update": {
+      "post": {
+        "tags": [
+          "vip和新人优惠券"
+        ],
+        "summary": "编辑",
+        "operationId": "updateUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "relevance",
+            "description": "relevance",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CouponRelevance对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/couponRelevance/vipCoupon": {
+      "get": {
+        "tags": [
+          "vip和新人优惠券"
+        ],
+        "summary": "vip优惠券",
+        "operationId": "vipCouponUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«CouponRelevanceListVo»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/couponUser/expireList": {
+      "post": {
+        "tags": [
+          "app优惠券信息"
+        ],
+        "summary": "历史记录已过期",
+        "operationId": "expireListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "couponUserListVo",
+            "description": "couponUserListVo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CouponUserListVo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«CouponUserVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/couponUser/list": {
+      "post": {
+        "tags": [
+          "app优惠券信息"
+        ],
+        "summary": "用户我的优惠券列表",
+        "operationId": "listUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "couponUserListVo",
+            "description": "couponUserListVo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CouponUserListVo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«CouponUserVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/couponUser/usedList": {
+      "post": {
+        "tags": [
+          "app优惠券信息"
+        ],
+        "summary": "历史记录已使用",
+        "operationId": "usedListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "couponUserListVo",
+            "description": "couponUserListVo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CouponUserListVo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«CouponUserVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/feedback-info/export": {
+      "post": {
+        "tags": [
+          "反馈意见"
+        ],
+        "summary": "导出反馈意见数据",
+        "operationId": "exportUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "feedbackPageQuery",
+            "description": "feedbackPageQuery",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FeedbackPageQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/feedback-info/list": {
+      "post": {
+        "tags": [
+          "反馈意见"
+        ],
+        "summary": "意见反馈分页",
+        "operationId": "selectFeedbackListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "feedbackPageQuery",
+            "description": "feedbackPageQuery",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FeedbackPageQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«FeedbackVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/feedback-info/save": {
+      "post": {
+        "tags": [
+          "反馈意见"
+        ],
+        "summary": "客户端反馈提交",
+        "operationId": "saveFeedbackUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "feedbackInfo",
+            "description": "feedbackInfo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FeedbackInfo对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/inviteConfig/exportExcel": {
+      "get": {
+        "tags": [
+          "后台邀请规则设置以及详情"
+        ],
+        "summary": "导出邀请关联信息为excel",
+        "operationId": "exportExcelUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/inviteConfig/getInviteConfig": {
+      "get": {
+        "tags": [
+          "后台邀请规则设置以及详情"
+        ],
+        "summary": "获取邀请码规则配置",
+        "operationId": "getInviteConfigUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«InviteConfig对象»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/inviteConfig/getRelevance": {
+      "post": {
+        "tags": [
+          "后台邀请规则设置以及详情"
+        ],
+        "summary": "获取用户邀请关联详情",
+        "operationId": "getRelevanceUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "vo",
+            "description": "vo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/InviteRelevanceVo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«InviteRelevanceReturnVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/inviteConfig/updateInviteConfig": {
+      "post": {
+        "tags": [
+          "后台邀请规则设置以及详情"
+        ],
+        "summary": "修改邀请码规则配置",
+        "operationId": "updateInviteConfigUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "config",
+            "description": "config",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/InviteConfig对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/login/login": {
+      "post": {
+        "tags": [
+          "用户登录"
+        ],
+        "summary": "用户登录",
+        "operationId": "getUserInfoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "loginVo",
+            "description": "loginVo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LoginVo对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«LoginReturnVo»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/login/setInvitationCode": {
+      "post": {
+        "tags": [
+          "用户登录"
+        ],
+        "summary": "设置邀请码",
+        "operationId": "setInvitationCodeUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "loginVo",
+            "description": "loginVo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LoginVo对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/login/setPassword": {
+      "post": {
+        "tags": [
+          "用户登录"
+        ],
+        "summary": "设置密码",
+        "operationId": "setPasswordUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "loginVo",
+            "description": "loginVo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LoginVo对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/login/verifyPhone": {
+      "post": {
+        "tags": [
+          "用户登录"
+        ],
+        "summary": "验证手机号",
+        "operationId": "verifyPhoneUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "loginVo",
+            "description": "loginVo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LoginVo对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/userInfo/exportExcel": {
+      "get": {
+        "tags": [
+          "用户信息"
+        ],
+        "summary": "用户信息导出",
+        "operationId": "exportExcelUsingGET_1",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/userInfo/getUserInfo/{id}": {
+      "get": {
+        "tags": [
+          "用户信息"
+        ],
+        "summary": "获取用户信息",
+        "operationId": "getUserInfoUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«UserInfo对象»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/userInfo/getUserInfoByPhone": {
+      "get": {
+        "tags": [
+          "用户信息"
+        ],
+        "summary": "根据手机号获取用户密码",
+        "operationId": "getUserInfoByPhoneUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "phone",
+            "in": "query",
+            "description": "phone",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/userInfo/list": {
+      "post": {
+        "tags": [
+          "用户信息"
+        ],
+        "summary": "用户信息列表",
+        "operationId": "listUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "userInfoVo",
+            "description": "userInfoVo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserInfoVo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«UserInfo对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/userInfo/resetPassword/{id}": {
+      "get": {
+        "tags": [
+          "用户信息"
+        ],
+        "summary": "重置密码",
+        "operationId": "resetPasswordUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/userTrumpet/exportExcel": {
+      "get": {
+        "tags": [
+          "用户小号信息"
+        ],
+        "summary": "用户信息导出",
+        "operationId": "exportExcelUsingGET_2",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/userTrumpet/list": {
+      "post": {
+        "tags": [
+          "用户小号信息"
+        ],
+        "summary": "用户小号列表",
+        "operationId": "listUsingPOST_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "userTrumpet",
+            "description": "userTrumpet",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserTrumpetVo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«UserTrumpet对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/userTrumpet/updateState": {
+      "post": {
+        "tags": [
+          "用户小号信息"
+        ],
+        "summary": "修改状态",
+        "operationId": "updateStateUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "userTrumpet",
+            "description": "userTrumpet",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserTrumpet对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    }
+  },
+  "definitions": {
+    "BaseResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "object"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse"
+    },
+    "BaseResponse«CouponInfo对象»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/CouponInfo对象0"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«CouponInfo对象»"
+    },
+    "BaseResponse«CouponRelevanceListVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/CouponRelevanceListVo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«CouponRelevanceListVo»"
+    },
+    "BaseResponse«IPage«CouponInfo对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«CouponInfo对象»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«CouponInfo对象»»"
+    },
+    "BaseResponse«IPage«CouponRelevanceListVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«CouponRelevanceListVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«CouponRelevanceListVo»»"
+    },
+    "BaseResponse«IPage«CouponUserVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«CouponUserVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«CouponUserVo»»"
+    },
+    "BaseResponse«IPage«FeedbackVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«FeedbackVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«FeedbackVo»»"
+    },
+    "BaseResponse«IPage«InviteRelevanceReturnVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«InviteRelevanceReturnVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«InviteRelevanceReturnVo»»"
+    },
+    "BaseResponse«IPage«UserInfo对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«UserInfo对象»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«UserInfo对象»»"
+    },
+    "BaseResponse«IPage«UserTrumpet对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«UserTrumpet对象»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«UserTrumpet对象»»"
+    },
+    "BaseResponse«InviteConfig对象»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/InviteConfig对象"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«InviteConfig对象»"
+    },
+    "BaseResponse«InviteInfoVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/InviteInfoVo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«InviteInfoVo»"
+    },
+    "BaseResponse«List«CouponInfo对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CouponInfo对象0"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«CouponInfo对象»»"
+    },
+    "BaseResponse«LoginReturnVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/LoginReturnVo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«LoginReturnVo»"
+    },
+    "BaseResponse«UserInfo对象»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/UserInfo对象"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«UserInfo对象»"
+    },
+    "BaseResponse«boolean»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "boolean"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«boolean»"
+    },
+    "CouponInfo对象": {
+      "type": "object",
+      "properties": {
+        "couponName": {
+          "type": "string",
+          "description": "优惠劵名称"
+        },
+        "couponType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优惠券来源1领券中心2新人优惠券3会员优惠券"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "createUser": {
+          "type": "integer",
+          "format": "int64",
+          "description": "创建人"
+        },
+        "discountAmount": {
+          "type": "number",
+          "description": "优惠金额"
+        },
+        "discountSubtract": {
+          "type": "number",
+          "description": "discount_type=2时满减的金额"
+        },
+        "discountType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优惠类型1无门槛2满减券"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "领券结束时间"
+        },
+        "exchangeCoin": {
+          "type": "integer",
+          "format": "int64",
+          "description": "兑换金币"
+        },
+        "gameApply": {
+          "type": "integer",
+          "format": "int32",
+          "description": "适用游戏类型1不限游戏2指定游戏3指定游戏不可用"
+        },
+        "gameIds": {
+          "type": "array",
+          "description": "游戏id列表",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优惠劵id"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "领券开始时间"
+        },
+        "takeEffectTime": {
+          "type": "integer",
+          "format": "int32",
+          "description": "多少天后生效 有效期类型2时生效"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优惠劵总数"
+        },
+        "validateType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "有效期类型1立即生效2自定义时间生效"
+        },
+        "validity": {
+          "type": "integer",
+          "format": "int32",
+          "description": "有效期"
+        }
+      },
+      "title": "CouponInfo对象",
+      "description": "优惠劵表"
+    },
+    "CouponInfo对象0": {
+      "type": "object",
+      "properties": {
+        "couponName": {
+          "type": "string",
+          "description": "优惠劵名称"
+        },
+        "couponType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优惠券来源1领券中心2新人优惠券3会员优惠券"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "createUser": {
+          "type": "integer",
+          "format": "int64",
+          "description": "创建人"
+        },
+        "discountAmount": {
+          "type": "number",
+          "description": "优惠金额"
+        },
+        "discountSubtract": {
+          "type": "number",
+          "description": "discount_type=2时满减的金额"
+        },
+        "discountType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优惠类型1无门槛2满减券"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "领券结束时间"
+        },
+        "exchangeCoin": {
+          "type": "integer",
+          "format": "int64",
+          "description": "兑换金币"
+        },
+        "gameApply": {
+          "type": "integer",
+          "format": "int32",
+          "description": "适用游戏类型1不限游戏2指定游戏3指定游戏不可用"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "remainingQuantity": {
+          "type": "integer",
+          "format": "int32",
+          "description": "剩余优惠券数量"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注 优惠券说明"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "领券开始时间"
+        },
+        "takeEffectTime": {
+          "type": "integer",
+          "format": "int32",
+          "description": "多少天后生效 有效期类型2时生效"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优惠劵总数"
+        },
+        "validateType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "有效期类型1立即生效2自定义时间生效"
+        },
+        "validity": {
+          "type": "integer",
+          "format": "int32",
+          "description": "有效期"
+        }
+      },
+      "title": "CouponInfo对象0",
+      "description": "优惠劵表"
+    },
+    "CouponListVo": {
+      "type": "object",
+      "properties": {
+        "couponName": {
+          "type": "string",
+          "description": "name"
+        },
+        "couponType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优惠券来源1领券中心2新人优惠券3会员优惠券"
+        },
+        "discountType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优惠类型1无门槛2满减券"
+        },
+        "gameApply": {
+          "type": "integer",
+          "format": "int32",
+          "description": "适用游戏类型1不限游戏2指定游戏3指定游戏不可用"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "CouponListVo"
+    },
+    "CouponRelevanceListVo": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer",
+          "format": "int32",
+          "description": "每个新人所得数量 / 每月会员所得数量"
+        },
+        "couponId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优惠券ID"
+        },
+        "couponName": {
+          "type": "string",
+          "description": "优惠劵名称"
+        },
+        "discountAmount": {
+          "type": "number",
+          "description": "优惠金额"
+        },
+        "discountSubtract": {
+          "type": "number",
+          "description": "discount_type=2时满减的金额"
+        },
+        "discountType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优惠类型1无门槛2满减券"
+        },
+        "gameApply": {
+          "type": "integer",
+          "format": "int32",
+          "description": "适用游戏类型1不限游戏2指定游戏3指定游戏不可用"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "ID"
+        },
+        "validity": {
+          "type": "integer",
+          "format": "int32",
+          "description": "有效期"
+        }
+      },
+      "title": "CouponRelevanceListVo"
+    },
+    "CouponRelevance对象": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer",
+          "format": "int32",
+          "description": "vip每月发放数量 / 新人优惠券领取数量"
+        },
+        "couponId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "对应优惠券id"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "roleType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "vip 1 新人2"
+        }
+      },
+      "title": "CouponRelevance对象",
+      "description": "vip和新人优惠券配置"
+    },
+    "CouponUserListVo": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "integer",
+          "format": "int32",
+          "description": "最新获取 1 / 即将过期 2"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户id"
+        }
+      },
+      "title": "CouponUserListVo"
+    },
+    "CouponUserVo": {
+      "type": "object",
+      "properties": {
+        "couponType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优惠券分类1新人优惠券2其他"
+        },
+        "discountAmount": {
+          "type": "number",
+          "description": "优惠金额"
+        },
+        "discountSubtract": {
+          "type": "number",
+          "description": "discount_type=2时满减的金额"
+        },
+        "discountType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优惠类型 无门槛 or 满**可用"
+        },
+        "expirationTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "到期时间"
+        },
+        "gameApply": {
+          "type": "integer",
+          "format": "int32",
+          "description": "适用游戏类型1不限游戏 显示通用券 2指定游戏3指定游戏不可用 显示产品券"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注"
+        }
+      },
+      "title": "CouponUserVo"
+    },
+    "FeedbackInfo对象": {
+      "type": "object",
+      "properties": {
+        "feedbackContent": {
+          "type": "string",
+          "description": "反馈内容"
+        },
+        "feedbackImg": {
+          "type": "string",
+          "description": "反馈图片/视频"
+        },
+        "feedbackTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "反馈时间"
+        },
+        "feedbackType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "反馈类型,1:全部;2:体验问题;3:交易问题;4:支付问题;5:新功能建议;6:其他"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "phone": {
+          "type": "string",
+          "description": "手机号"
+        }
+      },
+      "title": "FeedbackInfo对象",
+      "description": "意见反馈表"
+    },
+    "FeedbackPageQuery": {
+      "type": "object",
+      "required": [
+        "current",
+        "size"
+      ],
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1,
+          "description": "当前页"
+        },
+        "feedbackType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "反馈类型,1:全部;2:体验问题;3:交易问题;4:支付问题;5:新功能建议;6:其他"
+        },
+        "phone": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64",
+          "example": 10,
+          "description": "页显示条数"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "反馈起始时间"
+        },
+        "stopTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "反馈终止时间"
+        }
+      },
+      "title": "FeedbackPageQuery"
+    },
+    "FeedbackVo": {
+      "type": "object",
+      "properties": {
+        "feedbackContent": {
+          "type": "string",
+          "description": "反馈内容"
+        },
+        "feedbackImg": {
+          "type": "string",
+          "description": "反馈图片String"
+        },
+        "feedbackImgList": {
+          "type": "array",
+          "description": "反馈图片List",
+          "items": {
+            "type": "string"
+          }
+        },
+        "feedbackTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "反馈时间"
+        },
+        "feedbackType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "反馈类型,1:全部;2:体验问题;3:交易问题;4:支付问题;5:新功能建议;6:其他"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "phone": {
+          "type": "string",
+          "description": "手机号"
+        }
+      },
+      "title": "FeedbackVo"
+    },
+    "GetCouponVo": {
+      "type": "object",
+      "properties": {
+        "gameApply": {
+          "type": "integer",
+          "format": "int32",
+          "description": "适用游戏类型 1全部 2通用券 3产品券"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "GetCouponVo"
+    },
+    "IPage«CouponInfo对象»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CouponInfo对象0"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«CouponInfo对象»"
+    },
+    "IPage«CouponRelevanceListVo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CouponRelevanceListVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«CouponRelevanceListVo»"
+    },
+    "IPage«CouponUserVo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CouponUserVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«CouponUserVo»"
+    },
+    "IPage«FeedbackVo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FeedbackVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«FeedbackVo»"
+    },
+    "IPage«InviteRelevanceReturnVo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InviteRelevanceReturnVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«InviteRelevanceReturnVo»"
+    },
+    "IPage«UserInfo对象»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserInfo对象"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«UserInfo对象»"
+    },
+    "IPage«UserTrumpet对象»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserTrumpet对象"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«UserTrumpet对象»"
+    },
+    "InviteConfig对象": {
+      "type": "object",
+      "properties": {
+        "amountMax": {
+          "type": "number",
+          "description": "每个账号最多获得金额"
+        },
+        "randomAmountHigh": {
+          "type": "number",
+          "description": "每次邀请随机金额最高值"
+        },
+        "randomAmountLow": {
+          "type": "number",
+          "description": "每次邀请随机金额最低值"
+        }
+      },
+      "title": "InviteConfig对象",
+      "description": "邀请返现规则表"
+    },
+    "InviteInfoVo": {
+      "type": "object",
+      "properties": {
+        "accumulatedIncome": {
+          "type": "number",
+          "description": "邀请累计收益"
+        },
+        "amountMax": {
+          "type": "number",
+          "description": "每个账号最多获得金额"
+        },
+        "code": {
+          "type": "string",
+          "description": "邀请码"
+        },
+        "incomeCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "邀请人数"
+        }
+      },
+      "title": "InviteInfoVo",
+      "description": "邀请信息"
+    },
+    "InviteRelevanceReturnVo": {
+      "type": "object",
+      "properties": {
+        "accumulatedIncome": {
+          "type": "number",
+          "description": "老用户累计收益"
+        },
+        "code": {
+          "type": "string",
+          "description": "邀请码"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "好友注册时间"
+        },
+        "id": {
+          "type": "string",
+          "description": "id"
+        },
+        "pphone": {
+          "type": "string",
+          "description": "老用户手机号"
+        },
+        "sphone": {
+          "type": "string",
+          "description": "新用户手机号"
+        }
+      },
+      "title": "InviteRelevanceReturnVo",
+      "description": "邀请码详情返回Vo"
+    },
+    "InviteRelevanceVo": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "邀请码"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "好友注册时间结束"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pphone": {
+          "type": "string",
+          "description": "老用户手机号"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "好友注册时间开始"
+        }
+      },
+      "title": "InviteRelevanceVo",
+      "description": "邀请码详情条件Vo"
+    },
+    "LoginReturnVo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户id"
+        },
+        "isNew": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否为新用户 1新 2非新"
+        },
+        "jwt": {
+          "type": "string",
+          "description": "jwt token"
+        },
+        "menus": {
+          "type": "array",
+          "description": "菜单权限",
+          "items": {
+            "$ref": "#/definitions/SysMenu"
+          }
+        },
+        "password": {
+          "type": "string",
+          "description": "密码"
+        },
+        "permissions": {
+          "type": "array",
+          "description": "权限",
+          "items": {
+            "$ref": "#/definitions/SysPermission"
+          }
+        },
+        "roles": {
+          "type": "array",
+          "description": "角色",
+          "items": {
+            "$ref": "#/definitions/SysRole"
+          }
+        },
+        "userName": {
+          "type": "string",
+          "description": "用户名"
+        }
+      },
+      "title": "LoginReturnVo",
+      "description": "登录返回接口"
+    },
+    "LoginVo对象": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "验证码"
+        },
+        "inviteCode": {
+          "type": "string",
+          "description": "邀请码"
+        },
+        "password": {
+          "type": "string",
+          "description": "密码"
+        },
+        "password2": {
+          "type": "string",
+          "description": "密码"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "手机号"
+        }
+      },
+      "title": "LoginVo对象",
+      "description": "登录信息"
+    },
+    "PageVo": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PageVo"
+    },
+    "RobCouponsVo": {
+      "type": "object",
+      "properties": {
+        "exchangeCoin": {
+          "type": "integer",
+          "format": "int64",
+          "description": "兑换金币"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优惠劵id"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户id"
+        }
+      },
+      "title": "RobCouponsVo",
+      "description": "抢券vo"
+    },
+    "SysMenu": {
+      "type": "object",
+      "properties": {
+        "createId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "创建人ID"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "icon": {
+          "type": "string",
+          "description": "图标"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "菜单ID"
+        },
+        "menuName": {
+          "type": "string",
+          "description": "菜单名称"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "上级菜单ID"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "菜单排序编号"
+        },
+        "url": {
+          "type": "string",
+          "description": "菜单url"
+        }
+      },
+      "title": "SysMenu"
+    },
+    "SysPermission": {
+      "type": "object",
+      "properties": {
+        "createId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "创建人ID"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "description": {
+          "type": "string",
+          "description": "权限描述"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "权限ID"
+        },
+        "menuId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "菜单ID"
+        },
+        "name": {
+          "type": "string"
+        },
+        "permissionName": {
+          "type": "string",
+          "description": "权限名称"
+        },
+        "permissionValue": {
+          "type": "string",
+          "description": "权限类容"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态 0 已启用，1 已停用"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改时间"
+        },
+        "url": {
+          "type": "string",
+          "description": "权限资源路径"
+        }
+      },
+      "title": "SysPermission"
+    },
+    "SysRole": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "角色代码"
+        },
+        "createId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "创建人ID"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "description": {
+          "type": "string",
+          "description": "角色描述"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "角色id"
+        },
+        "name": {
+          "type": "string"
+        },
+        "roleName": {
+          "type": "string",
+          "description": "角色名称"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "description": "角色状态"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改时间"
+        }
+      },
+      "title": "SysRole"
+    },
+    "UserInfoVo": {
+      "type": "object",
+      "properties": {
+        "createTimeEnd": {
+          "type": "string",
+          "format": "date-time",
+          "description": "注册时间结束"
+        },
+        "createTimeStart": {
+          "type": "string",
+          "format": "date-time",
+          "description": "注册时间开始"
+        },
+        "expireTimeEnd": {
+          "type": "string",
+          "format": "date-time",
+          "description": "会员到期时间结束"
+        },
+        "expireTimeStart": {
+          "type": "string",
+          "format": "date-time",
+          "description": "会员到期时间开始"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户id"
+        },
+        "nickname": {
+          "type": "string",
+          "description": "昵称"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "phone": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "账号状态1正常0异常"
+        }
+      },
+      "title": "UserInfoVo",
+      "description": "用户list查询信息"
+    },
+    "UserInfo对象": {
+      "type": "object",
+      "properties": {
+        "accumulatedIncome": {
+          "type": "number",
+          "description": "邀请累计收益"
+        },
+        "birthTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "生日"
+        },
+        "code": {
+          "type": "string",
+          "description": "邀请码"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "expireTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "会员到期时间"
+        },
+        "headImg": {
+          "type": "string",
+          "description": "头像地址"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "introduction": {
+          "type": "string",
+          "description": "简介"
+        },
+        "nickname": {
+          "type": "string",
+          "description": "昵称"
+        },
+        "password": {
+          "type": "string",
+          "description": "密码"
+        },
+        "phone": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "region": {
+          "type": "string",
+          "description": "地区"
+        },
+        "registerIp": {
+          "type": "string",
+          "description": "注册ip"
+        },
+        "registerMac": {
+          "type": "string",
+          "description": "注册mac"
+        },
+        "sex": {
+          "type": "integer",
+          "format": "int32",
+          "description": "性别"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "账号状态"
+        },
+        "vipExp": {
+          "type": "integer",
+          "format": "int32",
+          "description": "经验"
+        }
+      },
+      "title": "UserInfo对象",
+      "description": "用户表"
+    },
+    "UserTrumpetVo": {
+      "type": "object",
+      "properties": {
+        "appType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "客户端类型"
+        },
+        "createTimeEnd": {
+          "type": "string",
+          "format": "date",
+          "description": "注册时间结束"
+        },
+        "createTimeStart": {
+          "type": "string",
+          "format": "date",
+          "description": "注册时间开始"
+        },
+        "gameName": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏名称"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "phone": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "trumpetName": {
+          "type": "string",
+          "description": "小号名称"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户id"
+        }
+      },
+      "title": "UserTrumpetVo",
+      "description": "小号list查询信息"
+    },
+    "UserTrumpet对象": {
+      "type": "object",
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏id"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "id"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "小号状态"
+        },
+        "trumpetName": {
+          "type": "string",
+          "description": "小号名称"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户id"
+        }
+      },
+      "title": "UserTrumpet对象",
+      "description": "用户小号表"
+    }
+  }
+}

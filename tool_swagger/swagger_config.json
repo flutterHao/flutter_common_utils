@@ -1,0 +1,73 @@
+{
+  "swagger": {
+    "@des": "根据swagger api url 或者文件批量生成model和cmd",
+    "@tmp": "swagger_api_docs_sdk_new.json",
+    "base_workspace_dir": "C:/Users/fgc20/Documents/GitHub/flutter_bt_workspace",
+    "infos": [
+      {
+        "swagger_file": "cn_mgr/game-pf-games.json",
+        "model_prefix": "sw_games",
+        "project_package": "flutter_game_bg",
+        "route_prefix": "/game-pf-games",
+        "target_model_path": "/flutter_game_manage_web/lib/generated/swagger/sw_games_models.dart",
+        "target_cmd_path": "/flutter_game_manage_web/lib/generated/swagger/sw_games_cmds.dart",
+        "request_class_name": "SwaggerHttpRequestWrapper",
+        "entity_dir": "/flutter_game_manage_web/lib/models",
+        "g_entity_dir": "/flutter_game_manage_web/lib/generated/json",
+        "json_conver_target_dir": "/flutter_game_manage_web/lib/generated/json/base",
+        "lan": "dart",
+        "selectd_routes": [
+          "/activeRanking/getActivityRankingById"
+        ]
+      },
+      {
+        "swagger_file": "cn_mgr/game-pf-system.json",
+        "model_prefix": "sw_sys",
+        "project_package": "flutter_game_bg",
+        "route_prefix": "/game-pf-system",
+        "target_model_path": "/flutter_game_manage_web/lib/generated/swagger/sw_sys_models.dart",
+        "target_cmd_path": "/flutter_game_manage_web/lib/generated/swagger/sw_sys_cmds.dart",
+        "request_class_name": "SwaggerHttpRequestWrapper",
+        "entity_dir": "/flutter_game_manage_web/lib/models",
+        "g_entity_dir": "/flutter_game_manage_web/lib/generated/json",
+        "json_conver_target_dir": "/flutter_game_manage_web/lib/generated/json/base",
+        "lan": "dart",
+        "selectd_routes": [
+          "/system/login"
+        ]
+      },
+      {
+        "swagger_file": "cn_mgr/game-pf-user.json",
+        "model_prefix": "sw_user",
+        "project_package": "flutter_game_bg",
+        "route_prefix": "/game-pf-user",
+        "target_model_path": "/flutter_game_manage_web/lib/generated/swagger/sw_user_models.dart",
+        "target_cmd_path": "/flutter_game_manage_web/lib/generated/swagger/sw_user_cmds.dart",
+        "request_class_name": "SwaggerHttpRequestWrapper",
+        "entity_dir": "/flutter_game_manage_web/lib/models",
+        "g_entity_dir": "/flutter_game_manage_web/lib/generated/json",
+        "json_conver_target_dir": "/flutter_game_manage_web/lib/generated/json/base",
+        "lan": "dart",
+        "selectd_routes": [
+          "/couponInfo/addNewPeople"
+        ]
+      },
+      {
+        "swagger_file": "cn_mgr/game-pf-basic.json",
+        "model_prefix": "sw_basic",
+        "project_package": "flutter_game_bg",
+        "route_prefix": "/game-pf-basic",
+        "target_model_path": "/flutter_game_manage_web/lib/generated/swagger/sw_basic_models.dart",
+        "target_cmd_path": "/flutter_game_manage_web/lib/generated/swagger/sw_basic_cmds.dart",
+        "request_class_name": "SwaggerHttpRequestWrapper",
+        "entity_dir": "/flutter_game_manage_web/lib/models",
+        "g_entity_dir": "/flutter_game_manage_web/lib/generated/json",
+        "json_conver_target_dir": "/flutter_game_manage_web/lib/generated/json/base",
+        "lan": "dart",
+        "selectd_routes": [
+          "/appConfig/page"
+        ]
+      }
+    ]
+  }
+}

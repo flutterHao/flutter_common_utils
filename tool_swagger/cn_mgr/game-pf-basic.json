@@ -1,0 +1,4018 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "<div style='font-size:14px;color:black;'>基础 微服务 API</div>",
+    "version": "1.0",
+    "title": "Basic Service API"
+  },
+  "host": "10.10.37.3",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "APP管理 - 接口管理API",
+      "x-author": "周港东",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "APP管理 - 数据源管理API",
+      "x-author": "周港东",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "APP管理 - 版本管理API",
+      "x-author": "周港东",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "APP管理 - 配置管理API",
+      "x-author": "周港东",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "APP管理 - 页面管理API",
+      "x-author": "周港东",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "【APP】组件数据API",
+      "x-author": "周港东",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "【APP】首页API",
+      "x-author": "周港东",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "多语言配置",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "腾讯云-cos-api",
+      "x-author": "王骏豪",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "语言文本",
+      "x-order": "2147483647"
+    }
+  ],
+  "paths": {
+    "/app/componentData/banner": {
+      "get": {
+        "tags": [
+          "【APP】组件数据API"
+        ],
+        "summary": "banner接口",
+        "operationId": "bannerUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«ComponentDataBannerVo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/componentData/card": {
+      "get": {
+        "tags": [
+          "【APP】组件数据API"
+        ],
+        "summary": "card接口",
+        "operationId": "cardUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«ComponentDataCardVo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/componentData/gameType": {
+      "get": {
+        "tags": [
+          "【APP】组件数据API"
+        ],
+        "summary": "gameType接口",
+        "operationId": "gameTypeUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«ComponentDataGameTypeVo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/componentData/icon": {
+      "get": {
+        "tags": [
+          "【APP】组件数据API"
+        ],
+        "summary": "icon接口",
+        "operationId": "iconUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«ComponentDataIconVo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/componentData/largeImg": {
+      "get": {
+        "tags": [
+          "【APP】组件数据API"
+        ],
+        "summary": "largeImg接口",
+        "operationId": "largeImgUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«ComponentDataLargeImgVo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/componentData/smallImg": {
+      "get": {
+        "tags": [
+          "【APP】组件数据API"
+        ],
+        "summary": "smallImg接口",
+        "operationId": "smallImgUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«ComponentDataSmallImgVo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/home/homeContent": {
+      "post": {
+        "tags": [
+          "【APP】首页API"
+        ],
+        "summary": "获取首页模块和底部导航",
+        "operationId": "homeContentUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "query",
+            "description": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/HomeContentQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«AppPageComponentVo»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/appConfig/create": {
+      "post": {
+        "tags": [
+          "APP管理 - 配置管理API"
+        ],
+        "summary": "添加",
+        "operationId": "createUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AppConfigCreateCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/appConfig/delete": {
+      "get": {
+        "tags": [
+          "APP管理 - 配置管理API"
+        ],
+        "summary": "删除",
+        "operationId": "deleteUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "配置ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/appConfig/page": {
+      "post": {
+        "tags": [
+          "APP管理 - 配置管理API"
+        ],
+        "summary": "分页",
+        "operationId": "pageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "query",
+            "description": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AppConfigPageQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«AppConfigPageVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/appConfig/use": {
+      "get": {
+        "tags": [
+          "APP管理 - 配置管理API"
+        ],
+        "summary": "使用",
+        "operationId": "useUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "配置ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/appPage/add": {
+      "post": {
+        "tags": [
+          "APP管理 - 页面管理API"
+        ],
+        "summary": "添加 - 导入页面",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AppPageAddCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/appPage/create": {
+      "post": {
+        "tags": [
+          "APP管理 - 页面管理API"
+        ],
+        "summary": "添加 - 新增页面",
+        "operationId": "createUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AppPageCreateCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/appPage/delete": {
+      "get": {
+        "tags": [
+          "APP管理 - 页面管理API"
+        ],
+        "summary": "删除",
+        "operationId": "deleteUsingGET_1",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "页面ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/appPage/one": {
+      "get": {
+        "tags": [
+          "APP管理 - 页面管理API"
+        ],
+        "summary": "单个详情",
+        "operationId": "oneUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "页面ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«AppPageVo»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/appPage/page": {
+      "post": {
+        "tags": [
+          "APP管理 - 页面管理API"
+        ],
+        "summary": "分页",
+        "operationId": "pageUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "query",
+            "description": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AppPagePageQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«AppPagePageVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/appPage/pageTree": {
+      "get": {
+        "tags": [
+          "APP管理 - 页面管理API"
+        ],
+        "summary": "获取 版本<配置<页面 树",
+        "operationId": "pageTreeUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«AppPageTreeVo»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/appPage/save": {
+      "post": {
+        "tags": [
+          "APP管理 - 页面管理API"
+        ],
+        "summary": "保存页面内容",
+        "operationId": "saveUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AppPageContentSaveCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/appVersion/create": {
+      "post": {
+        "tags": [
+          "APP管理 - 版本管理API"
+        ],
+        "summary": "添加",
+        "operationId": "createUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AppVersionCreateCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/appVersion/one": {
+      "get": {
+        "tags": [
+          "APP管理 - 版本管理API"
+        ],
+        "summary": "单个详情",
+        "operationId": "oneUsingGET_1",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "版本ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«APP版本分页Model»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/appVersion/page": {
+      "post": {
+        "tags": [
+          "APP管理 - 版本管理API"
+        ],
+        "summary": "分页",
+        "operationId": "pageUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "query",
+            "description": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BasePage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«APP版本分页Model»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/appVersion/update": {
+      "post": {
+        "tags": [
+          "APP管理 - 版本管理API"
+        ],
+        "summary": "编辑",
+        "operationId": "updateUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AppVersionUpdateCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/com-lang-text/export": {
+      "post": {
+        "tags": [
+          "语言文本"
+        ],
+        "summary": "导出前端定义文本",
+        "operationId": "exportExcelUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "comLang",
+            "description": "comLang",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ComLang对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/com-lang-text/getFrontList": {
+      "post": {
+        "tags": [
+          "语言文本"
+        ],
+        "summary": "前端定义文本列表",
+        "operationId": "getFrontListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "comLang",
+            "description": "comLang",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ComLang对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«ComLangText对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/com-lang-text/getRearList": {
+      "post": {
+        "tags": [
+          "语言文本"
+        ],
+        "summary": "后端配置文本列表",
+        "operationId": "getRearListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "langId",
+            "in": "query",
+            "description": "langId",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "textId",
+            "in": "query",
+            "description": "textId",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«ComLangText对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/com-lang-text/import": {
+      "post": {
+        "tags": [
+          "语言文本"
+        ],
+        "summary": "导入前端定义文本",
+        "operationId": "importExcelUsingPOST",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "file",
+            "description": "file",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "binary"
+            }
+          },
+          {
+            "name": "langId",
+            "in": "query",
+            "description": "langId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/com-lang-text/saveAndUpdateTest": {
+      "post": {
+        "tags": [
+          "语言文本"
+        ],
+        "summary": "文本添加,文本修改,文本删除",
+        "operationId": "saveAndUpdateTestUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "comLangTextList",
+            "description": "comLangTextList",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ComLangText对象"
+              }
+            }
+          },
+          {
+            "name": "langId",
+            "in": "query",
+            "description": "langId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/com-lang/deleteComLang": {
+      "post": {
+        "tags": [
+          "多语言配置"
+        ],
+        "summary": "删除语言",
+        "operationId": "deleteComLangUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "comLan",
+            "description": "comLan",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ComLang对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/com-lang/getAllList": {
+      "get": {
+        "tags": [
+          "多语言配置"
+        ],
+        "summary": "客户端获取多语言全部信息",
+        "operationId": "getAllListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«多语言Vo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/com-lang/getComLanglist": {
+      "get": {
+        "tags": [
+          "多语言配置"
+        ],
+        "summary": "语言列表",
+        "operationId": "getListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«ComLang对象»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/com-lang/saveComLang": {
+      "post": {
+        "tags": [
+          "多语言配置"
+        ],
+        "summary": "添加语言",
+        "operationId": "saveComLangUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "comLang",
+            "description": "comLang",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ComLang对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/com-lang/updateComLang": {
+      "post": {
+        "tags": [
+          "多语言配置"
+        ],
+        "summary": "修改语言",
+        "operationId": "updateComLangUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "comLang",
+            "description": "comLang",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ComLang对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/cos/batchUploadFile": {
+      "post": {
+        "tags": [
+          "腾讯云-cos-api"
+        ],
+        "summary": "cos-批量上传文件",
+        "operationId": "batchUploadFileUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "file",
+            "description": "file",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "file"
+              }
+            }
+          },
+          {
+            "name": "fileDir",
+            "in": "query",
+            "description": "fileDir",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/cos/deleteFile": {
+      "post": {
+        "tags": [
+          "腾讯云-cos-api"
+        ],
+        "summary": "/删除文件",
+        "operationId": "deleteFileUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "fileName",
+            "in": "query",
+            "description": "fileName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/cos/listFile": {
+      "get": {
+        "tags": [
+          "腾讯云-cos-api"
+        ],
+        "summary": "文件列表",
+        "operationId": "listFileUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«CosFileVo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/cos/uploadApk": {
+      "post": {
+        "tags": [
+          "腾讯云-cos-api"
+        ],
+        "summary": "cos-上传APK文件并解析",
+        "operationId": "uploadApkUsingPOST",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "file",
+            "description": "file",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "binary"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«Map«string,string»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/cos/uploadFile": {
+      "post": {
+        "tags": [
+          "腾讯云-cos-api"
+        ],
+        "summary": "cos-上传文件",
+        "operationId": "uploadFileUsingPOST",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "file",
+            "description": "file",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "binary"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/dataApi/bannerList": {
+      "get": {
+        "tags": [
+          "APP管理 - 接口管理API"
+        ],
+        "summary": "获取banner接口数据",
+        "operationId": "bannerListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«BannerDataSaveItem»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/dataApi/cardList": {
+      "get": {
+        "tags": [
+          "APP管理 - 接口管理API"
+        ],
+        "summary": "获取card接口数据",
+        "operationId": "cardListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«CardDataSaveItem»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/dataApi/iconList": {
+      "get": {
+        "tags": [
+          "APP管理 - 接口管理API"
+        ],
+        "summary": "获取icon接口数据",
+        "operationId": "iconListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«IconDataSaveItem»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/dataApi/largeImgList": {
+      "get": {
+        "tags": [
+          "APP管理 - 接口管理API"
+        ],
+        "summary": "获取largeImg接口数据",
+        "operationId": "largeImgListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«LargeImgDataSaveItem»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/dataApi/saveBannerData": {
+      "post": {
+        "tags": [
+          "APP管理 - 接口管理API"
+        ],
+        "summary": "保存Banner接口数据",
+        "operationId": "saveBannerDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BannerDataSaveCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/dataApi/saveCardData": {
+      "post": {
+        "tags": [
+          "APP管理 - 接口管理API"
+        ],
+        "summary": "保存Card接口数据",
+        "operationId": "saveCardDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CardDataSaveCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/dataApi/saveIconData": {
+      "post": {
+        "tags": [
+          "APP管理 - 接口管理API"
+        ],
+        "summary": "保存Icon接口数据",
+        "operationId": "saveIconDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/IconDataSaveCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/dataApi/saveLargeImgData": {
+      "post": {
+        "tags": [
+          "APP管理 - 接口管理API"
+        ],
+        "summary": "保存LargeImg接口数据",
+        "operationId": "saveLargeImgDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LargeImgDataSaveCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/dataApi/saveSmallImgData": {
+      "post": {
+        "tags": [
+          "APP管理 - 接口管理API"
+        ],
+        "summary": "保存SmallImg接口数据",
+        "operationId": "saveSmallImgDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SmallImgDataSaveCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/dataApi/smallImgList": {
+      "get": {
+        "tags": [
+          "APP管理 - 接口管理API"
+        ],
+        "summary": "获取smallImg接口数据",
+        "operationId": "smallImgListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«SmallImgDataSaveItem»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/dataApi/urlList": {
+      "get": {
+        "tags": [
+          "APP管理 - 接口管理API"
+        ],
+        "summary": "获取数据接口URL列表",
+        "operationId": "urlListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«string»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/dataSource/create": {
+      "post": {
+        "tags": [
+          "APP管理 - 数据源管理API"
+        ],
+        "summary": "新增",
+        "operationId": "createUsingPOST_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DataSourceCreateCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/dataSource/delete": {
+      "get": {
+        "tags": [
+          "APP管理 - 数据源管理API"
+        ],
+        "summary": "删除",
+        "operationId": "deleteUsingGET_2",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "数据源ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/dataSource/list": {
+      "get": {
+        "tags": [
+          "APP管理 - 数据源管理API"
+        ],
+        "summary": "列表",
+        "operationId": "listUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«List«数据源列表Model»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/dataSource/one": {
+      "get": {
+        "tags": [
+          "APP管理 - 数据源管理API"
+        ],
+        "summary": "单个详情",
+        "operationId": "oneUsingGET_2",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "数据源ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«数据源详情Model»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/dataSource/page": {
+      "post": {
+        "tags": [
+          "APP管理 - 数据源管理API"
+        ],
+        "summary": "分页",
+        "operationId": "pageUsingPOST_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "query",
+            "description": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BasePage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«IPage«数据源分页Model»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/dataSource/update": {
+      "post": {
+        "tags": [
+          "APP管理 - 数据源管理API"
+        ],
+        "summary": "更新",
+        "operationId": "updateUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "description": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DataSourceUpdateCommand"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/BaseResponse«object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    }
+  },
+  "definitions": {
+    "APP版本分页Model": {
+      "type": "object",
+      "properties": {
+        "forced": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否强制更新（1：是、0：否）"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "number": {
+          "type": "string",
+          "description": "版本号"
+        },
+        "suggestion": {
+          "type": "string",
+          "description": "升级提示语"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "更新时间"
+        }
+      },
+      "title": "APP版本分页Model"
+    },
+    "AppConfigCreateCommand": {
+      "type": "object",
+      "required": [
+        "name",
+        "versionId"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "配置名称"
+        },
+        "versionId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "版本ID"
+        }
+      },
+      "title": "AppConfigCreateCommand"
+    },
+    "AppConfigPageQuery": {
+      "type": "object",
+      "required": [
+        "current",
+        "size"
+      ],
+      "properties": {
+        "appVersionId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "版本ID"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1,
+          "description": "当前页"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64",
+          "example": 10,
+          "description": "页显示条数"
+        }
+      },
+      "title": "AppConfigPageQuery"
+    },
+    "AppConfigPageVo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string",
+          "description": "配置名称"
+        },
+        "pageCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "配置页面数量"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "description": "使用状态（1：使用中、0：未使用）"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "更新时间"
+        }
+      },
+      "title": "AppConfigPageVo"
+    },
+    "AppConfigTreeNodeVo": {
+      "type": "object",
+      "properties": {
+        "configName": {
+          "type": "string",
+          "description": "配置名称"
+        },
+        "pageTreeNodeList": {
+          "type": "array",
+          "description": "页面节点列表",
+          "items": {
+            "$ref": "#/definitions/AppPageTreeNodeVo"
+          }
+        }
+      },
+      "title": "AppConfigTreeNodeVo"
+    },
+    "AppPageAddCommand": {
+      "type": "object",
+      "required": [
+        "configId",
+        "pageId"
+      ],
+      "properties": {
+        "configId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "配置ID"
+        },
+        "pageId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "APP页面ID"
+        }
+      },
+      "title": "AppPageAddCommand"
+    },
+    "AppPageComponentVo": {
+      "type": "object",
+      "properties": {
+        "bottomNavigationList": {
+          "type": "array",
+          "description": "底部导航列表",
+          "items": {
+            "$ref": "#/definitions/AppPageContentAppSimpleVo"
+          }
+        },
+        "homeContentList": {
+          "type": "array",
+          "description": "首页组件列表",
+          "items": {
+            "$ref": "#/definitions/AppPageContentAppVo"
+          }
+        }
+      },
+      "title": "AppPageComponentVo"
+    },
+    "AppPageContentAppSimpleVo": {
+      "type": "object",
+      "properties": {
+        "leadTo": {
+          "type": "string",
+          "description": "跳转"
+        },
+        "mark": {
+          "type": "string",
+          "description": "组件标识"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排序"
+        },
+        "textId": {
+          "type": "string",
+          "description": "文本ID"
+        }
+      },
+      "title": "AppPageContentAppSimpleVo"
+    },
+    "AppPageContentAppVo": {
+      "type": "object",
+      "properties": {
+        "apiUrl": {
+          "type": "string",
+          "description": "接口URL"
+        },
+        "dataSourceId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "数据源ID"
+        },
+        "fieldsMap": {
+          "type": "object",
+          "description": "前后端字段关系映射（key:前端组件字段、value:后端接口字段）",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "leadTo": {
+          "type": "string",
+          "description": "跳转"
+        },
+        "mark": {
+          "type": "string",
+          "description": "组件标识"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排序"
+        },
+        "textId": {
+          "type": "string",
+          "description": "文本ID"
+        }
+      },
+      "title": "AppPageContentAppVo"
+    },
+    "AppPageContentSaveCommand": {
+      "type": "object",
+      "required": [
+        "pageId"
+      ],
+      "properties": {
+        "contentVoList": {
+          "type": "array",
+          "description": "组件列表",
+          "items": {
+            "$ref": "#/definitions/AppPageContentVo"
+          }
+        },
+        "pageId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页面ID"
+        }
+      },
+      "title": "AppPageContentSaveCommand"
+    },
+    "AppPageContentVo": {
+      "type": "object",
+      "properties": {
+        "dataSourceId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "数据源ID"
+        },
+        "fieldsMap": {
+          "type": "object",
+          "description": "前后端字段关系映射（key:前端组件字段、value:后端接口字段）",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "leadTo": {
+          "type": "string",
+          "description": "跳转"
+        },
+        "mark": {
+          "type": "string",
+          "description": "组件标识"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排序"
+        },
+        "textId": {
+          "type": "string",
+          "description": "文本ID"
+        }
+      },
+      "title": "AppPageContentVo"
+    },
+    "AppPageCreateCommand": {
+      "type": "object",
+      "required": [
+        "configId",
+        "pageType"
+      ],
+      "properties": {
+        "configId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "配置ID"
+        },
+        "pageType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页面类型（1：底部导航、2：首页）"
+        }
+      },
+      "title": "AppPageCreateCommand"
+    },
+    "AppPagePageQuery": {
+      "type": "object",
+      "required": [
+        "configId",
+        "current",
+        "size"
+      ],
+      "properties": {
+        "configId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "配置ID"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1,
+          "description": "当前页"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64",
+          "example": 10,
+          "description": "页显示条数"
+        }
+      },
+      "title": "AppPagePageQuery"
+    },
+    "AppPagePageVo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pageType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页面类型（1：底部导航、2：首页）"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "更新时间"
+        }
+      },
+      "title": "AppPagePageVo"
+    },
+    "AppPageTreeNodeVo": {
+      "type": "object",
+      "properties": {
+        "pageId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页面ID"
+        },
+        "pageType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页面类型（1：底部导航、2：首页）"
+        }
+      },
+      "title": "AppPageTreeNodeVo"
+    },
+    "AppPageTreeVo": {
+      "type": "object",
+      "properties": {
+        "versionNodeList": {
+          "type": "array",
+          "description": "版本节点列表",
+          "items": {
+            "$ref": "#/definitions/AppVersionTreeNodeVo"
+          }
+        }
+      },
+      "title": "AppPageTreeVo"
+    },
+    "AppPageVo": {
+      "type": "object",
+      "properties": {
+        "contentVoList": {
+          "type": "array",
+          "description": "组件列表",
+          "items": {
+            "$ref": "#/definitions/AppPageContentVo"
+          }
+        },
+        "pageId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页面ID"
+        },
+        "pageType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页面类型（1：底部导航、2：首页）"
+        }
+      },
+      "title": "AppPageVo"
+    },
+    "AppVersionCreateCommand": {
+      "type": "object",
+      "required": [
+        "apkUrl",
+        "forced",
+        "iosVerifyStatus",
+        "number",
+        "suggestion"
+      ],
+      "properties": {
+        "apkUrl": {
+          "type": "string",
+          "description": "Android安装包"
+        },
+        "forced": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否强制更新（1：是、0：否）"
+        },
+        "iosVerifyStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "App Store 审核结果（1：审核通过、2：审核中）"
+        },
+        "number": {
+          "type": "string",
+          "description": "版本号"
+        },
+        "suggestion": {
+          "type": "string",
+          "description": "升级提示语"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "更新时间"
+        }
+      },
+      "title": "AppVersionCreateCommand"
+    },
+    "AppVersionTreeNodeVo": {
+      "type": "object",
+      "properties": {
+        "configNodeList": {
+          "type": "array",
+          "description": "配置节点列表",
+          "items": {
+            "$ref": "#/definitions/AppConfigTreeNodeVo"
+          }
+        },
+        "versionNumber": {
+          "type": "string",
+          "description": "版本号"
+        }
+      },
+      "title": "AppVersionTreeNodeVo"
+    },
+    "AppVersionUpdateCommand": {
+      "type": "object",
+      "required": [
+        "apkUrl",
+        "forced",
+        "id",
+        "iosVerifyStatus",
+        "number",
+        "suggestion"
+      ],
+      "properties": {
+        "apkUrl": {
+          "type": "string",
+          "description": "Android安装包"
+        },
+        "forced": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否强制更新（1：是、0：否）"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "iosVerifyStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "App Store 审核结果（1：审核通过、2：审核中）"
+        },
+        "number": {
+          "type": "string",
+          "description": "版本号"
+        },
+        "suggestion": {
+          "type": "string",
+          "description": "升级提示语"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "更新时间"
+        }
+      },
+      "title": "AppVersionUpdateCommand"
+    },
+    "BackendFieldVo": {
+      "type": "object",
+      "properties": {
+        "desc": {
+          "type": "string",
+          "description": "字段说明"
+        },
+        "name": {
+          "type": "string",
+          "description": "字段名"
+        }
+      },
+      "title": "BackendFieldVo"
+    },
+    "BannerDataSaveCommand": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BannerDataSaveItem"
+          }
+        }
+      },
+      "title": "BannerDataSaveCommand"
+    },
+    "BannerDataSaveItem": {
+      "type": "object",
+      "properties": {
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "结束时间"
+        },
+        "file": {
+          "type": "string",
+          "description": "图片/视频"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "关联游戏ID"
+        },
+        "leadTo": {
+          "type": "string",
+          "description": "跳转项"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "开始时间"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态（0：下架、1：上架）"
+        },
+        "subject": {
+          "type": "string",
+          "description": "主题"
+        }
+      },
+      "title": "BannerDataSaveItem"
+    },
+    "BasePage": {
+      "type": "object",
+      "required": [
+        "current",
+        "size"
+      ],
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1,
+          "description": "当前页"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64",
+          "example": 10,
+          "description": "页显示条数"
+        }
+      },
+      "title": "BasePage"
+    },
+    "BaseResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "object"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse"
+    },
+    "BaseResponse«APP版本分页Model»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/APP版本分页Model"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«APP版本分页Model»"
+    },
+    "BaseResponse«AppPageComponentVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/AppPageComponentVo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«AppPageComponentVo»"
+    },
+    "BaseResponse«AppPageTreeVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/AppPageTreeVo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«AppPageTreeVo»"
+    },
+    "BaseResponse«AppPageVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/AppPageVo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«AppPageVo»"
+    },
+    "BaseResponse«IPage«APP版本分页Model»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«APP版本分页Model»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«APP版本分页Model»»"
+    },
+    "BaseResponse«IPage«AppConfigPageVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«AppConfigPageVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«AppConfigPageVo»»"
+    },
+    "BaseResponse«IPage«AppPagePageVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«AppPagePageVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«AppPagePageVo»»"
+    },
+    "BaseResponse«IPage«数据源分页Model»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/IPage«数据源分页Model»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«数据源分页Model»»"
+    },
+    "BaseResponse«List«BannerDataSaveItem»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BannerDataSaveItem"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«BannerDataSaveItem»»"
+    },
+    "BaseResponse«List«CardDataSaveItem»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CardDataSaveItem"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«CardDataSaveItem»»"
+    },
+    "BaseResponse«List«ComLangText对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ComLangText对象"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«ComLangText对象»»"
+    },
+    "BaseResponse«List«ComLang对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ComLang对象"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«ComLang对象»»"
+    },
+    "BaseResponse«List«ComponentDataBannerVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ComponentDataBannerVo"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«ComponentDataBannerVo»»"
+    },
+    "BaseResponse«List«ComponentDataCardVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ComponentDataCardVo"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«ComponentDataCardVo»»"
+    },
+    "BaseResponse«List«ComponentDataGameTypeVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ComponentDataGameTypeVo"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«ComponentDataGameTypeVo»»"
+    },
+    "BaseResponse«List«ComponentDataIconVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ComponentDataIconVo"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«ComponentDataIconVo»»"
+    },
+    "BaseResponse«List«ComponentDataLargeImgVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ComponentDataLargeImgVo"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«ComponentDataLargeImgVo»»"
+    },
+    "BaseResponse«List«ComponentDataSmallImgVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ComponentDataSmallImgVo"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«ComponentDataSmallImgVo»»"
+    },
+    "BaseResponse«List«CosFileVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CosFileVo"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«CosFileVo»»"
+    },
+    "BaseResponse«List«IconDataSaveItem»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IconDataSaveItem"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«IconDataSaveItem»»"
+    },
+    "BaseResponse«List«LargeImgDataSaveItem»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LargeImgDataSaveItem"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«LargeImgDataSaveItem»»"
+    },
+    "BaseResponse«List«SmallImgDataSaveItem»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SmallImgDataSaveItem"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«SmallImgDataSaveItem»»"
+    },
+    "BaseResponse«List«string»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«string»»"
+    },
+    "BaseResponse«List«多语言Vo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/多语言Vo"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«多语言Vo»»"
+    },
+    "BaseResponse«List«数据源列表Model»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/数据源列表Model"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«数据源列表Model»»"
+    },
+    "BaseResponse«Map«string,string»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«Map«string,string»»"
+    },
+    "BaseResponse«object»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "object"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«object»"
+    },
+    "BaseResponse«string»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "string"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«string»"
+    },
+    "BaseResponse«数据源详情Model»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "$ref": "#/definitions/数据源详情Model"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«数据源详情Model»"
+    },
+    "CardDataSaveCommand": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CardDataSaveItem"
+          }
+        }
+      },
+      "title": "CardDataSaveCommand"
+    },
+    "CardDataSaveItem": {
+      "type": "object",
+      "properties": {
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排序"
+        }
+      },
+      "title": "CardDataSaveItem"
+    },
+    "ComLangText对象": {
+      "type": "object",
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "langId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "com_lang表的id"
+        },
+        "textDetail": {
+          "type": "string",
+          "description": "文本详情"
+        },
+        "textId": {
+          "type": "string",
+          "description": "文本id"
+        },
+        "textType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "区分类别，1：前端导入；2：后台添加"
+        }
+      },
+      "title": "ComLangText对象",
+      "description": "语言文本内容表"
+    },
+    "ComLang对象": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "langName": {
+          "type": "string",
+          "description": "语言"
+        }
+      },
+      "title": "ComLang对象",
+      "description": "语言表"
+    },
+    "ComponentDataBannerVo": {
+      "type": "object",
+      "properties": {
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "结束时间"
+        },
+        "file": {
+          "type": "string",
+          "description": "图片/视频"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "关联游戏ID"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "ID"
+        },
+        "leadTo": {
+          "type": "string",
+          "description": "跳转项"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "开始时间"
+        },
+        "subject": {
+          "type": "string",
+          "description": "主题"
+        }
+      },
+      "title": "ComponentDataBannerVo"
+    },
+    "ComponentDataCardVo": {
+      "type": "object",
+      "properties": {
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "icon": {
+          "type": "string",
+          "description": "图标"
+        },
+        "introduction": {
+          "type": "string",
+          "description": "一句话简介"
+        },
+        "score": {
+          "type": "number",
+          "format": "double",
+          "description": "评分"
+        }
+      },
+      "title": "ComponentDataCardVo"
+    },
+    "ComponentDataGameTypeVo": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "type": "string",
+          "description": "游戏分类Icon"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏分类ID"
+        },
+        "typeName": {
+          "type": "string",
+          "description": "游戏分类名称"
+        }
+      },
+      "title": "ComponentDataGameTypeVo"
+    },
+    "ComponentDataIconVo": {
+      "type": "object",
+      "properties": {
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "icon": {
+          "type": "string",
+          "description": "图标"
+        }
+      },
+      "title": "ComponentDataIconVo"
+    },
+    "ComponentDataLargeImgVo": {
+      "type": "object",
+      "properties": {
+        "desc": {
+          "type": "string",
+          "description": "文案"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "largeImg": {
+          "type": "string",
+          "description": "大图"
+        },
+        "score": {
+          "type": "number",
+          "format": "double",
+          "description": "评分"
+        }
+      },
+      "title": "ComponentDataLargeImgVo"
+    },
+    "ComponentDataSmallImgVo": {
+      "type": "object",
+      "properties": {
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "playNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "在玩人数"
+        },
+        "smallImg": {
+          "type": "string",
+          "description": "小图"
+        }
+      },
+      "title": "ComponentDataSmallImgVo"
+    },
+    "CosFileVo": {
+      "type": "object",
+      "properties": {
+        "etag": {
+          "type": "string"
+        },
+        "fileSize": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "key": {
+          "type": "string"
+        },
+        "storageClasses": {
+          "type": "string"
+        }
+      },
+      "title": "CosFileVo"
+    },
+    "DataSourceCreateCommand": {
+      "type": "object",
+      "required": [
+        "apiUrl",
+        "name"
+      ],
+      "properties": {
+        "apiUrl": {
+          "type": "string",
+          "description": "接口URL"
+        },
+        "name": {
+          "type": "string",
+          "description": "数据源名称"
+        }
+      },
+      "title": "DataSourceCreateCommand"
+    },
+    "DataSourceUpdateCommand": {
+      "type": "object",
+      "required": [
+        "apiUrl",
+        "id",
+        "name"
+      ],
+      "properties": {
+        "apiUrl": {
+          "type": "string",
+          "description": "接口URL"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string",
+          "description": "数据源名称"
+        }
+      },
+      "title": "DataSourceUpdateCommand"
+    },
+    "HomeContentQuery": {
+      "type": "object",
+      "required": [
+        "appVersionId"
+      ],
+      "properties": {
+        "appVersionId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "APP版本ID"
+        }
+      },
+      "title": "HomeContentQuery"
+    },
+    "IPage«APP版本分页Model»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/APP版本分页Model"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«APP版本分页Model»"
+    },
+    "IPage«AppConfigPageVo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AppConfigPageVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«AppConfigPageVo»"
+    },
+    "IPage«AppPagePageVo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AppPagePageVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«AppPagePageVo»"
+    },
+    "IPage«数据源分页Model»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/数据源分页Model"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«数据源分页Model»"
+    },
+    "IconDataSaveCommand": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IconDataSaveItem"
+          }
+        }
+      },
+      "title": "IconDataSaveCommand"
+    },
+    "IconDataSaveItem": {
+      "type": "object",
+      "properties": {
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排序"
+        }
+      },
+      "title": "IconDataSaveItem"
+    },
+    "LargeImgDataSaveCommand": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LargeImgDataSaveItem"
+          }
+        }
+      },
+      "title": "LargeImgDataSaveCommand"
+    },
+    "LargeImgDataSaveItem": {
+      "type": "object",
+      "properties": {
+        "desc": {
+          "type": "string",
+          "description": "文案"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排序"
+        }
+      },
+      "title": "LargeImgDataSaveItem"
+    },
+    "SmallImgDataSaveCommand": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SmallImgDataSaveItem"
+          }
+        }
+      },
+      "title": "SmallImgDataSaveCommand"
+    },
+    "SmallImgDataSaveItem": {
+      "type": "object",
+      "properties": {
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏ID"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排序"
+        }
+      },
+      "title": "SmallImgDataSaveItem"
+    },
+    "多语言Vo": {
+      "type": "object",
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "langName": {
+          "type": "string",
+          "description": "语言"
+        },
+        "langTextList": {
+          "type": "array",
+          "description": "文本列表对象",
+          "items": {
+            "$ref": "#/definitions/ComLangText对象"
+          }
+        }
+      },
+      "title": "多语言Vo"
+    },
+    "数据源分页Model": {
+      "type": "object",
+      "properties": {
+        "apiUrl": {
+          "type": "string",
+          "description": "接口URL"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string",
+          "description": "数据源名称"
+        }
+      },
+      "title": "数据源分页Model"
+    },
+    "数据源列表Model": {
+      "type": "object",
+      "properties": {
+        "backendFieldList": {
+          "type": "array",
+          "description": "后端字段列表",
+          "items": {
+            "$ref": "#/definitions/BackendFieldVo"
+          }
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string",
+          "description": "数据源名称"
+        }
+      },
+      "title": "数据源列表Model"
+    },
+    "数据源详情Model": {
+      "type": "object",
+      "properties": {
+        "apiUrl": {
+          "type": "string",
+          "description": "接口URL"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string",
+          "description": "数据源名称"
+        }
+      },
+      "title": "数据源详情Model"
+    }
+  }
+}

@@ -1,0 +1,87 @@
+// {{origin}}
+// @JsonSerializable()
+class {{class_name}} {
+  {{class_name}}();
+  {%- for key in properties %}
+  {%- if properties[key].type == 'object' %}
+  late Map<String, dynamic> {{properties[key].realkey}}; // String {{properties[key].realkey}};
+  {%- elif properties[key].type == '' %}
+  late {{properties[key].refClass}} {{properties[key].realkey}};
+  {%- elif properties[key].type == 'None' %}
+  late {{properties[key].refClass}} {{properties[key].realkey}};
+  {%- elif properties[key].type == 'integer' and properties[key].format == 'int64' %}
+  late int {{properties[key].realkey}};
+  {%- elif properties[key].type == 'integer' %}
+  late int {{properties[key].realkey}};
+  {%- elif properties[key].type == 'number' %}
+  late double {{properties[key].realkey}};
+  {%- elif properties[key].type == 'array' %}
+  late {{properties[key].refClass}} {{properties[key].realkey}};
+  {%- elif properties[key].type == 'string' %}
+  late String {{properties[key].realkey}};
+  {%- elif properties[key].type == 'boolean' %}
+  late bool {{properties[key].realkey}};
+  {%- else %}
+  late {{properties[key].realkey}};
+  {%- endif %}  // {{properties[key].description}} ({{properties[key].type}} {{properties[key].refClass}})
+  {%- endfor %}
+  factory {{class_name}}.fromMap(Map<String, dynamic> map) {
+    {% if is_debug == false -%}// {%- endif -%} print('=============== {{class_name}} init');
+    {{class_name}} obj = {{class_name}}();
+    {%- for key in properties %}
+    {% if is_debug == false -%}// {%- endif -%} print('       ------------------------- {{properties[key].realkey}} ${ map["{{properties[key].realkey}}"].toString() }');
+    {%- if properties[key].type == 'object' %}
+      if (map["{{properties[key].realkey}}"] != null) {
+        obj.{{properties[key].realkey}} = map["{{properties[key].realkey}}"];
+      }
+    {%- elif properties[key].type == '' %}
+      obj.{{properties[key].realkey}} = {{properties[key].refClass}}.fromMap(map["{{properties[key].realkey}}"]);
+    {%- elif properties[key].type == 'None' %}
+    // {{properties[key].refClass}} {{properties[key].realkey}}; // None
+    {%- elif properties[key].type == 'integer' and properties[key].format == 'int64' %}
+    {#- if (map["{{properties[key].realkey}}"] != null) { #}
+    obj.{{properties[key].realkey}} = int.tryParse(map["{{properties[key].realkey}}"].toString()) ?? 0; // int64
+    {#- } -#}
+    {%- elif properties[key].type == 'integer' %}
+    {#- if (map["{{properties[key].realkey}}"] != null) { #}
+    obj.{{properties[key].realkey}} = int.tryParse(map["{{properties[key].realkey}}"].toString()) ?? 0; // integer
+    {#- } -#}
+    {%- elif properties[key].type == 'number' %}
+      obj.{{properties[key].realkey}} = double.tryParse(map["{{properties[key].realkey}}"].toString()) ?? 0.0; // number
+    {%- elif properties[key].type == 'array' %}
+    obj.{{properties[key].realkey}} = <{{properties[key].refClassSingle}}>[];
+    for (int i = 0; i < (map["{{properties[key].realkey}}"] ?? []).length; i++) {
+      {%- if properties[key]['items']['format'] == 'int32' %}
+      dynamic jsonItem = map["{{properties[key].realkey}}"][i];
+      int listItem = int.tryParse(jsonItem.toString()) ?? 0; // int32
+      {%- elif properties[key]['items']['format'] == 'int64' %}
+      dynamic jsonItem = map["{{properties[key].realkey}}"][i];
+      int listItem = int.tryParse(jsonItem.toString()) ?? 0; // int64
+      {%- elif properties[key].refClassSingle == 'String' %}
+      dynamic jsonItem = map["{{properties[key].realkey}}"][i];
+      String listItem = jsonItem != null ? jsonItem.toString() : ''; // String 
+      {%- elif properties[key].refClassSingle == 'dynamic' %}
+      dynamic jsonItem = map["{{properties[key].realkey}}"][i]; // dynamic
+      dynamic listItem = jsonItem; // dynamic
+      {%- elif properties[key].refClassSingle == 'boolean' %}
+      dynamic jsonItem = map["{{properties[key].realkey}}"][i]; // dynamic
+      bool listItem = ['true', '1'].contains(jsonItem.toString()); // dynamic
+      {%- else %}
+      Map<String, dynamic> jsonItem = map["{{properties[key].realkey}}"][i];
+      {{properties[key].refClassSingle}} listItem = {{properties[key].refClassSingle}}.fromMap((jsonItem));
+      {%- endif %}
+      obj.{{properties[key].realkey}}.add(listItem);
+    }
+    {%- elif properties[key].type == 'string' %}
+    obj.{{properties[key].realkey}} = map["{{properties[key].realkey}}"] != null ? map["{{properties[key].realkey}}"].toString() : ''; // String
+    {%- elif properties[key].type == 'boolean' %}
+    obj.{{properties[key].realkey}} = ['true', '1'].contains(map["{{properties[key].realkey}}"].toString());
+    {%- else %}
+    {{properties[key].type}}
+    obj.{{properties[key].refClass}} {{properties[key].realkey}} = {{properties[key].refClassSingle}}.fromMap(map["{{properties[key].realkey}}"]);
+    {%- endif %}
+    {%- endfor %}
+    return obj;
+  }
+}
+

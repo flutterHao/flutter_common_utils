@@ -1,0 +1,143 @@
+{
+  "svn_images": {
+    "@des": "输入svn有各个分辨率图片的例如@3x的路径，自动copy并且命名到工程assets的images目录，可以输入输出多组",
+    "base_workspace_dir": "C:/Users/fgc20/Documents/GitHub/flutter_bt_workspace",
+    "infos": [
+      {
+        "prefix": "bangdan_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/4分类、详情、榜单/榜单",
+        "project_image_dir": "/flutter_game_bt_app/assets/images"
+      },
+      {
+        "prefix": "fenlei_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/4分类、详情、榜单/分类",
+        "project_image_dir": "/flutter_game_bt_app/assets/images"
+      },
+      {
+        "prefix": "xiangqing_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/4分类、详情、榜单/详情",
+        "project_image_dir": "/flutter_game_bt_app/assets/images"
+      },
+      {
+        "prefix": "fuli_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/5福利/福利和礼包",
+        "project_image_dir": "/flutter_game_bt_app/assets/images"
+      },
+      {
+        "prefix": "qiandao_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/5福利/签到有礼",
+        "project_image_dir": "/flutter_game_bt_app/assets/images"
+      },
+      {
+        "prefix": "yaoqing_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/5福利/邀请好友",
+        "project_image_dir": "/flutter_game_bt_app/assets/images"
+      },
+      {
+        "prefix": "mymain_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/6我的/1我的主页面",
+        "project_image_dir": "/flutter_game_bt_app/assets/images"
+      },
+      {
+        "prefix": "mysetting_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/6我的/2我的资料和设置",
+        "project_image_dir": "/flutter_game_bt_app/assets/images"
+      },
+      {
+        "prefix": "mymsg_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/6我的/3消息中心和下载管理",
+        "project_image_dir": "/flutter_game_bt_app/assets/images"
+      },
+      {
+        "prefix": "dlg_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/3首页弹窗和玩游戏领红包",
+        "project_image_dir": "/flutter_game_bt_app/assets/images"
+      },
+      {
+        "prefix": "remain_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/6我的/4会员中心、红包余额、意见反馈",
+        "project_image_dir": "/flutter_game_bt_app/assets/images"
+      },
+      {
+        "prefix": "lv_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/6我的/6我的金币、我的等级、邀请码",
+        "project_image_dir": "/flutter_game_bt_app/assets/images"
+      },
+      {
+        "prefix": "wallet_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/6我的/5我的礼包、优惠券、我的钱包",
+        "project_image_dir": "/flutter_game_bt_app/assets/images"
+      },
+      {
+        "prefix": "coin_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/6我的/7列表明细icon",
+        "project_image_dir": "/flutter_game_bt_app/assets/images"
+      },
+      {
+        "prefix": "sdk_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/7SDK",
+        "project_image_dir": "/flutter_game_bt_app/assets/images"
+      },
+      {
+        "prefix": "reg_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/2注册登录和搜索",
+        "project_image_dir": "/flutter_game_bt_app/assets/images"
+      },
+      {
+        "prefix": "reg_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/2注册登录和搜索",
+        "project_image_dir": "/flutter_lib_shared/assets/images"
+      },
+      {
+        "prefix": "bomtab_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/1首页/底部栏",
+        "project_image_dir": "/flutter_lib_shared/assets/images"
+      },
+      {
+        "prefix": "jingang_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/1首页/金刚区",
+        "project_image_dir": "/flutter_lib_shared/assets/images"
+      },
+      {
+        "prefix": "homebg_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt/1首页/其他背景",
+        "project_image_dir": "/flutter_lib_shared/assets/images"
+      },
+      {
+        "prefix": "fnbomtab_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt_foreign/1首页/底部标签栏",
+        "project_image_dir": "/flutter_lib_shared/assets/images"
+      },
+      {
+        "prefix": "fnmain_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt_foreign/1首页/其他",
+        "project_image_dir": "/flutter_lib_shared/assets/images"
+      },
+      {
+        "prefix": "fntop_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt_foreign/1首页/顶部标签栏",
+        "project_image_dir": "/flutter_lib_shared/assets/images"
+      },
+      {
+        "prefix": "fntop_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt_foreign/1首页/顶部标签栏",
+        "project_image_dir": "/flutter_lib_shared/assets/images"
+      },
+      {
+        "prefix": "fnbomtab_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt_foreign/1首页/底部半圆",
+        "project_image_dir": "/flutter_lib_shared/assets/images"
+      },
+      {
+        "prefix": "fnmy_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt_foreign/3右侧导航栏和个人主页",
+        "project_image_dir": "/flutter_foreign_game_bt/assets/images"
+      },
+      {
+        "prefix": "fnwallet_",
+        "svn_images_dir": "C:/Users/fgc20/Documents/svn_flutter_bt_all/svn_flutter_bt_foreign/2钱包",
+        "project_image_dir": "/flutter_foreign_game_bt/assets/images"
+      }
+    ]
+  }
+}

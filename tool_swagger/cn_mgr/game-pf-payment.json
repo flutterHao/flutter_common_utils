@@ -1,0 +1,5918 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "<div style='font-size:14px;color:black;'>支付 微服务 API</div>",
+    "version": "1.0",
+    "title": "Payment Service API"
+  },
+  "host": "10.10.37.3",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "交易方式配置",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "交易类型配置",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "提现审核api",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "提现方式配置",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "提现规则",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "提现配置api",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "支付策略",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "渠道配置",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "订单api",
+      "x-order": "2147483647"
+    },
+    {
+      "name": "钱包api",
+      "x-order": "2147483647"
+    }
+  ],
+  "paths": {
+    "/app/pay-order/createGamePayOrder": {
+      "post": {
+        "tags": [
+          "订单api"
+        ],
+        "summary": "创建游戏订单",
+        "operationId": "createGamePayOrderUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "createGamePayOrderTo",
+            "description": "createGamePayOrderTo",
+            "required": true,
+            "schema": {
+              "originalRef": "CreateGamePayOrderTo",
+              "$ref": "#/definitions/CreateGamePayOrderTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«GetPayStrategyAndAccountVo»",
+              "$ref": "#/definitions/BaseResponse«GetPayStrategyAndAccountVo»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/pay-order/createPayOrder": {
+      "post": {
+        "tags": [
+          "订单api"
+        ],
+        "summary": "创建平台订单",
+        "operationId": "createPayOrderUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "createPayOrderTo",
+            "description": "createPayOrderTo",
+            "required": true,
+            "schema": {
+              "originalRef": "CreatePayOrderTo",
+              "$ref": "#/definitions/CreatePayOrderTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«GetPayStrategyAndAccountVo»",
+              "$ref": "#/definitions/BaseResponse«GetPayStrategyAndAccountVo»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/pay-order/export": {
+      "post": {
+        "tags": [
+          "订单api"
+        ],
+        "summary": "导出平台订单表格",
+        "operationId": "exportUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "searchPayOrderListTo",
+            "description": "searchPayOrderListTo",
+            "required": true,
+            "schema": {
+              "originalRef": "SearchPayOrderListTo",
+              "$ref": "#/definitions/SearchPayOrderListTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/pay-order/exportGamePayOrder": {
+      "post": {
+        "tags": [
+          "订单api"
+        ],
+        "summary": "导出游戏订单表格",
+        "operationId": "exportGamePayOrderUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "searchPayOrderListTo",
+            "description": "searchPayOrderListTo",
+            "required": true,
+            "schema": {
+              "originalRef": "SearchPayOrderListTo",
+              "$ref": "#/definitions/SearchPayOrderListTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/pay-order/searchPayOrderList": {
+      "post": {
+        "tags": [
+          "订单api"
+        ],
+        "summary": "分页查询列表",
+        "operationId": "searchPayOrderListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "searchPayOrderListTo",
+            "description": "searchPayOrderListTo",
+            "required": true,
+            "schema": {
+              "originalRef": "SearchPayOrderListTo",
+              "$ref": "#/definitions/SearchPayOrderListTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«IPage«SearchPayOrderListVo»»",
+              "$ref": "#/definitions/BaseResponse«IPage«SearchPayOrderListVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/wallet/getUserWithdrawalAmount": {
+      "get": {
+        "tags": [
+          "钱包api"
+        ],
+        "summary": "用户钱包查询",
+        "operationId": "getUserWithdrawalAmountUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "query",
+            "description": "uid",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«UserWithdrawalAmount»",
+              "$ref": "#/definitions/BaseResponse«UserWithdrawalAmount»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/app/wallet/getWalletDetails": {
+      "get": {
+        "tags": [
+          "钱包api"
+        ],
+        "summary": "钱包明细",
+        "operationId": "getWalletDetailsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "description": "date",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "uid",
+            "in": "query",
+            "description": "uid",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«List«WalletDetails»»",
+              "$ref": "#/definitions/BaseResponse«List«WalletDetails»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-channel/bindingAndSaveAccount": {
+      "post": {
+        "tags": [
+          "渠道配置"
+        ],
+        "summary": "添加并绑定渠道账号",
+        "operationId": "bindingAndSaveAccountUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "query",
+            "description": "channelId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "publicAccountVo",
+            "description": "publicAccountVo",
+            "required": true,
+            "schema": {
+              "originalRef": "渠道账号列表Vo",
+              "$ref": "#/definitions/渠道账号列表Vo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse",
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-channel/bindingPayMeans": {
+      "post": {
+        "tags": [
+          "渠道配置"
+        ],
+        "summary": "绑定支付方式",
+        "operationId": "bindingPayMeansUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "payChannelId",
+            "in": "query",
+            "description": "payChannelId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "payMeansId",
+            "in": "query",
+            "description": "payMeansId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-channel/bindingWithdrawMeans": {
+      "post": {
+        "tags": [
+          "渠道配置"
+        ],
+        "summary": "绑定提现方式",
+        "operationId": "bindingWithdrawMeansUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "payChannelId",
+            "in": "query",
+            "description": "payChannelId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "payMeansId",
+            "in": "query",
+            "description": "payMeansId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-channel/delete": {
+      "post": {
+        "tags": [
+          "渠道配置"
+        ],
+        "summary": "删除渠道",
+        "operationId": "deleteUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "渠道id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse",
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-channel/getAccountList": {
+      "post": {
+        "tags": [
+          "渠道配置"
+        ],
+        "summary": "获取渠道下绑定的账号分页",
+        "operationId": "getAccountListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "渠道id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "page",
+            "description": "page",
+            "required": true,
+            "schema": {
+              "originalRef": "BasePage",
+              "$ref": "#/definitions/BasePage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«IPage«渠道账号列表Vo»»",
+              "$ref": "#/definitions/BaseResponse«IPage«渠道账号列表Vo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-channel/getPayList": {
+      "post": {
+        "tags": [
+          "渠道配置"
+        ],
+        "summary": "获取渠道下绑定的支付方式分页",
+        "operationId": "getPayListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "渠道id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "page",
+            "description": "page",
+            "required": true,
+            "schema": {
+              "originalRef": "BasePage",
+              "$ref": "#/definitions/BasePage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«IPage«交易方式Vo»»",
+              "$ref": "#/definitions/BaseResponse«IPage«交易方式Vo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-channel/getPayMeansName": {
+      "get": {
+        "tags": [
+          "渠道配置"
+        ],
+        "summary": "获取支付方式id与名称列表",
+        "operationId": "getPayNameUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«List«交易方式id名称Vo»»",
+              "$ref": "#/definitions/BaseResponse«List«交易方式id名称Vo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-channel/getPublicAccountById": {
+      "get": {
+        "tags": [
+          "渠道配置"
+        ],
+        "summary": "编辑:查询账号信息",
+        "operationId": "getPublicAccountVoUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "账号id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«渠道账号列表Vo»",
+              "$ref": "#/definitions/BaseResponse«渠道账号列表Vo»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-channel/getWithdrawList": {
+      "post": {
+        "tags": [
+          "渠道配置"
+        ],
+        "summary": "获取渠道绑定下的提现方式分页",
+        "operationId": "getWithdrawListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "渠道id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "page",
+            "description": "page",
+            "required": true,
+            "schema": {
+              "originalRef": "BasePage",
+              "$ref": "#/definitions/BasePage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«IPage«交易方式Vo»»",
+              "$ref": "#/definitions/BaseResponse«IPage«交易方式Vo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-channel/getWithdrawName": {
+      "get": {
+        "tags": [
+          "渠道配置"
+        ],
+        "summary": "获取提现方式id与名称列表",
+        "operationId": "getWithdrawMeansNameUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«List«交易方式id名称Vo»»",
+              "$ref": "#/definitions/BaseResponse«List«交易方式id名称Vo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-channel/list": {
+      "post": {
+        "tags": [
+          "渠道配置"
+        ],
+        "summary": "获取渠道分页",
+        "operationId": "listUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "page",
+            "description": "page",
+            "required": true,
+            "schema": {
+              "originalRef": "BasePage",
+              "$ref": "#/definitions/BasePage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«IPage«渠道分页列表Vo»»",
+              "$ref": "#/definitions/BaseResponse«IPage«渠道分页列表Vo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-channel/save": {
+      "post": {
+        "tags": [
+          "渠道配置"
+        ],
+        "summary": "添加渠道",
+        "operationId": "saveUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "payChannel",
+            "description": "payChannel",
+            "required": true,
+            "schema": {
+              "originalRef": "PayChannel",
+              "$ref": "#/definitions/PayChannel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-channel/unbindAccount": {
+      "post": {
+        "tags": [
+          "渠道配置"
+        ],
+        "summary": "删除并解绑渠道账号",
+        "operationId": "unbindAccountUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "description": "accountId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "description": "channelId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse",
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-channel/unbindPayMeans": {
+      "post": {
+        "tags": [
+          "渠道配置"
+        ],
+        "summary": "解绑支付方式",
+        "operationId": "unbindPayMeansUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "payChannelId",
+            "in": "query",
+            "description": "payChannelId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "payMeansId",
+            "in": "query",
+            "description": "payMeansId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-channel/unbindWithdrawMeans": {
+      "post": {
+        "tags": [
+          "渠道配置"
+        ],
+        "summary": "解绑提现方式",
+        "operationId": "unbindWithdrawMeansUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "payChannelId",
+            "in": "query",
+            "description": "payChannelId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "payMeansId",
+            "in": "query",
+            "description": "payMeansId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-channel/update": {
+      "post": {
+        "tags": [
+          "渠道配置"
+        ],
+        "summary": "修改渠道",
+        "operationId": "updateUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "payChannel",
+            "description": "payChannel",
+            "required": true,
+            "schema": {
+              "originalRef": "PayChannel",
+              "$ref": "#/definitions/PayChannel"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-channel/updateAccount": {
+      "post": {
+        "tags": [
+          "渠道配置"
+        ],
+        "summary": "编辑:修改渠道账号信息",
+        "operationId": "updateAccountUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "publicAccountVo",
+            "description": "publicAccountVo",
+            "required": true,
+            "schema": {
+              "originalRef": "渠道账号列表Vo",
+              "$ref": "#/definitions/渠道账号列表Vo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse",
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-means/delete": {
+      "post": {
+        "tags": [
+          "交易方式配置"
+        ],
+        "summary": "删除交易方式",
+        "operationId": "deleteUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "交易方式id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse",
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-means/deletePwdi": {
+      "post": {
+        "tags": [
+          "交易方式配置"
+        ],
+        "summary": "删除参数",
+        "operationId": "deletePwdiUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "参数id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-means/getPwdiList": {
+      "post": {
+        "tags": [
+          "交易方式配置"
+        ],
+        "summary": "交易方式下的参数分页",
+        "operationId": "getPwdiListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "交易方式id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "page",
+            "description": "page",
+            "required": true,
+            "schema": {
+              "originalRef": "BasePage",
+              "$ref": "#/definitions/BasePage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«IPage«参数Vo»»",
+              "$ref": "#/definitions/BaseResponse«IPage«参数Vo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-means/list": {
+      "post": {
+        "tags": [
+          "交易方式配置"
+        ],
+        "summary": "交易方式分页",
+        "operationId": "listUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "page",
+            "description": "page",
+            "required": true,
+            "schema": {
+              "originalRef": "BasePage",
+              "$ref": "#/definitions/BasePage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«IPage«交易方式列表Vo»»",
+              "$ref": "#/definitions/BaseResponse«IPage«交易方式列表Vo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-means/save": {
+      "post": {
+        "tags": [
+          "交易方式配置"
+        ],
+        "summary": "添加交易方式",
+        "operationId": "saveUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "payMeansListVo",
+            "description": "payMeansListVo",
+            "required": true,
+            "schema": {
+              "originalRef": "交易方式列表Vo",
+              "$ref": "#/definitions/交易方式列表Vo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-means/savePwdi": {
+      "post": {
+        "tags": [
+          "交易方式配置"
+        ],
+        "summary": "添加参数",
+        "operationId": "savePwdiUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "交易方式id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "pwdiVo",
+            "description": "pwdiVo",
+            "required": true,
+            "schema": {
+              "originalRef": "参数Vo",
+              "$ref": "#/definitions/参数Vo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-means/update": {
+      "post": {
+        "tags": [
+          "交易方式配置"
+        ],
+        "summary": "修改交易方式",
+        "operationId": "updateUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "payMeansListVo",
+            "description": "payMeansListVo",
+            "required": true,
+            "schema": {
+              "originalRef": "交易方式列表Vo",
+              "$ref": "#/definitions/交易方式列表Vo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-means/updatePwdi": {
+      "post": {
+        "tags": [
+          "交易方式配置"
+        ],
+        "summary": "修改参数",
+        "operationId": "updatePwdiUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pwdiVo",
+            "description": "pwdiVo",
+            "required": true,
+            "schema": {
+              "originalRef": "参数Vo",
+              "$ref": "#/definitions/参数Vo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-strategy/create": {
+      "post": {
+        "tags": [
+          "支付策略"
+        ],
+        "summary": "添加支付策略",
+        "operationId": "createUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "createPayStrategyTo",
+            "description": "createPayStrategyTo",
+            "required": true,
+            "schema": {
+              "originalRef": "CreatePayStrategyTo",
+              "$ref": "#/definitions/CreatePayStrategyTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-strategy/createPayMethod": {
+      "post": {
+        "tags": [
+          "支付策略"
+        ],
+        "summary": "添加支付方式",
+        "operationId": "createPayMethodUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "createPayMethodTo",
+            "description": "createPayMethodTo",
+            "required": true,
+            "schema": {
+              "originalRef": "CreatePayMethodTo",
+              "$ref": "#/definitions/CreatePayMethodTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-strategy/deleteById": {
+      "post": {
+        "tags": [
+          "支付策略"
+        ],
+        "summary": "删除",
+        "operationId": "deleteByIdUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-strategy/deletePayMethod": {
+      "post": {
+        "tags": [
+          "支付策略"
+        ],
+        "summary": "删除支付方式",
+        "operationId": "deletePayMethodUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deletePayMethodTo",
+            "description": "deletePayMethodTo",
+            "required": true,
+            "schema": {
+              "originalRef": "DeletePayMethodTo",
+              "$ref": "#/definitions/DeletePayMethodTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-strategy/getPayMethod": {
+      "get": {
+        "tags": [
+          "支付策略"
+        ],
+        "summary": "查看支付方式",
+        "operationId": "getPayMethodUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "current",
+            "in": "query",
+            "description": "current",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "size",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«IPage«GetPayMethodVo»»",
+              "$ref": "#/definitions/BaseResponse«IPage«GetPayMethodVo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-strategy/getPayStrategyAndAccount": {
+      "post": {
+        "tags": [
+          "支付策略"
+        ],
+        "summary": "分配交易账号",
+        "operationId": "getPayStrategyAndAccountUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getPayStrategyAndAccountTo",
+            "description": "getPayStrategyAndAccountTo",
+            "required": true,
+            "schema": {
+              "originalRef": "GetPayStrategyAndAccountTo",
+              "$ref": "#/definitions/GetPayStrategyAndAccountTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«GetPayStrategyAndAccountVo»",
+              "$ref": "#/definitions/BaseResponse«GetPayStrategyAndAccountVo»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-strategy/payStrategyList": {
+      "get": {
+        "tags": [
+          "支付策略"
+        ],
+        "summary": "支付策略列表",
+        "operationId": "payStrategyListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "current",
+            "in": "query",
+            "description": "current",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "size",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«IPage«PayStrategyListVo»»",
+              "$ref": "#/definitions/BaseResponse«IPage«PayStrategyListVo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-strategy/updateName": {
+      "post": {
+        "tags": [
+          "支付策略"
+        ],
+        "summary": "修改策略名称",
+        "operationId": "updateNameUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateNameTo",
+            "description": "updateNameTo",
+            "required": true,
+            "schema": {
+              "originalRef": "UpdateNameTo",
+              "$ref": "#/definitions/UpdateNameTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-strategy/updatePayMethod": {
+      "post": {
+        "tags": [
+          "支付策略"
+        ],
+        "summary": "修改支付方式",
+        "operationId": "updatePayMethodUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updatePayMethodTo",
+            "description": "updatePayMethodTo",
+            "required": true,
+            "schema": {
+              "originalRef": "UpdatePayMethodTo",
+              "$ref": "#/definitions/UpdatePayMethodTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-strategy/updatePayMethodState": {
+      "post": {
+        "tags": [
+          "支付策略"
+        ],
+        "summary": "/修改支付方式状态",
+        "operationId": "updatePayMethodStateUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updatePayMethodStateTo",
+            "description": "updatePayMethodStateTo",
+            "required": true,
+            "schema": {
+              "originalRef": "UpdatePayMethodStateTo",
+              "$ref": "#/definitions/UpdatePayMethodStateTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-type/bindingChannel": {
+      "post": {
+        "tags": [
+          "交易类型配置"
+        ],
+        "summary": "绑定渠道",
+        "operationId": "binDingChannelUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "payChannelId",
+            "in": "query",
+            "description": "payChannelId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "payTypeId",
+            "in": "query",
+            "description": "payTypeId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-type/deletePayType": {
+      "post": {
+        "tags": [
+          "交易类型配置"
+        ],
+        "summary": "删除交易类型",
+        "operationId": "delPayTypeUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse",
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-type/getChannelList": {
+      "post": {
+        "tags": [
+          "交易类型配置"
+        ],
+        "summary": "获取交易类型下所绑定的渠道分页",
+        "operationId": "getUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "交易类型id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "page",
+            "description": "page",
+            "required": true,
+            "schema": {
+              "originalRef": "BasePage",
+              "$ref": "#/definitions/BasePage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«IPage«渠道分页列表Vo»»",
+              "$ref": "#/definitions/BaseResponse«IPage«渠道分页列表Vo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-type/getChannelName": {
+      "get": {
+        "tags": [
+          "交易类型配置"
+        ],
+        "summary": "获取渠道名称列表",
+        "operationId": "getChannelNameUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«List«渠道id名称Vo»»",
+              "$ref": "#/definitions/BaseResponse«List«渠道id名称Vo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-type/list": {
+      "post": {
+        "tags": [
+          "交易类型配置"
+        ],
+        "summary": "交易类型分页",
+        "operationId": "listUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "page",
+            "description": "page",
+            "required": true,
+            "schema": {
+              "originalRef": "BasePage",
+              "$ref": "#/definitions/BasePage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«IPage«交易类型列表Vo»»",
+              "$ref": "#/definitions/BaseResponse«IPage«交易类型列表Vo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-type/save": {
+      "post": {
+        "tags": [
+          "交易类型配置"
+        ],
+        "summary": "添加交易类型",
+        "operationId": "saveUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "payType",
+            "description": "payType",
+            "required": true,
+            "schema": {
+              "originalRef": "PayType",
+              "$ref": "#/definitions/PayType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-type/unbindChannel": {
+      "post": {
+        "tags": [
+          "交易类型配置"
+        ],
+        "summary": "解绑渠道",
+        "operationId": "unbindChannelUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "payChannelId",
+            "in": "query",
+            "description": "payChannelId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "payTypeId",
+            "in": "query",
+            "description": "payTypeId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/pay-type/update": {
+      "post": {
+        "tags": [
+          "交易类型配置"
+        ],
+        "summary": "修改交易类型",
+        "operationId": "updateUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "payType",
+            "description": "payType",
+            "required": true,
+            "schema": {
+              "originalRef": "PayType",
+              "$ref": "#/definitions/PayType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdraw/getWithdrawalMethod": {
+      "post": {
+        "tags": [
+          "提现配置api"
+        ],
+        "summary": "弹出提现方式",
+        "operationId": "getWithdrawalMethodUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getWithdrawalMethodTo",
+            "description": "getWithdrawalMethodTo",
+            "required": true,
+            "schema": {
+              "originalRef": "GetWithdrawalMethodTo",
+              "$ref": "#/definitions/GetWithdrawalMethodTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«GetWithdrawalAccountVo»",
+              "$ref": "#/definitions/BaseResponse«GetWithdrawalAccountVo»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-audit/audit": {
+      "post": {
+        "tags": [
+          "提现审核api"
+        ],
+        "summary": "审核",
+        "operationId": "auditUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "auditTo",
+            "description": "auditTo",
+            "required": true,
+            "schema": {
+              "originalRef": "AuditTo",
+              "$ref": "#/definitions/AuditTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-audit/auditBatch": {
+      "post": {
+        "tags": [
+          "提现审核api"
+        ],
+        "summary": "批量审核",
+        "operationId": "auditBatchUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "auditBatchTO",
+            "description": "auditBatchTO",
+            "required": true,
+            "schema": {
+              "originalRef": "AuditBatchTo",
+              "$ref": "#/definitions/AuditBatchTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-audit/createWithdrawal": {
+      "post": {
+        "tags": [
+          "提现审核api"
+        ],
+        "summary": "提现申请",
+        "operationId": "createWithdrawalUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "createWithdrawalTO",
+            "description": "createWithdrawalTO",
+            "required": true,
+            "schema": {
+              "originalRef": "CreateWithdrawalTo",
+              "$ref": "#/definitions/CreateWithdrawalTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-audit/exportExcel": {
+      "post": {
+        "tags": [
+          "提现审核api"
+        ],
+        "summary": "导出数据",
+        "operationId": "exportExcelUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getWithdrawalAuditListTo",
+            "description": "getWithdrawalAuditListTo",
+            "required": true,
+            "schema": {
+              "originalRef": "GetWithdrawalAuditListTo",
+              "$ref": "#/definitions/GetWithdrawalAuditListTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-audit/getChannelByPayTypeAndPayMeans": {
+      "get": {
+        "tags": [
+          "提现审核api"
+        ],
+        "summary": "根据交易类型、支付方式得到渠道",
+        "operationId": "getChannelByPayTypeAndPayMeansUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "payMeansName",
+            "in": "query",
+            "description": "payMeansName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payTypeName",
+            "in": "query",
+            "description": "payTypeName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«List«PayChannel»»",
+              "$ref": "#/definitions/BaseResponse«List«PayChannel»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-audit/getWithdrawalAuditList": {
+      "post": {
+        "tags": [
+          "提现审核api"
+        ],
+        "summary": "列表查询",
+        "operationId": "getWithdrawalAuditListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getWithdrawalAuditListTo",
+            "description": "getWithdrawalAuditListTo",
+            "required": true,
+            "schema": {
+              "originalRef": "GetWithdrawalAuditListTo",
+              "$ref": "#/definitions/GetWithdrawalAuditListTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«IPage«WithdrawalAudit»»",
+              "$ref": "#/definitions/BaseResponse«IPage«WithdrawalAudit»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-config/ChannelNameAndId": {
+      "get": {
+        "tags": [
+          "提现方式配置"
+        ],
+        "summary": "添加界面获取渠道名称和id列表",
+        "operationId": "ChannelNameAndIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«List«渠道id名称Vo»»",
+              "$ref": "#/definitions/BaseResponse«List«渠道id名称Vo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-config/accountNameAndId": {
+      "get": {
+        "tags": [
+          "提现方式配置"
+        ],
+        "summary": "添加界面获取账号名称和id列表",
+        "operationId": "getAccountNameUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«List«账号id名称Vo»»",
+              "$ref": "#/definitions/BaseResponse«List«账号id名称Vo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-config/createWithdrawal": {
+      "post": {
+        "tags": [
+          "提现方式配置"
+        ],
+        "summary": "添加提现方式",
+        "operationId": "createWithdrawalUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "createWithdrawalConfigTo",
+            "description": "createWithdrawalConfigTo",
+            "required": true,
+            "schema": {
+              "originalRef": "CreateWithdrawalConfigTo",
+              "$ref": "#/definitions/CreateWithdrawalConfigTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-config/deleteById": {
+      "post": {
+        "tags": [
+          "提现方式配置"
+        ],
+        "summary": "删除提现方式配置类型",
+        "operationId": "deleteByIdUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "提现方式id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-config/deleteWithdrawal": {
+      "post": {
+        "tags": [
+          "提现方式配置"
+        ],
+        "summary": "删除支付方式",
+        "operationId": "deleteWithdrawalUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deletePayMethodTo",
+            "description": "deletePayMethodTo",
+            "required": true,
+            "schema": {
+              "originalRef": "DeletePayMethodTo",
+              "$ref": "#/definitions/DeletePayMethodTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-config/getPayTypeNameList": {
+      "get": {
+        "tags": [
+          "提现方式配置"
+        ],
+        "summary": "获取交易类型id与名称列表",
+        "operationId": "getPayTypeNameListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«List«交易类型名称Vo»»",
+              "$ref": "#/definitions/BaseResponse«List«交易类型名称Vo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-config/getWithdrawal": {
+      "post": {
+        "tags": [
+          "提现方式配置"
+        ],
+        "summary": "查看提现方式",
+        "operationId": "getWithdrawalUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "page",
+            "description": "page",
+            "required": true,
+            "schema": {
+              "originalRef": "BasePage",
+              "$ref": "#/definitions/BasePage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«IPage«GetWithdrawalVo»»",
+              "$ref": "#/definitions/BaseResponse«IPage«GetWithdrawalVo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-config/getWithdrawalConfigList": {
+      "post": {
+        "tags": [
+          "提现方式配置"
+        ],
+        "summary": "提现方式配置类型列表",
+        "operationId": "payStrategyListUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "page",
+            "description": "page",
+            "required": true,
+            "schema": {
+              "originalRef": "BasePage",
+              "$ref": "#/definitions/BasePage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«IPage«提现方式配置列表Vo»»",
+              "$ref": "#/definitions/BaseResponse«IPage«提现方式配置列表Vo»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-config/payNameAndId": {
+      "get": {
+        "tags": [
+          "提现方式配置"
+        ],
+        "summary": "添加界面获取提现方式名称和id列表",
+        "operationId": "getWithdrawMeansNameUsingGET_1",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«List«交易方式id名称Vo»»",
+              "$ref": "#/definitions/BaseResponse«List«交易方式id名称Vo»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-config/save": {
+      "post": {
+        "tags": [
+          "提现方式配置"
+        ],
+        "summary": "添加提现方式配置类型",
+        "operationId": "saveUsingPOST_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "WithdrawalConfigTo",
+            "description": "WithdrawalConfigTo",
+            "required": true,
+            "schema": {
+              "originalRef": "WithdrawalConfigTo",
+              "$ref": "#/definitions/WithdrawalConfigTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-config/updateWithdrawal": {
+      "post": {
+        "tags": [
+          "提现方式配置"
+        ],
+        "summary": "修改提现方式",
+        "operationId": "updateWithdrawalUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateWithdrawalConfigTo",
+            "description": "updateWithdrawalConfigTo",
+            "required": true,
+            "schema": {
+              "originalRef": "UpdateWithdrawalConfigTo",
+              "$ref": "#/definitions/UpdateWithdrawalConfigTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-config/updateWithdrawalState": {
+      "post": {
+        "tags": [
+          "提现方式配置"
+        ],
+        "summary": "/修改提现方式状态",
+        "operationId": "updateWithdrawalStateUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updatePayMethodStateTo",
+            "description": "updatePayMethodStateTo",
+            "required": true,
+            "schema": {
+              "originalRef": "UpdatePayMethodStateTo",
+              "$ref": "#/definitions/UpdatePayMethodStateTo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«boolean»",
+              "$ref": "#/definitions/BaseResponse«boolean»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-rule/list": {
+      "get": {
+        "tags": [
+          "提现规则"
+        ],
+        "summary": "提现规则:等级提现与等级提现特权列表",
+        "operationId": "listUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse«提现规则列表Vo»",
+              "$ref": "#/definitions/BaseResponse«提现规则列表Vo»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    },
+    "/withdrawal-rule/saveAnddel": {
+      "post": {
+        "tags": [
+          "提现规则"
+        ],
+        "summary": "大保存:添加删除二合一",
+        "operationId": "saveAnddelUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "withdrawalRuleVo",
+            "description": "withdrawalRuleVo",
+            "required": true,
+            "schema": {
+              "originalRef": "提现规则列表Vo",
+              "$ref": "#/definitions/提现规则列表Vo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "BaseResponse",
+              "$ref": "#/definitions/BaseResponse"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-order": "2147483647"
+      }
+    }
+  },
+  "definitions": {
+    "AuditBatchTo": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "description": "id集合",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "isPassed": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否通过: 1通过 2未通过"
+        }
+      },
+      "title": "AuditBatchTo"
+    },
+    "AuditTo": {
+      "type": "object",
+      "properties": {
+        "accountName": {
+          "type": "string",
+          "description": "账号名称"
+        },
+        "channelName": {
+          "type": "string",
+          "description": "渠道名称"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "id"
+        },
+        "isOld": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否原方式通过：1是 2否"
+        },
+        "isPass": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否通过:1通过 2未通过"
+        }
+      },
+      "title": "AuditTo"
+    },
+    "BasePage": {
+      "type": "object",
+      "required": [
+        "current",
+        "size"
+      ],
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1,
+          "description": "当前页"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64",
+          "example": 10,
+          "description": "页显示条数"
+        }
+      },
+      "title": "BasePage"
+    },
+    "BaseResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "object"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse"
+    },
+    "BaseResponse«GetPayStrategyAndAccountVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "GetPayStrategyAndAccountVo",
+          "$ref": "#/definitions/GetPayStrategyAndAccountVo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«GetPayStrategyAndAccountVo»"
+    },
+    "BaseResponse«GetWithdrawalAccountVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "GetWithdrawalAccountVo",
+          "$ref": "#/definitions/GetWithdrawalAccountVo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«GetWithdrawalAccountVo»"
+    },
+    "BaseResponse«IPage«GetPayMethodVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "IPage«GetPayMethodVo»",
+          "$ref": "#/definitions/IPage«GetPayMethodVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«GetPayMethodVo»»"
+    },
+    "BaseResponse«IPage«GetWithdrawalVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "IPage«GetWithdrawalVo»",
+          "$ref": "#/definitions/IPage«GetWithdrawalVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«GetWithdrawalVo»»"
+    },
+    "BaseResponse«IPage«PayStrategyListVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "IPage«PayStrategyListVo»",
+          "$ref": "#/definitions/IPage«PayStrategyListVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«PayStrategyListVo»»"
+    },
+    "BaseResponse«IPage«SearchPayOrderListVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "IPage«SearchPayOrderListVo»",
+          "$ref": "#/definitions/IPage«SearchPayOrderListVo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«SearchPayOrderListVo»»"
+    },
+    "BaseResponse«IPage«WithdrawalAudit»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "IPage«WithdrawalAudit»",
+          "$ref": "#/definitions/IPage«WithdrawalAudit»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«WithdrawalAudit»»"
+    },
+    "BaseResponse«IPage«交易方式Vo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "IPage«交易方式Vo»",
+          "$ref": "#/definitions/IPage«交易方式Vo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«交易方式Vo»»"
+    },
+    "BaseResponse«IPage«交易方式列表Vo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "IPage«交易方式列表Vo»",
+          "$ref": "#/definitions/IPage«交易方式列表Vo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«交易方式列表Vo»»"
+    },
+    "BaseResponse«IPage«交易类型列表Vo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "IPage«交易类型列表Vo»",
+          "$ref": "#/definitions/IPage«交易类型列表Vo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«交易类型列表Vo»»"
+    },
+    "BaseResponse«IPage«参数Vo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "IPage«参数Vo»",
+          "$ref": "#/definitions/IPage«参数Vo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«参数Vo»»"
+    },
+    "BaseResponse«IPage«提现方式配置列表Vo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "IPage«提现方式配置列表Vo»",
+          "$ref": "#/definitions/IPage«提现方式配置列表Vo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«提现方式配置列表Vo»»"
+    },
+    "BaseResponse«IPage«渠道分页列表Vo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "IPage«渠道分页列表Vo»",
+          "$ref": "#/definitions/IPage«渠道分页列表Vo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«渠道分页列表Vo»»"
+    },
+    "BaseResponse«IPage«渠道账号列表Vo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "IPage«渠道账号列表Vo»",
+          "$ref": "#/definitions/IPage«渠道账号列表Vo»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«IPage«渠道账号列表Vo»»"
+    },
+    "BaseResponse«List«PayChannel»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "PayChannel",
+            "$ref": "#/definitions/PayChannel"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«PayChannel»»"
+    },
+    "BaseResponse«List«WalletDetails»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "WalletDetails",
+            "$ref": "#/definitions/WalletDetails"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«WalletDetails»»"
+    },
+    "BaseResponse«List«交易方式id名称Vo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "交易方式id名称Vo",
+            "$ref": "#/definitions/交易方式id名称Vo"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«交易方式id名称Vo»»"
+    },
+    "BaseResponse«List«交易类型名称Vo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "交易类型名称Vo",
+            "$ref": "#/definitions/交易类型名称Vo"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«交易类型名称Vo»»"
+    },
+    "BaseResponse«List«渠道id名称Vo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "渠道id名称Vo",
+            "$ref": "#/definitions/渠道id名称Vo"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«渠道id名称Vo»»"
+    },
+    "BaseResponse«List«账号id名称Vo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "账号id名称Vo",
+            "$ref": "#/definitions/账号id名称Vo"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«List«账号id名称Vo»»"
+    },
+    "BaseResponse«UserWithdrawalAmount»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "UserWithdrawalAmount",
+          "$ref": "#/definitions/UserWithdrawalAmount"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«UserWithdrawalAmount»"
+    },
+    "BaseResponse«boolean»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "boolean"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«boolean»"
+    },
+    "BaseResponse«提现规则列表Vo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "提现规则列表Vo",
+          "$ref": "#/definitions/提现规则列表Vo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«提现规则列表Vo»"
+    },
+    "BaseResponse«渠道账号列表Vo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "渠道账号列表Vo",
+          "$ref": "#/definitions/渠道账号列表Vo"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "BaseResponse«渠道账号列表Vo»"
+    },
+    "CreateGamePayOrderTo": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "支付金额"
+        },
+        "couponId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优惠劵id"
+        },
+        "couponName": {
+          "type": "string",
+          "description": "优惠劵名称"
+        },
+        "couponUserId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "用户-优惠劵关系表id"
+        },
+        "currency": {
+          "type": "string",
+          "description": "币种"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "游戏id"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "游戏名称"
+        },
+        "memberDiscount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "会员折扣,单位%"
+        },
+        "payTypeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付类型id"
+        },
+        "payTypeName": {
+          "type": "string",
+          "description": "支付类型名称"
+        },
+        "phone": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "rechargeAmount": {
+          "type": "number",
+          "description": "应付金额"
+        },
+        "trumpetId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "小号id"
+        },
+        "trumpetName": {
+          "type": "string",
+          "description": "小号名称"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户id"
+        }
+      },
+      "title": "CreateGamePayOrderTo"
+    },
+    "CreatePayMethodTo": {
+      "type": "object",
+      "properties": {
+        "params": {
+          "type": "string",
+          "description": "参数"
+        },
+        "payAccountId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "账号id"
+        },
+        "payChannelId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "渠道id"
+        },
+        "payMeansId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付方式id"
+        },
+        "payStrategyId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "策略id"
+        }
+      },
+      "title": "CreatePayMethodTo"
+    },
+    "CreatePayOrderTo": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "支付金额"
+        },
+        "currency": {
+          "type": "string",
+          "description": "币种"
+        },
+        "orderType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "订单类型：1月度会员 2季度会员 3年度会员"
+        },
+        "payTypeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付类型id"
+        },
+        "payTypeName": {
+          "type": "string",
+          "description": "支付类型名称"
+        },
+        "phone": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户id"
+        }
+      },
+      "title": "CreatePayOrderTo"
+    },
+    "CreatePayStrategyTo": {
+      "type": "object",
+      "properties": {
+        "payStrategyName": {
+          "type": "string",
+          "description": "策略名称"
+        },
+        "payStrategyType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "策略类型：1随机策略 2轮询策略"
+        },
+        "payTypeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "交易类型id"
+        }
+      },
+      "title": "CreatePayStrategyTo"
+    },
+    "CreateWithdrawalConfigTo": {
+      "type": "object",
+      "properties": {
+        "params": {
+          "type": "string",
+          "description": "参数"
+        },
+        "payAccountId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "账号id"
+        },
+        "payChannelId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "渠道id"
+        },
+        "payMeansId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付方式id"
+        },
+        "payStrategyId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "策略id"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优先级"
+        }
+      },
+      "title": "CreateWithdrawalConfigTo"
+    },
+    "CreateWithdrawalTo": {
+      "type": "object",
+      "properties": {
+        "applyAmount": {
+          "type": "number",
+          "description": "申请提现金额"
+        },
+        "phone": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "transactionType": {
+          "type": "string",
+          "description": "交易类型"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户id"
+        },
+        "userInfo": {
+          "type": "string",
+          "description": "用户提现信息"
+        },
+        "vipLevel": {
+          "type": "integer",
+          "format": "int32",
+          "description": "用户等级"
+        },
+        "withdrawalAccount": {
+          "type": "string",
+          "description": "提现账号"
+        },
+        "withdrawalChannel": {
+          "type": "string",
+          "description": "提现渠道"
+        },
+        "withdrawalMethod": {
+          "type": "string",
+          "description": "提现方式"
+        }
+      },
+      "title": "CreateWithdrawalTo"
+    },
+    "DeletePayMethodTo": {
+      "type": "object",
+      "properties": {
+        "payAccountId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "账号id"
+        },
+        "payChannelId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "渠道id"
+        },
+        "payMeansId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付方式id"
+        },
+        "payStrategyId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "策略id"
+        }
+      },
+      "title": "DeletePayMethodTo"
+    },
+    "GetPayMethodVo": {
+      "type": "object",
+      "properties": {
+        "accountState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "账户状态 1正常 2冻结"
+        },
+        "freezeTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "冻结时间"
+        },
+        "params": {
+          "type": "string",
+          "description": "参数"
+        },
+        "payAccountId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "账号id"
+        },
+        "payAccountName": {
+          "type": "string",
+          "description": "账号名称"
+        },
+        "payChannelId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "渠道id"
+        },
+        "payChannelName": {
+          "type": "string",
+          "description": "渠道名称"
+        },
+        "payMeansId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付方式id"
+        },
+        "payMeansName": {
+          "type": "string",
+          "description": "支付方式名称"
+        },
+        "payRestricts": {
+          "type": "number",
+          "description": "支付上限"
+        },
+        "payStrategyId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "策略id"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态 1开启 2关闭"
+        }
+      },
+      "title": "GetPayMethodVo"
+    },
+    "GetPayStrategyAndAccountTo": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "支付金额"
+        },
+        "currency": {
+          "type": "string",
+          "description": "币种"
+        },
+        "payTypeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付类型id"
+        },
+        "payTypeName": {
+          "type": "string",
+          "description": "支付类型名称"
+        }
+      },
+      "title": "GetPayStrategyAndAccountTo"
+    },
+    "GetPayStrategyAndAccountVo": {
+      "type": "object",
+      "properties": {
+        "payAccountId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "账号id"
+        },
+        "payChannelId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "渠道id"
+        },
+        "payMeansId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付方式id"
+        },
+        "payTypeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "类型id"
+        },
+        "payTypeName": {
+          "type": "string",
+          "description": "类型名称"
+        },
+        "publicAccount": {
+          "description": "账号信息",
+          "originalRef": "PublicAccount",
+          "$ref": "#/definitions/PublicAccount"
+        }
+      },
+      "title": "GetPayStrategyAndAccountVo"
+    },
+    "GetWithdrawalAccountVo": {
+      "type": "object",
+      "properties": {
+        "accountName": {
+          "type": "string",
+          "description": "账号名称"
+        },
+        "accountParams": {
+          "type": "string",
+          "description": "字段配置json 格式"
+        },
+        "accountRemake": {
+          "type": "string",
+          "description": "备注"
+        },
+        "currency": {
+          "type": "string",
+          "description": "币种"
+        },
+        "params": {
+          "type": "string",
+          "description": "参数"
+        },
+        "payAccountId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "账号id"
+        },
+        "payChannelId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "渠道id"
+        },
+        "payMeansId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "提现方式id"
+        },
+        "payRestricts": {
+          "type": "number",
+          "description": "支付上限"
+        },
+        "payTypeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付类型id"
+        },
+        "payTypeName": {
+          "type": "string",
+          "description": "支付类型名称"
+        },
+        "payWithdrawDealInfos": {
+          "type": "array",
+          "description": "提现参数集合",
+          "items": {
+            "originalRef": "PayWithdrawDealInfo",
+            "$ref": "#/definitions/PayWithdrawDealInfo"
+          }
+        },
+        "withdrawRestricts": {
+          "type": "number",
+          "description": "提现上限"
+        },
+        "withdrawalConfigId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "提现配置id"
+        }
+      },
+      "title": "GetWithdrawalAccountVo"
+    },
+    "GetWithdrawalAuditListTo": {
+      "type": "object",
+      "properties": {
+        "applyEndTime": {
+          "type": "string",
+          "description": "申请结束时间"
+        },
+        "applyStartTime": {
+          "type": "string",
+          "description": "申请开始时间"
+        },
+        "approvalStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "审核状态：1待审核 2已通过 3未通过 4异常"
+        },
+        "auditEndTime": {
+          "type": "string",
+          "description": "审核结束时间"
+        },
+        "auditStartTime": {
+          "type": "string",
+          "description": "审核开始时间"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "description": "当前页数"
+        },
+        "orderId": {
+          "type": "string",
+          "description": "平台订单号"
+        },
+        "orderNum": {
+          "type": "string",
+          "description": "渠道订单号"
+        },
+        "phone": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64",
+          "description": "页大小"
+        },
+        "transactionType": {
+          "type": "string",
+          "description": "交易类型"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户id"
+        },
+        "withdrawalStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "提现状态：1处理中 2到账 3失败 4异常"
+        }
+      },
+      "title": "GetWithdrawalAuditListTo"
+    },
+    "GetWithdrawalMethodTo": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "金额"
+        },
+        "currency": {
+          "type": "string",
+          "description": "币种"
+        },
+        "payTypeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "交易类型id"
+        }
+      },
+      "title": "GetWithdrawalMethodTo"
+    },
+    "GetWithdrawalVo": {
+      "type": "object",
+      "properties": {
+        "accountState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "账户状态 1正常 2冻结"
+        },
+        "freezeTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "冻结时间"
+        },
+        "params": {
+          "type": "string",
+          "description": "参数"
+        },
+        "payAccountId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "账号id"
+        },
+        "payAccountName": {
+          "type": "string",
+          "description": "账号名称"
+        },
+        "payChannelId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "渠道id"
+        },
+        "payChannelName": {
+          "type": "string",
+          "description": "渠道名称"
+        },
+        "payMeansId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付方式id"
+        },
+        "payMeansName": {
+          "type": "string",
+          "description": "支付方式名称"
+        },
+        "payStrategyId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "策略id"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优先级"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态 1开启 2关闭"
+        },
+        "withdrawRestricts": {
+          "type": "number",
+          "description": "提现上限"
+        }
+      },
+      "title": "GetWithdrawalVo"
+    },
+    "IPage«GetPayMethodVo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "GetPayMethodVo",
+            "$ref": "#/definitions/GetPayMethodVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«GetPayMethodVo»"
+    },
+    "IPage«GetWithdrawalVo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "GetWithdrawalVo",
+            "$ref": "#/definitions/GetWithdrawalVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«GetWithdrawalVo»"
+    },
+    "IPage«PayStrategyListVo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "PayStrategyListVo",
+            "$ref": "#/definitions/PayStrategyListVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«PayStrategyListVo»"
+    },
+    "IPage«SearchPayOrderListVo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "SearchPayOrderListVo",
+            "$ref": "#/definitions/SearchPayOrderListVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«SearchPayOrderListVo»"
+    },
+    "IPage«WithdrawalAudit»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "WithdrawalAudit",
+            "$ref": "#/definitions/WithdrawalAudit"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«WithdrawalAudit»"
+    },
+    "IPage«交易方式Vo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "交易方式Vo",
+            "$ref": "#/definitions/交易方式Vo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«交易方式Vo»"
+    },
+    "IPage«交易方式列表Vo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "交易方式列表Vo",
+            "$ref": "#/definitions/交易方式列表Vo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«交易方式列表Vo»"
+    },
+    "IPage«交易类型列表Vo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "交易类型列表Vo",
+            "$ref": "#/definitions/交易类型列表Vo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«交易类型列表Vo»"
+    },
+    "IPage«参数Vo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "参数Vo",
+            "$ref": "#/definitions/参数Vo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«参数Vo»"
+    },
+    "IPage«提现方式配置列表Vo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "提现方式配置列表Vo",
+            "$ref": "#/definitions/提现方式配置列表Vo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«提现方式配置列表Vo»"
+    },
+    "IPage«渠道分页列表Vo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "渠道分页列表Vo",
+            "$ref": "#/definitions/渠道分页列表Vo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«渠道分页列表Vo»"
+    },
+    "IPage«渠道账号列表Vo»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "渠道账号列表Vo",
+            "$ref": "#/definitions/渠道账号列表Vo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«渠道账号列表Vo»"
+    },
+    "PayChannel": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "ident": {
+          "type": "string",
+          "description": "标识"
+        },
+        "name": {
+          "type": "string",
+          "description": "渠道名称"
+        }
+      },
+      "title": "PayChannel"
+    },
+    "PayStrategyListVo": {
+      "type": "object",
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "payMethodCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付方式数量"
+        },
+        "payStrategyName": {
+          "type": "string",
+          "description": "策略名称"
+        },
+        "payStrategyType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "策略类型 1随机策略 2轮询策略"
+        },
+        "payTypeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "交易类型id"
+        },
+        "payTypeName": {
+          "type": "string",
+          "description": "交易类型名称"
+        },
+        "takeEffectMethodCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "生效支付方式数量"
+        }
+      },
+      "title": "PayStrategyListVo"
+    },
+    "PayType": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "icon": {
+          "type": "string",
+          "description": "图标"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "ident": {
+          "type": "string",
+          "description": "标识"
+        },
+        "payTypeName": {
+          "type": "string",
+          "description": "交易类型名称"
+        }
+      },
+      "title": "PayType"
+    },
+    "PayWithdrawDealInfo": {
+      "type": "object",
+      "properties": {
+        "accountId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "账号id"
+        },
+        "channelId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "渠道id"
+        },
+        "copyWriter": {
+          "type": "string",
+          "description": "提示文案"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dealId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付方式id"
+        },
+        "errorMessage": {
+          "type": "string",
+          "description": "错误提示"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键id"
+        },
+        "names": {
+          "type": "string",
+          "description": "名称"
+        },
+        "params": {
+          "type": "string",
+          "description": "字段"
+        },
+        "regularExpression": {
+          "type": "string"
+        },
+        "shows": {
+          "type": "string",
+          "description": "输入提示"
+        },
+        "types": {
+          "type": "integer",
+          "format": "int32",
+          "description": "类别 0必填 1选填"
+        }
+      },
+      "title": "PayWithdrawDealInfo"
+    },
+    "PublicAccount": {
+      "type": "object",
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "freezeTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "params": {
+          "type": "string"
+        },
+        "payRestricts": {
+          "type": "number"
+        },
+        "remake": {
+          "type": "string"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "withdrawRestricts": {
+          "type": "number"
+        }
+      },
+      "title": "PublicAccount"
+    },
+    "SearchPayOrderListTo": {
+      "type": "object",
+      "required": [
+        "current",
+        "size"
+      ],
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1,
+          "description": "当前页"
+        },
+        "endTime": {
+          "type": "string",
+          "description": "结束时间"
+        },
+        "gameOrderId": {
+          "type": "string",
+          "description": "游戏订单号"
+        },
+        "id": {
+          "type": "string",
+          "description": "平台订单号"
+        },
+        "orderState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "订单状态：1已下单 2已付款"
+        },
+        "orderType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "订单类型：1月度会员 2季度会员 3年度会员"
+        },
+        "payChannelNum": {
+          "type": "string",
+          "description": "第三方订单号"
+        },
+        "payTypeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付方式id"
+        },
+        "phone": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "purchaseType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "购买类型：1手动购买 2自动续费"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64",
+          "example": 10,
+          "description": "页显示条数"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "开始时间"
+        },
+        "trumpetName": {
+          "type": "string",
+          "description": "小号名称"
+        },
+        "type": {
+          "type": "integer",
+          "format": "int32",
+          "description": "类型：1平台列表 2游戏列表"
+        },
+        "uid": {
+          "type": "string",
+          "description": "用户id"
+        }
+      },
+      "title": "SearchPayOrderListTo"
+    },
+    "SearchPayOrderListVo": {
+      "type": "object",
+      "properties": {
+        "actualAmount": {
+          "type": "number",
+          "description": "金额"
+        },
+        "couponName": {
+          "type": "string",
+          "description": "优惠劵使用"
+        },
+        "gameName": {
+          "type": "string",
+          "description": "所属游戏名称"
+        },
+        "gameOrderId": {
+          "type": "string",
+          "description": "游戏订单号"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "平台订单号"
+        },
+        "memberDiscount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "会员折扣"
+        },
+        "orderState": {
+          "type": "integer",
+          "format": "int32",
+          "description": "订单状态：1已下单 2已付款"
+        },
+        "orderType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "订单类型：1月度会员 2季度会员 3年度会员"
+        },
+        "payChannelNum": {
+          "type": "string",
+          "description": "第三方订单号"
+        },
+        "payTypeName": {
+          "type": "string",
+          "description": "支付方式"
+        },
+        "phone": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "purchaseType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "购买类型：1手动购买 2自动续费"
+        },
+        "rechargeAmount": {
+          "type": "number",
+          "description": "充值金额"
+        },
+        "transactionTime": {
+          "type": "string",
+          "description": "交易时间"
+        },
+        "trumpetName": {
+          "type": "string",
+          "description": "小号名称"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户ID"
+        }
+      },
+      "title": "SearchPayOrderListVo"
+    },
+    "UpdateNameTo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "payStrategyName": {
+          "type": "string",
+          "description": "策略名称"
+        }
+      },
+      "title": "UpdateNameTo"
+    },
+    "UpdatePayMethodStateTo": {
+      "type": "object",
+      "properties": {
+        "payAccountId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "账号id"
+        },
+        "payChannelId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "渠道id"
+        },
+        "payMeansId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付方式id"
+        },
+        "payStrategyId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "策略id"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态 1开启 2关闭"
+        }
+      },
+      "title": "UpdatePayMethodStateTo"
+    },
+    "UpdatePayMethodTo": {
+      "type": "object",
+      "properties": {
+        "oldPayAccountId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "原账号id"
+        },
+        "oldPayChannelId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "原渠道id"
+        },
+        "oldPayMeansId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "原支付方式id"
+        },
+        "oldPayStrategyId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "策略id"
+        },
+        "params": {
+          "type": "string",
+          "description": "参数"
+        },
+        "payAccountId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "账号id"
+        },
+        "payChannelId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "渠道id"
+        },
+        "payMeansId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付方式id"
+        }
+      },
+      "title": "UpdatePayMethodTo"
+    },
+    "UpdateWithdrawalConfigTo": {
+      "type": "object",
+      "properties": {
+        "oldPayAccountId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "原账号id"
+        },
+        "oldPayChannelId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "原渠道id"
+        },
+        "oldPayMeansId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "原支付方式id"
+        },
+        "oldPayStrategyId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "策略id"
+        },
+        "params": {
+          "type": "string",
+          "description": "参数"
+        },
+        "payAccountId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "账号id"
+        },
+        "payChannelId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "渠道id"
+        },
+        "payMeansId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付方式id"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优先级"
+        }
+      },
+      "title": "UpdateWithdrawalConfigTo"
+    },
+    "UserWithdrawalAmount": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "已提现金额"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户id"
+        },
+        "walletBalance": {
+          "type": "number",
+          "description": "钱包余额"
+        }
+      },
+      "title": "UserWithdrawalAmount"
+    },
+    "WalletDetails": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "金额"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "icon": {
+          "type": "string",
+          "description": "图标"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "recordName": {
+          "type": "string",
+          "description": "记录名称"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "审核状态：1待审核 2已通过 3未通过 4异常"
+        },
+        "type": {
+          "type": "integer",
+          "format": "int32",
+          "description": "类型 1转入 2转出"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户名称"
+        },
+        "withdrawalAuditId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "提现审核表id"
+        }
+      },
+      "title": "WalletDetails"
+    },
+    "WithdrawalAmountConfig": {
+      "type": "object",
+      "required": [
+        "amount"
+      ],
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "提现金额"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "WithdrawalAmountConfig"
+    },
+    "WithdrawalAudit": {
+      "type": "object",
+      "properties": {
+        "actualAmount": {
+          "type": "number",
+          "description": "实际到账金额"
+        },
+        "amount": {
+          "type": "number",
+          "description": "已提现金额"
+        },
+        "applyAmount": {
+          "type": "number",
+          "description": "申请金额"
+        },
+        "approvalStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "审核状态：1待审核 2已通过 3未通过 4异常"
+        },
+        "auditTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "审核时间"
+        },
+        "auditUser": {
+          "type": "integer",
+          "format": "int64",
+          "description": "审核人"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "主键id"
+        },
+        "orderId": {
+          "type": "string",
+          "description": "平台订单号"
+        },
+        "orderNum": {
+          "type": "string",
+          "description": "提现订单号"
+        },
+        "phone": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "transactionType": {
+          "type": "string",
+          "description": "交易类型"
+        },
+        "uid": {
+          "type": "integer",
+          "format": "int64",
+          "description": "用户id"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改时间"
+        },
+        "userInfo": {
+          "type": "string",
+          "description": "用户提现信息"
+        },
+        "withdrawalAccount": {
+          "type": "string",
+          "description": "提现账号"
+        },
+        "withdrawalChannel": {
+          "type": "string",
+          "description": "提现渠道"
+        },
+        "withdrawalMethod": {
+          "type": "string",
+          "description": "提现方式"
+        },
+        "withdrawalStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "提现状态：1处理中 2到账 3失败 4异常"
+        }
+      },
+      "title": "WithdrawalAudit"
+    },
+    "WithdrawalConfigTo": {
+      "type": "object",
+      "properties": {
+        "payTypeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "类型id"
+        },
+        "payTypeName": {
+          "type": "string",
+          "description": "类型名称"
+        }
+      },
+      "title": "WithdrawalConfigTo"
+    },
+    "WithdrawalFeeSchedule": {
+      "type": "object",
+      "required": [
+        "handlingFee",
+        "vipLevel",
+        "withdrawalTimes"
+      ],
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "handlingFee": {
+          "type": "number",
+          "description": "手续费"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "vipLevel": {
+          "type": "integer",
+          "format": "int32",
+          "description": "会员等级"
+        },
+        "withdrawalTimes": {
+          "type": "integer",
+          "format": "int32",
+          "description": "每天可提现次数"
+        }
+      },
+      "title": "WithdrawalFeeSchedule"
+    },
+    "交易方式Vo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "ident": {
+          "type": "string",
+          "description": "标识"
+        },
+        "payMeansName": {
+          "type": "string",
+          "description": "交易方式名称"
+        }
+      },
+      "title": "交易方式Vo"
+    },
+    "交易方式id名称Vo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "payMeansName": {
+          "type": "string",
+          "description": "交易方式名称"
+        }
+      },
+      "title": "交易方式id名称Vo"
+    },
+    "交易方式列表Vo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "ident": {
+          "type": "string",
+          "description": "标识"
+        },
+        "payMeansName": {
+          "type": "string",
+          "description": "交易方式名称"
+        },
+        "transactionType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "交易类型：1支付 2提现"
+        }
+      },
+      "title": "交易方式列表Vo"
+    },
+    "交易类型列表Vo": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "type": "string",
+          "description": "图标"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "ID"
+        },
+        "ident": {
+          "type": "string",
+          "description": "标识"
+        },
+        "payTypeName": {
+          "type": "string",
+          "description": "交易类型名称"
+        }
+      },
+      "title": "交易类型列表Vo"
+    },
+    "交易类型名称Vo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "交易类型id"
+        },
+        "payTypeName": {
+          "type": "string",
+          "description": "交易类型名称"
+        }
+      },
+      "title": "交易类型名称Vo"
+    },
+    "参数Vo": {
+      "type": "object",
+      "properties": {
+        "copyWriter": {
+          "type": "string",
+          "description": "提示文案"
+        },
+        "errorMessage": {
+          "type": "string",
+          "description": "错误提示"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键id"
+        },
+        "names": {
+          "type": "string",
+          "description": "名称"
+        },
+        "params": {
+          "type": "string",
+          "description": "字段"
+        },
+        "regularExpression": {
+          "type": "string",
+          "description": "正则表达式"
+        },
+        "shows": {
+          "type": "string",
+          "description": "输入提示"
+        },
+        "types": {
+          "type": "integer",
+          "format": "int32",
+          "description": "类别 0必填 1选填"
+        }
+      },
+      "title": "参数Vo"
+    },
+    "提现方式配置列表Vo": {
+      "type": "object",
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键id"
+        },
+        "payTypeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "提现类型id"
+        },
+        "payTypeName": {
+          "type": "string",
+          "description": "提现类型名称"
+        },
+        "withdrawalWayCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "提现方式配置列表Vo"
+    },
+    "提现规则列表Vo": {
+      "type": "object",
+      "required": [
+        "withdrawalAmountConfigs",
+        "withdrawalFeeSchedules"
+      ],
+      "properties": {
+        "withdrawalAmountConfigs": {
+          "type": "array",
+          "description": "提现金额列表对象",
+          "items": {
+            "originalRef": "WithdrawalAmountConfig",
+            "$ref": "#/definitions/WithdrawalAmountConfig"
+          }
+        },
+        "withdrawalFeeSchedules": {
+          "type": "array",
+          "description": "会员提现列表对象",
+          "items": {
+            "originalRef": "WithdrawalFeeSchedule",
+            "$ref": "#/definitions/WithdrawalFeeSchedule"
+          }
+        }
+      },
+      "title": "提现规则列表Vo"
+    },
+    "渠道id名称Vo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "渠道id"
+        },
+        "name": {
+          "type": "string",
+          "description": "渠道名称"
+        }
+      },
+      "title": "渠道id名称Vo"
+    },
+    "渠道分页列表Vo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "渠道id"
+        },
+        "ident": {
+          "type": "string",
+          "description": "标识"
+        },
+        "name": {
+          "type": "string",
+          "description": "渠道名称"
+        }
+      },
+      "title": "渠道分页列表Vo"
+    },
+    "渠道账号列表Vo": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "currency": {
+          "type": "string",
+          "description": "币种"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "name": {
+          "type": "string",
+          "description": "账号名称"
+        },
+        "paramsList": {
+          "type": "string",
+          "description": "字段配置json 格式"
+        },
+        "payRestricts": {
+          "type": "number",
+          "description": "支付上限"
+        },
+        "withdrawRestricts": {
+          "type": "number",
+          "description": "提现上限"
+        }
+      },
+      "title": "渠道账号列表Vo"
+    },
+    "账号id名称Vo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "账号id"
+        },
+        "name": {
+          "type": "string",
+          "description": "账号名称"
+        }
+      },
+      "title": "账号id名称Vo"
+    }
+  }
+}

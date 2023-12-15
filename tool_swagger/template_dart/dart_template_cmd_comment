@@ -1,0 +1,7 @@
+  //  {{cmd_dict.pathKey}}
+  //  {{cmd_dict.tags}}
+  //  {{cmd_dict.summary}}
+    {%- for param in cmd_dict.allParams %}
+  //  @param {{param.realname}} ({{param.type}}) (required: {{param.required}}) {{param.realdes}}{% endfor %}
+  //  response: {{cmd_dict.response}}
+  //  response class: {{cmd_dict.response_class_name}} (取里面的data)

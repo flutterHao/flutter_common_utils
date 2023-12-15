@@ -1,0 +1,52 @@
+// {{origin}}
+${{class_name}}FromJson(Map<String, dynamic> json) {
+  {{class_name}} obj = {{class_name}}();
+  {%- for key in properties %}
+  {%- if properties[key].type == 'object' %}
+  final Map<String, dynamic>? {{properties[key].realkey}} = jsonConvert.convert<Map<String, dynamic>>(json['{{properties[key].realkey}}']); // object
+  if ({{properties[key].realkey}} != null) { obj.{{properties[key].realkey}} = json["{{properties[key].realkey}}"]; }
+  {%- elif properties[key].type == '' %}
+	final {{properties[key].refClass}}? {{properties[key].realkey}} = jsonConvert.convert<{{properties[key].refClass}}>(json['{{properties[key].realkey}}']); // empty type {{properties[key].refClass}}
+	if ({{properties[key].realkey}} != null) { obj.{{properties[key].realkey}} = {{properties[key].realkey}}; }
+  {%- elif properties[key].type == 'None' %}
+  // {{properties[key].refClass}} {{properties[key].realkey}}; // None
+  {%- elif properties[key].type == 'integer' and properties[key].format == 'int64' %}
+  final int? {{properties[key].realkey}} = jsonConvert.convert<int>(json['{{properties[key].realkey}}']); // int64
+  if ({{properties[key].realkey}} != null) { obj.{{properties[key].realkey}} = {{properties[key].realkey}}; }
+  {%- elif properties[key].type == 'integer' %}
+  final int? {{properties[key].realkey}} = jsonConvert.convert<int>(json['{{properties[key].realkey}}']); // int64
+  if ({{properties[key].realkey}} != null) { obj.{{properties[key].realkey}} = {{properties[key].realkey}}; }
+  {%- elif properties[key].type == 'number' %}
+	final double? {{properties[key].realkey}} = jsonConvert.convert<double>(json['{{properties[key].realkey}}']); // number
+	if ({{properties[key].realkey}} != null) { obj.{{properties[key].realkey}} = {{properties[key].realkey}}; }
+  {%- elif properties[key].type == 'array' %}
+	final List<{{properties[key].refClassSingle}}>? {{properties[key].realkey}} = jsonConvert.convertListNotNull<{{properties[key].refClassSingle}}>(json['{{properties[key].realkey}}']); // array
+	if ({{properties[key].realkey}} != null) { obj.{{properties[key].realkey}} = {{properties[key].realkey}}; }
+  {%- elif properties[key].type == 'string' %}
+  final String? {{properties[key].realkey}} = jsonConvert.convert<String>(json['{{properties[key].realkey}}']); // String
+  if ({{properties[key].realkey}} != null) { obj.{{properties[key].realkey}} = {{properties[key].realkey}}; }
+  {%- elif properties[key].type == 'boolean' %}
+  final bool? {{properties[key].realkey}} = jsonConvert.convert<bool>(json['{{properties[key].realkey}}']);  // boolean
+  if ({{properties[key].realkey}} != null) { obj.{{properties[key].realkey}} = {{properties[key].realkey}}; }
+  {%- else %}
+  {{properties[key].type}}
+  obj.{{properties[key].refClass}} {{properties[key].realkey}} = {{properties[key].refClassSingle}}.fromJson(json["{{properties[key].realkey}}"]); // else2
+  {%- endif %}
+  {%- endfor %}
+  return obj;
+}
+Map<String, dynamic> ${{class_name}}ToJson({{class_name}} entity) {
+	final Map<String, dynamic> data = <String, dynamic>{};
+  {%- for key in properties %}
+  {%- if properties[key].type == 'object' %}
+  data['{{properties[key].realkey}}'] = entity.{{properties[key].realkey}}; // object
+  {%- elif properties[key].type == '' %}
+	data['{{properties[key].realkey}}'] = entity.{{properties[key].realkey}}.toJson(); // empty
+  {%- elif properties[key].type == 'None222' %}
+  // {{properties[key].refClass}} {{properties[key].realkey}}; // None
+  {%- else %}
+  data['{{properties[key].realkey}}'] = entity.{{properties[key].realkey}}; // else3 {{properties[key].type}}
+  {%- endif %}
+  {%- endfor %}
+	return data;
+}

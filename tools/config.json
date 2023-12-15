@@ -1,0 +1,69 @@
+{
+  "constant": {
+    "@des": "Widget的类名称常量自动生成输出，可以配置多组，每组配置输入的ui根文件夹和输入的文件路径，均从workspace开始算起。source_dir会自动遍历下面的app，tab，page，component文件夹里面的组件类",
+    "infos": [
+      {
+        "widget_source_dir": "/lib/components",
+        "constant_target_path": "/lib/common/constant/generated/constant.dart"
+      }
+    ]
+  },
+  "widget_factory": {
+    "@des": "Widget的工厂类自动生成，可以根据类名称创建Widget对象的类，可以配置多组，跟constant配置方法一样",
+    "infos": [
+      {
+        "widget_source_dir": "/lib/components",
+        "widget_factory_target_path": "/lib/generated/widget_factory.dart",
+        "component_special_params": {
+          "SileGifWidget": [
+            "childWidget"
+          ],
+          "BottomIconTitleTab": [
+            "getChildPage"
+          ],
+          "BottomFloatingIconTab": [
+            "getChildPage"
+          ],
+          "TopScrollTitleTab": [
+            "getChildPage",
+            "onMenuTap",
+            "endDrawer"
+          ],
+          "SearchNavBar": [
+            "titleHint",
+            "barColor",
+            "onItemTap"
+          ],
+          "CardScoreTemplate": [
+            "list",
+            "title",
+            "image",
+            "changeCallBack"
+          ],
+          "MenuListView": [
+            "menus",
+            "onTap"
+          ],
+          "IconTitleTemplate": [
+            "list",
+            "title",
+            "changeCallBack"
+          ],
+          "SmallImageTemplate": [
+            "list",
+            "title",
+            "image",
+            "changeCallBack"
+          ],
+          "SwiperView": [
+            "bannerList",
+            "aspectRatioH",
+            "aspectRatioW",
+            "onItemTap",
+            "outer"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+diff a/pubspec.yaml b/pubspec.yaml	(rejected hunks)
+@@ -11,12 +11,12 @@
+     sdk: flutter
+   cupertino_icons: 1.0.2
+   # 屏幕适配
+-  flutter_screenutil: 5.5.3+2
++  flutter_screenutil: ^5.6.1
+ 
+   # 图片轮播
+   flutter_swiper_plus: ^2.0.4
+   #图片网络缓存
+-  cached_network_image: 3.2.1
++  cached_network_image: ^3.2.3
+   #提示
+   fluttertoast: 8.0.8
+   #路由管理
+@@ -50,14 +50,14 @@
+   #文件路径
+   path_provider: '>=2.0.0 <4.0.0'
+   #日志库
+-  logger: 1.1.0
++  logger: 1.2.2
+   #滑动删除
+   flutter_slidable: 2.0.0
+   #圆形进度条
+   percent_indicator: 4.2.2
+   #多媒体选择组件
+-  image_picker: ^0.8.5+3
+-  video_thumbnail: ^0.5.2
++  image_picker: ^0.8.6+4
++  video_thumbnail: 0.5.3
+ 
+   #网络监听
+   connectivity_plus: 2.3.6
+@@ -65,7 +65,7 @@
+   json_annotation: ^4.6.0
+   json_serializable: ^6.3.1
+   #视频播放
+-  video_player: ^2.4.7
++  video_player: ^2.5.3
+   #文件选择
+   file_picker: ^4.5.1
+   #打开url链接

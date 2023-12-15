@@ -1,0 +1,7 @@
+/// 此文件由 python 自动生成，请勿编辑
+/// Widget的类名称常量
+/// 最后生成时间: {{ last_time }} 
+
+class ConstantComponent {
+{{ component_text }}  static const cAllComponents = [{{ all_components_str }}];
+}

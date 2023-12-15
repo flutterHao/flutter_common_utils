@@ -1,0 +1,56 @@
+/// 此文件由 python 自动生成，请勿编辑
+/// Swagger的路由请求，会自动注入参数发送请求，并返回json字符串
+/// 类方法需要自行编辑实现: {{class_name_request}}.sendHttpRequest
+/// 最后生成时间: {{ last_time }}
+
+import 'package:{{project_package}}/net/swagger_http_request_wrapper.dart';
+
+class {{class_name}} {
+{% for cmd_dict in cmds %}
+{{cmd_dict.method_comment}}
+  static {{cmd_dict.method_name}} async {
+    String baseUrl = {{class_name_request}}.getBaseUrl();
+    String route = "{{cmd_dict['route_prefix']}}{{cmd_dict['pathKey']}}";
+    String method = "{{cmd_dict['method']}}";
+    // bool isForm = false;
+    List<String> contentTypes = [];
+    {%- for consume in cmd_dict.consumes %}
+    String contentType = "{{consume}}";
+    contentTypes.add(contentType);
+    {%- endfor %}
+    Map<String, dynamic> headerParams = {};
+    {%- for param in cmd_dict.headerParams %}
+    {%- if param.is_num %}
+    headerParams["{{param.realname}}"] = headers["{{param.realname}}"];
+    {%- else %}
+    if (headers["{{param.realname}}"].isNotEmpty) { headerParams["{{param.realname}}"] = headers["{{param.realname}}"]; };
+    {%- endif -%}
+    {%- endfor %}
+    Map<String, dynamic> pathParams = {};
+    {%- for param in cmd_dict.pathParams -%}
+    {%- if param.is_num %}
+    pathParams['{{param.realname}}'] = {{param.realname}};
+    {%- else %}
+    if ({{param.realname}}.isNotEmpty) { pathParams["{{param.realname}}"] = {{param.realname}}; }
+    {%- endif -%}
+    {%- endfor %}
+    Map<String, dynamic> queryParams = {};
+    {%- for param in cmd_dict.queryParams -%}
+    {%- if param.is_num %}
+    queryParams["{{param.realname}}"] = {{param.realname}};
+    {%- else %}
+    if ({{param.realname}}.isNotEmpty) { queryParams["{{param.realname}}"] = {{param.realname}}; }
+    {%- endif -%}
+    {%- endfor %}
+    Map<String, dynamic> bodyParams = {};
+    {%- for param in cmd_dict.bodyParams %}
+    {%- if param.is_num %}
+    bodyParams["{{param.realname}}"] = {{param.realname}};
+    {%- else %}
+    if ({{param.realname}}.isNotEmpty) { bodyParams["{{param.realname}}"] = {{param.realname}}; }
+    {%- endif %}
+    {%- endfor %}
+    await {{class_name_request}}.sendHttpRequest<T>(baseUrl, route, method, contentTypes, headerParams, pathParams, queryParams, bodyParams, nTimeout, onSuccess, onError);
+  }
+{% endfor -%}
+}

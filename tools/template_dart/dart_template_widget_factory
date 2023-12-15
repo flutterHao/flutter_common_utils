@@ -1,0 +1,18 @@
+/// 此文件由 python 自动生成，请勿编辑
+/// Widget的工厂类
+/// 最后生成时间: {{ last_time }}
+// ignore_for_file: avoid_print
+
+import 'package:flutter/material.dart';
+import 'package:flutter_lib_shared/common/base/base_list_widget.dart';{{ packages_str }}
+
+class WidgetFactory {
+  static AbsBaseComponent? getInstanceComponent(String className, String key, Map<String, dynamic> extParams{{ component_special_params_str }}) {
+    switch (className) { {{ component_case_str }}
+      default:
+        break;
+    }
+    print(' factory null Widget $className');
+    return null;
+  }
+}
