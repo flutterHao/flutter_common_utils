@@ -55,7 +55,7 @@ dependencies:
   #日志库
   logger: 1.2.2
   #滑动删除
-  flutter_slidable: 2.0.0
+  flutter_slidable: ^3.0.0
   #圆形进度条
   percent_indicator: 4.2.2
   #多媒体选择组件
@@ -111,7 +111,7 @@ dependencies:
 
 #  tencent_kit: ^4.0.0
 
-  fluwx: 3.12.2
+  fluwx: ^3.12.2
 
   tobias: 2.4.1+1
   r_get_ip: 0.1.1

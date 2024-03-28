@@ -166,7 +166,6 @@ class ImageText extends StatelessWidget {
             bottom: 0,
             child: Container(
               width: 88.0.w,
-              height: 52.0.w,
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
                     begin: Alignment.topCenter,
@@ -187,7 +186,6 @@ class ImageText extends StatelessWidget {
                   20.vGap,
                   SizedBox(
                     width: 88.0.w,
-                    height: 13.0.w,
                     child: Center(
                       child: Text(
                         '$text',
