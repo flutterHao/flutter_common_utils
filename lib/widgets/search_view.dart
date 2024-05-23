@@ -3,7 +3,7 @@ import 'package:flutter_lib_shared/common/exports/common_lib.dart';
 import '../generated/r.dart';
 import 'custom_textfield.dart';
 
-///@author huangjianghe
+///@author Hao
 ///@date 2022/6/15
 ///搜索组件
 class SearchNavBar extends StatelessWidget {
@@ -137,12 +137,12 @@ class SearchView extends StatelessWidget {
         // 边色与边宽度
         borderRadius: borderRadius ?? 12.br,
       ),
-      height:32.w,
+      height: 32.w,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.only(left: 8.w,right: 8.w),
+            padding: EdgeInsets.only(left: 8.w, right: 8.w),
             child: Image.asset(leftImgPath ?? R.fenleiIconSearch,
                 color: AppColors.cB8B8B8, package: 'flutter_lib_shared'),
           ),
@@ -158,7 +158,8 @@ class SearchView extends StatelessWidget {
                 child: CustomTextField(
                   hintText: titleHint,
                   enabled: enabled,
-                  controller: controller,focusNode: focusNode,
+                  controller: controller,
+                  focusNode: focusNode,
                 )),
           ),
           rightWidget ?? const SizedBox()

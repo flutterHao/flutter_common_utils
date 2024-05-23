@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_lib_shared/common/config/config.dart';
 import 'package:flutter_lib_shared/common/exports/common_lib.dart';
 
-///@author huangjianghe
+///@author Hao
 ///@date 2022/7/5
 ///网络拦截器
 class NetInterceptor extends Interceptor {

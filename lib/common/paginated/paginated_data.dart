@@ -1,4 +1,4 @@
-///@author huangjianghe
+///@author Hao
 ///@date 2022/7/20
 ///接收网络返回的数据
 class PaginatedData<T> {

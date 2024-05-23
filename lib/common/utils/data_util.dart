@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-///@author huangjianghe
+///@author Hao
 ///@date 2022/6/30
 ///
 typedef SectionViewOnFetchAlphabet<T> = String Function(T header);
@@ -33,9 +33,9 @@ typedef SectionViewOnFetchAlphabet<T> = String Function(T header);
 
 class DataUtil {
   static List<dynamic> convertHierarchyToList<T>(List<T> list,
-      SectionViewOnFetchAlphabet<T> sectionViewOnFetchAlphabet,bool isClear) {
+      SectionViewOnFetchAlphabet<T> sectionViewOnFetchAlphabet, bool isClear) {
     List<AlphabetHeader<T>> dataList =
-    _convertListToAlphaHeader(list, sectionViewOnFetchAlphabet,isClear);
+        _convertListToAlphaHeader(list, sectionViewOnFetchAlphabet, isClear);
 
     List result = [];
     for (var item in dataList) {
@@ -102,8 +102,7 @@ extension Map2StringEx on Map {
           result += "\n$indentationStr \"$key\" : $temp,";
         } else if (value is List) {
           result +=
-          "\n$indentationStr \"$key\" : ${value.listToStructureString(
-              indentation: indentation + 2)},";
+              "\n$indentationStr \"$key\" : ${value.listToStructureString(indentation: indentation + 2)},";
         } else {
           result += "\n$indentationStr \"$key\" : \"$value\",";
         }

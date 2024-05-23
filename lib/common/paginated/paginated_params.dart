@@ -1,4 +1,4 @@
-///@author huangjianghe
+///@author Hao
 ///@date 2022/7/20
 ///请求的分页参数
 class PaginatedParams {

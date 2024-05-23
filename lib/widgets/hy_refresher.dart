@@ -5,7 +5,7 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../generated/r.dart';
 
-///@author huangjianghe
+///@author Hao
 ///@date 2022/7/27
 ///@description 下拉刷新
 ///
@@ -163,7 +163,6 @@ class HyRefresher<T, C extends PaginatedController<T, PaginatedState<T>>>
   //     itemExtent: itemExtent,
   //   );
   // }
-
 
   Widget? buildEmptyWidget() {
     if (emptyWidget != null) {

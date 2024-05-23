@@ -1,6 +1,6 @@
 import '../exports/common_lib.dart';
 
-///@author huangjianghe
+///@author Hao
 ///@date 2022/9/26
 ///@description
 extension StringExt on String {

@@ -13,7 +13,7 @@ import 'api_exception.dart';
 import 'interceptors/logs_interceptor.dart';
 import 'interceptors/net_interceptor.dart';
 
-///@author huangjianghe
+///@author Hao
 ///@date 2022/7/4
 ///@description 网络请求
 

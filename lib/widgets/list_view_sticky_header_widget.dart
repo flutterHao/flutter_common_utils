@@ -6,11 +6,11 @@ import '../../generated/r.dart';
 
 typedef OnTapHeader = void Function(int index);
 
-///@author huangjianghe
+///@author Hao
 ///@date 2022/6/30
 ///头部固定的listview
 class ListViewStickyHeader<T> extends StatelessWidget {
-  final List  dataList;
+  final List dataList;
   final Widget? header;
   final Widget? refreshHeader;
   final Widget? refreshFooter;
@@ -20,13 +20,13 @@ class ListViewStickyHeader<T> extends StatelessWidget {
 
   ListViewStickyHeader(
       {Key? key,
-        required this.dataList,
-        this.refreshHeader,
-        this.physics,
-        this.refreshFooter,
-        required this.onTapHeader,
-        this.header,
-        required this.itemBuilder})
+      required this.dataList,
+      this.refreshHeader,
+      this.physics,
+      this.refreshFooter,
+      required this.onTapHeader,
+      this.header,
+      required this.itemBuilder})
       : super(key: key);
 
   @override
@@ -36,22 +36,20 @@ class ListViewStickyHeader<T> extends StatelessWidget {
     }
     return FlutterSliverList(
         delegate: FlutterListViewDelegate(initOffset: 188, (context, index) {
-          var data = dataList[index];
-          if (data is String) {
-            return header;
-          }
-          if (data is AlphabetHeader) {
-            return _renderHeader(data.name, context);
-          }
-          return itemBuilder(index, data as T);
-        },
+      var data = dataList[index];
+      if (data is String) {
+        return header;
+      }
+      if (data is AlphabetHeader) {
+        return _renderHeader(data.name, context);
+      }
+      return itemBuilder(index, data as T);
+    },
             childCount: dataList.length,
             onItemSticky: (index) => dataList[index] is AlphabetHeader,
             keepPosition: true,
             onItemHeight: (index) => 72.h));
   }
-
-
 
   Widget _renderHeader(String text, context) {
     return Container(
@@ -75,5 +73,4 @@ class ListViewStickyHeader<T> extends StatelessWidget {
       ),
     );
   }
-
 }

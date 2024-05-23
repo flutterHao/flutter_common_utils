@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 
 import '../common/exports/common_lib.dart';
 
-///@author huangjianghe
+///@author Hao
 ///@date 2022/6/30
 ///
 class CustomTextField extends StatelessWidget {
@@ -20,7 +20,7 @@ class CustomTextField extends StatelessWidget {
   final List<TextInputFormatter>? inputFormatters;
   final FocusNode? focusNode;
   final TextStyle? textStyle;
-  final double?  paddingLeft;
+  final double? paddingLeft;
 
   const CustomTextField(
       {Key? key,
@@ -45,7 +45,7 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     TextStyle defaultTextStyle = 14.w4();
     return Container(
-      padding: EdgeInsets.only(left: paddingLeft??0.0),
+      padding: EdgeInsets.only(left: paddingLeft ?? 0.0),
       decoration: BoxDecoration(
         border: border ?? Border(),
         borderRadius: borderRadius,

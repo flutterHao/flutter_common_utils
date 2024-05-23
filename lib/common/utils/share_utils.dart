@@ -5,7 +5,7 @@ import 'package:fluwx/fluwx.dart';
 
 import '../../widgets/bottom_show_sheet.dart';
 
-///@author huangjianghe
+///@author Hao
 ///@date 2022/10/26
 ///@description 分享工具类
 class ShareUtils {

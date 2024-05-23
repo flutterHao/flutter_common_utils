@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 
-///@author huangjianghe
+///@author Hao
 ///@date 2022/7/12
 ///缓存拦截器
-class CacheInterceptor extends Interceptor{
-}
+class CacheInterceptor extends Interceptor {}
