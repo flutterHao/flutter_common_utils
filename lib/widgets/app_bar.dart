@@ -1,6 +1,6 @@
 import '../common/exports/common_lib.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/7/20
 ///@description 通用AppBar
 // class MyAppBar extends StatelessWidget implements PreferredSizeWidget {

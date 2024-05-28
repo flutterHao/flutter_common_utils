@@ -4,7 +4,7 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../exports/common_lib.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/7/20
 ///
 typedef GetData<M> = void Function(List<M> data, int total);

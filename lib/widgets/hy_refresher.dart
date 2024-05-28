@@ -5,7 +5,7 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../generated/r.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/7/27
 ///@description 下拉刷新
 ///

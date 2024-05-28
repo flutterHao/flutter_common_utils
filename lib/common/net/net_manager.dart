@@ -13,7 +13,7 @@ import 'api_exception.dart';
 import 'interceptors/logs_interceptor.dart';
 import 'interceptors/net_interceptor.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/7/4
 ///@description 网络请求
 
@@ -223,7 +223,7 @@ class NetManager {
       showToast("No network, please check the network connection settings");
       return;
     }
-    const _methodValues = {
+    const methodValues = {
       DioMethod.get: 'get',
       DioMethod.post: 'post',
       DioMethod.put: 'put',
@@ -232,7 +232,7 @@ class NetManager {
       DioMethod.head: 'head'
     };
     Response response;
-    options ??= Options(method: _methodValues[method]);
+    options ??= Options(method: methodValues[method]);
 
     try {
       response = await _dio.request(path,

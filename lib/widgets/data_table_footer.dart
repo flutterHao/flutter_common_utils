@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../common/paginated/page_model.dart';
 import 'out_line_input_box.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/7/18
 ///@description: 表格页脚
 

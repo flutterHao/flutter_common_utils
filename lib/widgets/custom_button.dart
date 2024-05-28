@@ -1,6 +1,6 @@
 import 'package:flutter_lib_shared/common/exports/common_lib.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/6/30
 ///自定义按钮
 class CustomButton extends StatefulWidget {

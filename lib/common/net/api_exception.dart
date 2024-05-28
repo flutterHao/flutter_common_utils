@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 
 import '../utils/log_util.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/7/21
 ///@description 处理异常
 class ApiException implements Exception {

@@ -3,7 +3,7 @@ import 'package:flutter_lib_shared/common/exports/common_lib.dart';
 
 import '../../generated/r.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/9/14
 ///@description
 class ImageWidget extends StatelessWidget {

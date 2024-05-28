@@ -6,7 +6,7 @@ import 'package:tobias/tobias.dart';
 
 import '../../widgets/bottom_show_sheet.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/10/26
 ///@description 支付工具类
 class PayUtils {

@@ -5,7 +5,7 @@ import 'package:flutter_swiper_plus/flutter_swiper_plus.dart';
 
 import 'image_show_widget.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/6/10
 ///轮播图组件
 typedef SwiperOnTap = void Function(int index);

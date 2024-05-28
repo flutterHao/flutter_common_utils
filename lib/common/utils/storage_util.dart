@@ -1,6 +1,6 @@
 import 'package:get_storage/get_storage.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/7/18
 ///数据的存取
 class StorageUtil {

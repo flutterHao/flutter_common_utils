@@ -6,7 +6,7 @@ import '../../generated/r.dart';
 
 typedef OnTapHeader = void Function(int index);
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/6/30
 ///头部固定的listview
 class ListViewStickyHeader<T> extends StatelessWidget {

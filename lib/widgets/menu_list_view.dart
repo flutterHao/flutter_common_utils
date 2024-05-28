@@ -2,7 +2,7 @@ import 'package:flutter_lib_shared/common/exports/common_lib.dart';
 
 import 'image_show_widget.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/6/10
 ///菜单组件
 

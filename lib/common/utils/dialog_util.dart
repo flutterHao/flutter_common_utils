@@ -1,6 +1,6 @@
 import '../exports/common_lib.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/8/25
 ///@description
 class DialogUtil {

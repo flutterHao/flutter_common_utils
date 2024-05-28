@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/6/30
 ///
 typedef SectionViewOnFetchAlphabet<T> = String Function(T header);

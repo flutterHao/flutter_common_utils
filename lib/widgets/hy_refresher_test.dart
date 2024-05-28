@@ -8,7 +8,7 @@ import '../generated/r.dart';
 import 'classic_footer.dart' as footer;
 import 'classic_header.dart' as header;
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/7/27
 ///@description 下拉刷新
 ///

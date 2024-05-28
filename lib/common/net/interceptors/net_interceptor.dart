@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_lib_shared/common/config/config.dart';
 import 'package:flutter_lib_shared/common/exports/common_lib.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/7/5
 ///网络拦截器
 class NetInterceptor extends Interceptor {
@@ -14,7 +14,6 @@ class NetInterceptor extends Interceptor {
     }
     var userId = StorageUtil.read(Config.userId);
 
-    ///后台瞎搞不统一
     if (!ObjectUtil.isEmpty(userId)) {
       options.headers.addAll({"userId": userId});
       options.headers.addAll({"headUserId": userId});
@@ -51,7 +50,7 @@ class NetInterceptor extends Interceptor {
         err.requestOptions.extra["errorMsg"] =
             err.message!.isNotEmpty ? err.message : "Cancel Connection";
         break;
-      case DioErrorType.unknown:
+      // case DioErrorType.unknown:
       default:
 //       var connectivityResult = await (Connectivity().checkConnectivity());
 // //判断是否有网络
@@ -59,7 +58,7 @@ class NetInterceptor extends Interceptor {
 //         err.requestOptions.extra["errorMsg"] = "网络未连接";
 //         break;
 //       }
-        err.requestOptions.extra["errorMsg"] = "connection exception";
+        err.requestOptions.extra["errorMsg"] = "unknown";
         break;
     }
     super.onError(err, handler);

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_lib_shared/common/utils/data_util.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/7/6
 ///日志拦截器
 class LogsInterceptor extends LogInterceptor {

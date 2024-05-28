@@ -3,7 +3,7 @@ import 'package:flutter_lib_shared/common/exports/common_lib.dart';
 import '../generated/r.dart';
 import 'custom_textfield.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/6/15
 ///搜索组件
 class SearchNavBar extends StatelessWidget {

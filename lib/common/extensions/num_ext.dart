@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 
 import '../exports/common_lib.dart';
 
-///@author Hao
+///@author lihonghao
 ///@date 2022/6/10
 ///@description 拓展num功能
 extension NumExt on num {
